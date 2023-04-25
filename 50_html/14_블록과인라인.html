@@ -12,19 +12,36 @@
     <!--
         요소
         1. 블록레벨요소: 
-         h1~h6, p, hr, ul, ol, li, dl, dt, dd, blockquote, address
+           1) 위에서 아래로 배치(세로 배치)
+           2) 와이어 프레임 구현은 블록레벨요소로 한다.
+           3) 블록레벨 요소는 블록레벨 요소와 인라인요소를 자식을 가질 수 있다.
+           4) div, header, nav, main, section, article, aside, footer, address, h1~h6, p, hr, ul, ol, li, dl, dt, dd, blockquote, address, form, fieldset, table, thead, tbody, tfoot, ...
         2. 인라인요소:
-         b, strong, i, em, mark, small, sup, sub, ins, del, img, br, q, abbr, cite
+           1) 왼쪽에서 오른쪽으로 배치(가로 배치)
+           2) 인라인요소는 블록레벨 요소를 자식으로 가질 수 없다.
+              (단, a태그는 예외)
+           3)spn, b, strong, i, em, mark, small, sup, sub, ins, del, img, a, br, q, abbr, cite, input, label, select, textarea, button, ...
     -->
 
     <h2>블록 레벨 요소</h2>
-    <div>div1</div>
-    <div>div2</div>
-    <div>div3</div>
+
+        <div>
+            <div>div</div>
+            <header>header</header>
+            <vav>nave</vav>
+            <main>main</main>
+            <section>section</section>
+            <footer>footer</footer>
+        </div>
 
     <h2>인라인 요소</h2>
-    <span>span1</span>
-    <span>span2</span>
-    <span>span3</span>
+    <div>
+        <span>span</span>
+        <a href="#">a</a>
+        <b>b</b>
+        <i>i</i>
+        <del>del</del>
+    </div>
+    
 </body>
 </html>
