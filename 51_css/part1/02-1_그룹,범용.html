@@ -18,7 +18,7 @@
         body {border: 1px solid red;}
         h1 {border: 1px solid red;}
         h2 {border: 1px solid red;}
-        ul {border: /lid red
+        ul {border: 1px solid red;}
         li {border: 1px solid red;}
 
         /* 
@@ -26,9 +26,13 @@
             선택자1, 선택자2, ...
         */
 
+        /* 이게 제일 바람직한 방법 */
+         html, body, h1, ul, li {
+              border: 1px solid red;
+         }
 
         /* 범용(Universal, 전체) 선택자 */
-        
+        * {border: 1px solid red;}
 
     </style>
 </head>
