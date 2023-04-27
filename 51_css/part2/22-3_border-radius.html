@@ -48,12 +48,15 @@
         .br4 {border-radius: 10px 20px 30px;}
 
         /* (5) .br5의 모서리 둥근 정도를 왼쪽 상단과 오른쪽 하단은 10px, 오른쪽 상단과 왼쪽 아래는 20px로 지정하시오. */
-        .br5 {border-radius: 10px, 20px;}
+        .br5 {border-radius: 10px 20px;}
 
 
         /* (6) .br6의 모서리 둥근 정도를 75px로 지정하시오. */
-        /
-        .br6 {border-radius: 75px;}
+        /* width 또는 height 크기의 50% 이상 지정하면 원 (circle)이 된다. */
+        /* %는 width 또는 height의 크기가 기준이다. */
+        .br6 {
+            border-radius: 75px;
+        }
 
         /* %는 자신의 가로 또는 세로 크기가 기준 */
         /* (7) .br7의 모서리 둥근 정도를 50%로 지정하시오. */
@@ -62,6 +65,7 @@
         /* (8) .br8의 모서리 둥근 정도를 왼쪽 상단과 왼쪽 하단을 75px로 지정하시오. */
         .br8 {
             width: 75px;
+            border-radius: 75px 0 0 75px;
         }
 
         
