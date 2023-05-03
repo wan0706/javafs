@@ -80,7 +80,7 @@ section {
     
 
 }
-#menu ul::after, #event li::after {
+#menu ul::after, #event ul::after {
     content: '';
     clear: both;
     display: block;
