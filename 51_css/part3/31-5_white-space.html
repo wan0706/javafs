@@ -6,6 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS</title>
     <style>
+
+        /* 
+            white-space: 공간처리;
+                값: normal, nowrap, pre, pre-wrap, pre-line
+        */
+
+
+        /* enter -> 엔터키 */
+        /* sp/tab -> 스페이스바, 탭키 */
+
         /* 자동 줄 바꿈(o), Enter(x), sp/tab(x) */
         .whn {white-space: normal;}
         /* 자동 줄 바꿈(x), Enter(x), sp/tab(x) */
@@ -21,6 +31,7 @@
 <body>
     <h1>CSS 텍스트 속성</h1>
     <h2>white-space</h2>
+    <!-- HTML은 한 칸 이상의 공백을 한 칸으로 인식한다. -->
     <p class="whn">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
@@ -37,8 +48,10 @@
         Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit.</p>
-    <p class="whpl">Lorem           ipsum dolor sit. Lorem ipsum dolor sit. 
-        Lorem            ipsum dolor sit. Lorem ipsum dolor sit. 
+    <p class="whpl">Lorem        
+           ipsum dolor sit. Lorem ipsum dolor sit. 
+        Lorem         
+           ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit. Lorem ipsum dolor sit. 
         Lorem ipsum dolor sit.</p>
 

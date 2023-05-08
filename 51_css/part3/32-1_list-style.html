@@ -10,14 +10,29 @@
         ul, li {border:1px solid red;}
 
         /* .lsi의 마커를 이미지로 지정 */
-
+        .lsi {list-style-image: url(../assets/dot.png);}
         /* .lsp의 마커 위치를 안쪽으로 지정 */
-
+        .lsp {
+            list-style-position: inside;
+        }
+        /* <ul>, <ol>, <li> 요소를 대상으로 숨긴다. */
         /* .lisn의 마커 숨기기 */
+        .lisn {
+            list-style-type: none;
+            list-style: none;
+        }
 
-        /* list-style: 타입 이미지 위치; */
+        /* list-style: 타입|이미지 위치; */
         /* .lis의 목록 속성을 타입은 circle, dot.png 이미지, 위치는 inside로 지정해 보세요.(속기) */
-        
+        .lis {
+            list-style-type: circle;
+            list-style-image: url(../assets/dot.png);
+            list-style-position: inside;
+
+            list-style: circle url(../assets/dot.png) inside;
+        }
+        /* 속성 순서는 바뀌어도 상관없으나 띄어쓰기로 구분은 해야한다 */
+        /* 이미지 크기는 이미지 자체를 수정해야한다 */
         
     </style>
 </head>
