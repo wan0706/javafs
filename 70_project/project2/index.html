@@ -6,44 +6,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>바비브라운</title>
 </head>
+<style>
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 10px;
+}
+
+
+body {
+    font: 1.5rem/1.8 'Noto Sans KR', sans-serif;
+    column-rule: #333;
+}
+
+a{
+    color:#333;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    z-index: 99999;
+}
+
+header li {
+    height: 54px;
+    padding: 0 16px;
+
+    display: flex;
+    align-items: right;
+}
+
+
+ul a:hover {
+    background: #ccc;
+}
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
 <body>
     <!-- 헤더 -->
    <header>
-       <h1><a href="#"><b>BOBBI BROWN</b></a></h1>
+       <h1 class="logo"><a href="#"></a></h1>BOBBI BROWN</a></h1>
    </header>
+  
+   <nav>
+    <ul>
+        <li><a href="#쇼핑">쇼핑</a></li>
+        <li><a href="#더알아보기">더알아보기</a></li>
+        <li><a href="#검색">검색</a></li>
+    </ul>
+</nav>
+</header>
 
-   <ul>
-    <li><a href="#쇼핑">쇼핑</a></li>
-    <li><a href="#더알아보기">더 알아보기</a></li>
-    <li><a href="#검색">검색</a></li>
-  </ul>
+
+
+
+
 
   <!-- 섹션1 -->
   <section id="section">
    <img src="images/바비브라운로고.jpg" alt="로고">
    <h2><b>공식몰 단독 감사의 달 프로모션</b></h2>
    <p>감사의 달을 맞이하여 사랑이 넘치는 혜택과 함께 바비 브라운의 BEST 아이템을 선물하세요.</p>
-   <a href="#">쇼핑하러가기</a>           
-                     
-  <h2><b>세럼 광채를 쉽게 만드는 3STEP</b></h2>
-  <ul>
-    <li>
-        <img src="images/바비브라운1.jpg" alt="구매하기1">
-        <p>광채 피부를 선사하고 자외선으로부터 피부를 보호하는 톤업 세럼 프라이머를 먼저 사용합니다.</p>
-        <a href="#">구매하기</a>
-    </li>
-    <li>
-        <img src="images/바비브라운2.jpg" alt="구매하기2">
-        <p>피부를 감싸듯 가볍게 밀착 피팅되어 지속력을 높여주고 고급스럽게 빛나는 피부 선사해주는 인텐시브 세럼 파운데이션을 그 위에 사용합니다.</p>
-        <a href="#">구매하기</a>
-    </li>
-    <li>
-        <img src="images/바비브라운3.jpg" alt="구매하기3">
-        <p>인텐시브 세럼 쿠션을 파운데이션 대체로 사용하거나, 수정 메이크업용 혹은 하이라이팅 효과용으로 사용하셔도 좋습니다.</p>
-        <a href="#">구매하기</a>
-    </li>
-  </ul>
- 
+   <a href="#">쇼핑하러가기</a>     
+   </section>    
+   
+   
+
+
+    <!-- section2 -->
+    <section id="menu" class="section">
+        <h2>바비브라운 추천 아이템</h2>
+        <ul>
+            <li>
+                <h3>아이템1</h3>
+                <img src="images/바비브라운1.jpg" alt="바비브라운1">
+            </li>
+            <li>
+                <h3>아이템2</h3>
+                <img src="images/바비브라운2.jpg" alt="바비브라운2">
+            </li>
+            <li>
+                <h3>아이템3</h3>
+                <img src="images/바비브라운3.jpg" alt="바비브라운3">
+            </li>
+            <li>
+                <h3>아이템4</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴4">
+            </li>
+            <li>
+                <h3>아이템5</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴5">
+            </li>
+            <li>
+                <h3>아이템6</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴6">
+            </li>
+            <li>
+                <h3>아이템7</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴7">
+            </li>
+            <li>
+                <h3>아이템8</h3>
+                <img src="https://dummyimage.com/362x243&text=+" alt="메뉴8">
+            </li>
+        </ul>
+    </section>
+
 
 
     <!-- 섹션3 -->
