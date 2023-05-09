@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        .container{
+            width: 110px;
+            height: 110px;
+            /* background: #000; */
+            perspective: 800px;
+            border-radius: 50%;
+     
+        }
+
+      .inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        transform-style: preserve-3d;
+        }
+        
+        .inner div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+       }
+
+      .container div {
+        width: 110px;
+        height: 110px;
+        }
+
+      .front {
+        z-index: 1;
+        background: lightblue;
+
+        backface-visibility: hidden;
+
+      }
+
+      .back {
+        background: lightcoral;
+        transform: rotateY(180deg);
+        text-align: center;
+        line-height: 110px;
+        font-size: 2rem;
+        color: brown;
+        font-weight: bold;
+      }
+
+
+      .container:hover .inner {
+        transform: rotateY(180deg);
+      }
+    </style>
+</head>
+<body>
+    <h1>이미지 호버시 y축 회전하기</h1>
+    <p>https://www.farmhannong.com/kor/main/index.do</p>
+    <div class="container">
+         <div class="inner">
+             <div class="front">
+                <img src="../assets/icon_farming_02.png" alt="사과"> 
+                     </div>
+                     <div class="back">
+                사과
+                     </div>
+                 </div>
+         </div>
+
+</body>
+</html>
+
+<!-- .wrap1 {
+    border-radius: 50%;
+    position: relative;
+    width: 110px;
+    height: 110px;
+    transition: 0.5s;
+}
+
+.wrap1 div {
+    border-radius: 50%;
+    width: 110px;
+    height: 110px;
+}
+
+.front {
+    position: absolute;
+    background-color: greenyellow;
+    /* 코드상 .back이 밑에 있어서, front를 위로 보냄 */
+    z-index: 1;
+}
+
+.back {
+    /* 글자 가운데 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 사과 뒷면으로 보내기 */
+    position: absolute;
+    background-color: skyblue;
+}
+
+/* 컨테이너 뒤집기 */
+.wrap1:hover {
+    transform: rotateY(180deg);
+}
+
+/* 컨테이너 뒤집으면 .back가 좌우 반전으로 나온다. 다시 뒤집어 반전 맞추기. */
+.wrap1:hover .back {
+    /* .front에서 z값이 1이므로, .back에서 z값 1을 줘야만 다시 올라온다. */
+    z-index: 1;
+    transform: rotateY(180deg);
+}
+</style>
+</head>
+
+<body>
+<h1>
+이미지 호버시, y축 회전하기
+</h1>
+<p>
+https://www.farmhannong.com/kor/main/index.do
+</p>
+
+<div class="wrap1">
+<div class="front">
+    <img src="../assets/icon_farming_02.png" alt="배고픈 사과">
+</div>
+<div class="back">
+    배고픈 사과
+</div>
+
+</div>
+</body> -->

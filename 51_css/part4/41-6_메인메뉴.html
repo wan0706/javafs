@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        html {
+            font-size: 10px;
+        }
+        body {
+            font-size: 1.5rem;
+        }
+
+         a {
+            display: block;
+            width: 60px;
+            text-decoration: none; /* 밑줄제거 */
+            color:darkgreen;
+            transition: 0.3s;
+        } 
+
+        /* 밑줄 다시 만든 요소들 */
+         span {
+            display: block;
+            width: 0;
+            height: 2px;
+            background: rgb(251, 163, 210);
+            transition: 0.3s;
+        }
+
+        a:hover {
+            color:rgb(251, 163, 210);
+        }
+
+         a:hover span {
+            width: 100%;
+        }
+
+        .gnb3 a::after {
+            content: '';
+            display: block;
+            height: 2px;
+            background: rgb(251, 163, 210);
+            transform: scaleX(0);
+            transition: 0.3s;
+            transform-origin: 0 0;
+        }
+
+        .gnb3 a:hover::after {
+            transform: scaleX(1);
+        }
+
+
+    </style>
+</head>
+<body>
+    <h1>메인 메뉴바</h1>
+    <p>http://www.ht.co.kr/</p>
+    <nav class="gnb1">
+         <a href="#">제품소개<span></span></a>
+    </nav>
+    <nav class="gnb2">
+        <a href="#">제품소개</a>
+   </nav>
+   <nav class="gnb3">
+    <a href="#">제품소개</a>
+</nav>
+</body>
+</html>
