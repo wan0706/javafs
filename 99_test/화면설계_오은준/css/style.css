@@ -23,7 +23,6 @@ li {
     display: inline-block;
     padding: 8px 16px;
     line-height: 1;
-    
 
 }
 
@@ -227,4 +226,6 @@ footer {
     height: 100px;
     background: rgba(198, 198, 204, 0.39);
     border-radius: 40px;
+    text-align: center;
+    font-size: 30px;
  }
