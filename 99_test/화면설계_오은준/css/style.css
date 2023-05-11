@@ -1,6 +1,11 @@
 @charset "utf-8";
 
 /* reset */
+@font-face {
+    font-family: ;
+            src: url('../font/');
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -20,14 +25,6 @@ body {
 
 li {
     list-style: none;
-    display: inline-block;
-    padding: 8px 16px;
-    line-height: 1;
-
-}
-
-li:hover {
-    background: rgba(204, 202, 202, 0.419);
 }
 
 img {
@@ -41,14 +38,12 @@ iframe {
     border: 0;
 }
 
-
 html {
     font-size: 10px;
 }
 body {
     font-size: 1.5rem;
     line-height: 1.8;
-    margin: 0;
 }
 
 h1 {
@@ -62,10 +57,20 @@ h2 {
 a {
 color: #333;
 text-decoration: none;
-display: block;
-width: 110px;
-transition: 0.3s;
 }
+
+.logo span{
+    display: block;
+    width: 0;
+    height: 2px;
+    transition: 0.3s;      
+}
+
+a:hover {
+    color: #4e4ac794;
+}
+
+
 
 
 
@@ -83,22 +88,6 @@ header {
 .logo {
     float: left;
 }
-
-.logo a::after {
-content: '';
-display: block;
-height: 2px;
-background: rgb(174, 175, 167);
-transform: scaleX(0);
-transition: 0.3s;
-transform-origin: 0 0;
-}
-
-.logo a:hover::after {
-transform: scaleX(1);
-}
-
-
 nav {
     float: right;
 }
@@ -126,18 +115,11 @@ section {
 }
 
 /* section1 */
-
 #main_img {
     position: relative;
     background: url(../images/배너3.jpg) no-repeat 50% 50%/cover fixed;
     width: 1496px;
     height: 930px;
-}
-
-
-
-#main_img {
-    position: relative;
 }
 #main_img h2 {
     position: absolute;
@@ -157,6 +139,7 @@ section {
     float:left;
     width: 362px;
 }
+
 #menu ul::after, #event ul::after {
     content:'';
     clear:both;
@@ -171,6 +154,7 @@ section {
 #menu h2 {
     margin-bottom: 48px;
 }
+
 
 
 /* section3 */
@@ -211,8 +195,8 @@ section {
 
 /* footer */
 footer {
-    background: #aeaaaa79;
-    color: #706d6d;
+    background: #dad8d84e;
+    color: #7b7777;
     text-align: center;
     padding:32px 0;
 }
@@ -220,12 +204,12 @@ footer {
 .backToTop {
     position: fixed;
     right: 50px;
-    bottom:50px;
-    color: aliceblue;
+    bottom: 50px;
+    color: blanchedalmond;
     width: 100px;
     height: 100px;
-    background: rgba(198, 198, 204, 0.39);
-    border-radius: 40px;
+    background: rgba(149, 174, 182, 0.227);
     text-align: center;
     font-size: 30px;
- }
+    border-radius: 20px;
+}
