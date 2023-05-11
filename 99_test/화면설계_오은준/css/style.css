@@ -49,6 +49,7 @@ html {
 body {
     font-size: 1.5rem;
     line-height: 1.8;
+    margin: 0;
 }
 
 h1 {
@@ -129,7 +130,7 @@ section {
 
 #main_img {
     position: relative;
-    background: url(/70_project/images/배너3.jpg) no-repeat 50% 50%/cover fixed;
+    background: url(../images/배너3.jpg) no-repeat 50% 50%/cover fixed;
     width: 1496px;
     height: 930px;
 }
@@ -211,8 +212,19 @@ section {
 
 /* footer */
 footer {
-    background: #000;
-    color: #fff;
+    background: #aeaaaa79;
+    color: #706d6d;
     text-align: center;
     padding:32px 0;
 }
+
+.backToTop {
+    position: fixed;
+    right: 50px;
+    bottom:50px;
+    color: aliceblue;
+    width: 100px;
+    height: 100px;
+    background: rgba(198, 198, 204, 0.39);
+    border-radius: 40px;
+ }

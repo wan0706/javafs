@@ -8,38 +8,37 @@
    
 </head>
 <style>
-
-li {
-    display: inline-block;
-    padding: 4px 8px;
-    line-height: 1;
+img {
+    width: 100px;
+    /* height: 100px; */
 }
-li:hover {
-    background: rgba(204, 202, 202, 0.419);
+.container {
+    width: 250px;
+    height: 360px;
+    overflow: hidden;
 }
+.inner {
+    transform: scale(1);
+    transition: 0.3s;
+} 
 
-a {
-    color: gray
+.container:hover .inner {
+    transform: scale(1.2 1.2);
 }
-    
-
 
 </style>
 
 
 
-<body>
-    <!-- header -->
-    <header>
-        
-        <nav>
-            <ul>
-                <li><a href="#이벤트">이벤트</a></li>
-                <li><a href="#베스트">베스트</a></li>
-                <li><a href="#특가">특가</a></li>
-            </ul>
-        </nav>
-    </header>
 
+<body>
+    <h2>Best sellers</h2>
+<ul class="container">
+     <li class="inner">
+          <h3>제품 1</h3>
+           <img src="/70_project/project2/images/제품1.png" alt="제품1">
+     </li>
+ </ul>
+  
 </body>
 </html>
