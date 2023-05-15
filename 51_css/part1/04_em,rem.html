@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS</title>
+    <style>
+        html {font-size: 10px;}
+        body {font-size: 30px;}
+        div {font-size: 1.5rem;}
+        div > div {font-size: 2em;}
+    </style>
+</head>
+<body>
+    <h1>난 부모의 2em = 40px</h1>
+    <!-- em 과 rem 공통점은 둘 다 배수 -->
+    <!-- 차이점은 누구의 몇 배인가? -->
+    <!-- rem은 무조건 HTML에서 지정한 글자 크기의 배수 -->
+    <!-- em은 부모에서 지정한 글자 크기의 배수 -->
+    <p>난 body에 글자다. = 20px</p>
+    <div>
+        글자 크기 = 15px
+        <div>
+            글자 크기 = 30px
+            <div>글자 크기 = 60px</div>
+        </div>
+    </div>
+</body>
+</html>
