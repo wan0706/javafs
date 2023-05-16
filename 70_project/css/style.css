@@ -46,7 +46,16 @@ header i {
     transform: translate(-50%,-50%);  
 }
 
-/
+/* section2~4 공통 */
+.container {
+    width: 960px;
+    margin: 0 auto;
+}
+
+.parallax {
+    height: 410px;
+    background: no-repeat 50% 50%/cover fixed;
+}
 
 /* section2 */
 
@@ -57,16 +66,21 @@ header i {
 
 
 /* section3 */
-#portfolio div {
-    height: 410px;
-    background: url(../images/parallax2.jpg) no-repeat 50% 50%/cover fixed;
+#portfolio .parallax {
+    background-image: url(../images/parallax2.jpg);
 }
+
 /* 
     max-width: 960px
     column count:12
     1 column width: 69px
     gutter: 12px
     */
+
+#portfolio ul {
+ display: flex;
+}    
+
 #portfolio li {
     width: 231px;
     height: 162px;
@@ -74,8 +88,7 @@ header i {
 
 
 /* section4 */
-#contact > div {
-    height: 410px;
-    background: url(../images/parallax3.jpg) no-repeat 50% 50%/cover fixed;
+#contact .parallax {
+    background-image: url(../images/parallax3.jpg);
 }
 /* footer */
