@@ -26,7 +26,12 @@
             //재할당: var, let
          
             //let은 재선언을 할 수 없다.
-            //const는 재선언과 재할당을 할 수 없다.
+            //const는 재선언과 재할당을 할 수 없다. -> 값이 바뀌지 않는 변수는 contst를 쓴다.
+            ex) const c = 20; (x)
+            //let은 재할당 된다 -> 값이 바뀌는 변수는 let을 쓴다.
+            ex) let b; 
+                b = 10;
+     
         */
 
         //const는 선언 동시에 할당도 해야 한다.
@@ -35,7 +40,8 @@
         var a = 30;
 
         let b = 10;
-        let b = 30;
+        //let은 재선언 할 수 없다.
+        // let b = 30;
 
 
         document.write(box, '<br>');
