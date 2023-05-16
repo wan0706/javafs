@@ -163,6 +163,7 @@ padding: 8px 0;
     border-bottom: 1px dotted #ccc;
     white-space: nowrap;
 }
+
 #tab1 a {
     width: 300px;
     white-space: nowrap;
@@ -208,6 +209,7 @@ footer {
     height: 100px;
     background: firebrick;
 }
+
 .addr { 
     display: flex;
     flex-direction: column;
