@@ -1,0 +1,152 @@
+@charset "utf-8";
+
+
+
+/* header */
+header {
+    position: fixed;
+    top:0;
+    z-index: 9999;
+    width: 100%;
+    padding: 0 32px;
+    height: 54px;
+    background: #777;
+}
+.logo {
+    float: left;
+}
+
+nav {
+    float: right;
+}
+
+nav li {
+    display: inline-block;
+}
+
+/* section common */
+section {
+    width: 1496px;
+    margin: 0 auto;
+}
+.section {
+    padding-top: 81px;
+}
+.section h2 {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;   
+}
+.section h2 + p {
+    margin-bottom: 48px;
+}
+
+/* section1 */
+#main_img {
+    position: relative;
+}
+#main_img h2 {
+    position: absolute;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, -50%);
+    background: #444;
+    padding: 8px 16px;
+}
+/* section2, 3 common*/
+
+
+#menu li, #event li {
+    float: left;
+    width: 362px;
+    
+
+}
+#menu ul::after, #event ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+/* #menu ul {
+    overflow: hidden;
+} */
+#menu li:not(:nth-of-type(4n)), #event li:not(:nth-of-type(4n)) {
+    margin-right: 16px;
+}
+
+/* section2 */
+#menu h2 {
+    margin-bottom: 48px;
+}
+
+/* section3 */
+
+
+#event li h3 {
+    margin: 16px 0 8px;
+    
+}
+
+#event li p {
+    margin: 8px 0 8px;
+}
+
+#event li a {
+    display: block;
+    background: #ccc;
+    text-align: center;
+    padding: 8px 0;
+    margin-top: 16px;
+}
+
+
+/* #event li {
+    float: left;
+    width: 362px;
+}
+
+#event ul::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+
+
+#event li:not(:nth-of-type(4n)) {
+    margin-right: 16px;
+} */
+
+
+
+/* section4 */
+#news h2 {
+    margin-top: 48px;
+}
+
+#news input {
+    margin-top: 16px;
+    padding: 16px 8px;
+    width: 100%;
+    display: block;
+}
+
+#news button {
+    margin: 8px 0;
+    background: #444;
+    color: #fff;
+    /* width: 100%; */
+    padding: 16px;
+    height: 54px;
+    text-align: send messge;
+}
+
+
+
+/* footer */
+footer {
+    height: 81px;
+    background: #000;
+    color: #fff;
+    padding: 32px 0;
+    text-align: center;
+}
