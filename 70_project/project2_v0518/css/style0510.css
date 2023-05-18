@@ -119,7 +119,7 @@ footer {
     padding: 30px 0;
 }
 
-foother span:nth-last-of-type(1), footer span:nth-last-of-type(3){
+footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
     display: none;
 }
 
@@ -174,13 +174,13 @@ foother span:nth-last-of-type(1), footer span:nth-last-of-type(3){
    #event li {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
    }
 
    #event li div {
-    background: yellow;
-   }
-   }
+    height: 100px;
+    }
+   
    /* 섹션4 */
    /* 푸터 */
   
