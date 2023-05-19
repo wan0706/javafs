@@ -1,7 +1,5 @@
 @charset 'utf-8';
-@import url('https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&family=Sunflower:wght@300&display=swap');
-
-
+/* reset */
 * {
     margin: 0;
     padding: 0;
@@ -50,6 +48,8 @@ html {
 body {
     font-size: 1.5rem/1.8;
     color: #333;
+    font-family: 'SUITE', sans-serif;
+    font-size: 1.5rem;
 }
 
 .logo {
@@ -58,7 +58,7 @@ body {
     letter-spacing: 4px;
 }
 h2, h3 {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: url(../font/SUITE-ExtraBold.ttf);
     font-weight: 400;
 }
 
@@ -290,12 +290,13 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
 
    /* section2 */
 
-    
+
    .menu li {
     width: calc(25% - 8px);
-    max-width: 362px;}
+    max-width: 362px;
+}
    
-   * section3 */
+   /* section3 */
    #event li {
     display: flex;
     flex-direction: column;
@@ -308,7 +309,8 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
    
    /* section4 */
    /* footer */
-  
+  footer {
+    width: 100%;
 } 
 
 @media (min-width: 768px) {
