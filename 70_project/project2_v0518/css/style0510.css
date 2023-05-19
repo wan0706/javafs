@@ -69,7 +69,7 @@ nav {
     left: 0;
     top:0;
     padding: 4px 12px;
-    background: #000;  
+    background: #9c9c9c6f;  
 }
 
 /* 섹션3 */
@@ -184,5 +184,6 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
    /* 섹션4 */
    /* 푸터 */
   
-}
+} /* 992 끝*/
+
 
