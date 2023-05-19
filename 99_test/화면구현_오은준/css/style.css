@@ -311,6 +311,7 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
    /* footer */
   footer {
     width: 100%;
+}
 } 
 
 @media (min-width: 768px) {
