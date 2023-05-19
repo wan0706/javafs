@@ -14,11 +14,17 @@ html {
 
 body {
     background: #fff;
+    margin: 0;
 }
 
 img {
     width: 100%;
     vertical-align: top;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 li {
@@ -118,6 +124,8 @@ header {
 nav {
     display: none;
 }
+
+
 /* section1 */
 #main_img {
     position: relative;
@@ -159,6 +167,8 @@ nav {
 .section li {
     margin-bottom: 16px;
 }
+
+
 
 /* section2 */
 #menu h2 {
@@ -213,7 +223,7 @@ nav {
     display: block;
     padding: 12px 16px;
     margin: 20px 0 45px;
-    background: #000;
+    background: #ccc;
 }
 
 
@@ -232,6 +242,8 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
 /* 992 */
 @media (min-width: 992px) {
    /* header */
+
+
    header {
     display: flex;
     justify-content: space-between;
@@ -255,6 +267,9 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
     max-width: 1496px;
     
    }
+
+
+
    /* section 2~4 common */
    .section {
     width: 1496px;
@@ -274,7 +289,13 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
     }
 
    /* section2 */
-   /* section3 */
+
+    
+   .menu li {
+    width: calc(25% - 8px);
+    max-width: 362px;}
+   
+   * section3 */
    #event li {
     display: flex;
     flex-direction: column;
@@ -292,8 +313,27 @@ footer span:nth-last-of-type(1), footer span:nth-last-of-type(3){
 
 @media (min-width: 768px) {
 
+ 
+.menu img {
+    width: calc(50% - 8px);
+}
+ 
+.menu li {
+    width: 100%;
+    margin-bottom: 16px;
+}
 
+.menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1496px;
+    margin: 0 auto;
+}
 
-    /* header */
-    
+.menu {
+    padding: 8px 16px;
+}
+
 }
