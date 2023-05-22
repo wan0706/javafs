@@ -203,6 +203,12 @@ section h2 + p {
     display: flex;    
 }
 
+#map {
+    margin-right: 30px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
 /* 패럴렉스 */
 .parallax {
     font-size: 3.6rem;
