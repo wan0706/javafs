@@ -162,24 +162,45 @@ section h2 + p {
 
 
 /* section3 */
-#portfolio .parallax {
-    background-image: url(../images/parallax2.jpg);
-}
-
 
 #portfolio ul {
  display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
 }    
 
 #portfolio li {
     width: 231px;
     height: 162px;
+    margin-bottom: 12px;
+    overflow: hidden;
 }
+
+#portfolio .moreBtn {
+    margin-top: 64px;
+    text-align: center;
+}
+
+#portfolio .moreBtn a{
+    padding: 12px 24px;
+    background: #f1f1f1;
+
+}
+
+#portfolio .parallax {
+    background-image: url(../images/parallax2.jpg);
+}
+
+
 
 
 /* section4 */
 #contact .parallax {
     background-image: url(../images/parallax3.jpg);
+}
+
+#contact .container {
+    display: flex;    
 }
 
 /* 패럴렉스 */
