@@ -15,30 +15,30 @@
    
         // document.write('<h2>컴퓨터 가위, 바위, 보 맞추기</h2>');
 
-        var game = prompt('가위, 바위, 보 중 쓰세요', '');
-        var gameNum;
+        // var game = prompt('가위, 바위, 보 중 쓰세요', '');
+        // var gameNum;
 
-        switch (game) {
-            case '가위':
-                gameNum = 1; break;
-            case '바위':
-                gameNum = 2; break;
-            case '보':
-                gameNum = 3; break;
-            default: alert('잘못 작성했습니다.');
-            // 브라우저 새로고침
-            location.reload();
-        }
+        // switch (game) {
+        //     case '가위':
+        //         gameNum = 1; break;
+        //     case '바위':
+        //         gameNum = 2; break;
+        //     case '보':
+        //         gameNum = 3; break;
+        //     default: alert('잘못 작성했습니다.');
+        //     // 브라우저 새로고침
+        //     location.reload();
+        // }
 
-        var com = Math.ceil(Math.random() * 3);
+        // var com = Math.ceil(Math.random() * 3);
        
-        document.write('<img src=\'../assets/math_img_' + com + '.jpg\'>');
+        // document.write('<img src=\'../assets/math_img_' + com + '.jpg\'>');
 
-        if (gameNum == com) {
-            document.write('<img src=\'../assets/game_1.jpg\'>');
-        } else {
-            document.write('<img src=\'../assets/game_2.jpg\'>');
-        }
+        // if (gameNum == com) {
+        //     document.write('<img src=\'../assets/game_1.jpg\'>');
+        // } else {
+        //     document.write('<img src=\'../assets/game_2.jpg\'>');
+        // }
 
 
        
@@ -81,7 +81,9 @@
         // 1 <= x < 4 -> 1 ~ 3 사이 정수
         // Math.floor(Math.random() * (최댓값 - 최솟값 + 1) - 최솟값;
         // Math.floor(Math.random() * 3) + 1;
-        let com = Math.floor(Math.random() * 3) + 1;
+   
+         let com = Math.floor(Math.random() * 3) + 1;
+        document.write('<img src="../assets/math_img_' + com + '.jpg" alt="가위"><br>');
 
         if (gameNum === com) {
             document.write('축하합니다. 잘 맞추었습니다.');
