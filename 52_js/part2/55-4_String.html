@@ -21,14 +21,10 @@
 
         /* 
             
-         
-            slice(a, b): 왼쪽에서 a개의 문자를 자르고, b번째 이후에 문자열을 자른 후 남은 문자열을 반환 (단, b가 -1인 경우 뒤에서부터 1글자를 가리킴)
-            split('문자'): 지정한 문자를 기준으로 문자열 데이터를 나누어 배열에 저장하여 반환
-            concat('새문자열'): 문자열에 새 문자열 결합
-            trim(): 문자열 앞 또는 뒤에 공백 문자열 삭제
-
             toLowerCase(): 소문자로 반환
             toUpperCase(): 대문자로 반환
+
+
             charCodeAt(index): 인덱스 번호에 해당하는 문자열의 아스키코드 값을 반환 (인덱스를 생략하면 0)
             fromCharCode(아스키코드값): 아스키코드 값에 해당하는 문자열 반환
             length: 문자열의 문자 총 개수 반환
@@ -36,6 +32,13 @@
 
         var str = 'Hello Thank you good luck to you';
 
+        let str2 = str.toUpperCase();
+        document.write(str2, '<br>');
+        document.write(str2.toLowerCase(), '<br>');
+        
+        //A: 65 -> a: 97
+        document.write(str.charCodeAt(8), '<br>');
+        document.write(String.fromCharCode(65), '<br>');
 
 
     </script>
