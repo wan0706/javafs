@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>valley Festival_오은준</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet"type="text/css">
 
     <style>
 
@@ -29,14 +29,32 @@
         #wrap {width: 100%;}
         header {
             height: 100px;
-            background: #ffffff;
+            background: #edf2f9;
         }
-        nav {
+
+        /* 헤더 네비게이션 효과 */
+        header h1 {
+            animation: h1 5s forwards;
+        }
+
+        @keyframes h1 {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        nav { 
+       
             height: 40px;
-            background: #ffffff;
+            background: #afbfe8;
         }
+
+        /* 푸터 */
         footer {
-            background: #ffffff;
+            background: #2e2e38;
         }
 
         /* 헤더 */
@@ -57,18 +75,12 @@
             display: flex;
         }
 
- 
-
-
         /* 1depth */
-
-
         .main > li {
-            
             width: 100%;
             height: 40px;
+            display: block;
             text-align: center;
-            background: #ffffff;
         }
 
         .main > li > a {
@@ -77,11 +89,11 @@
             line-height: 40px;
             font-weight: bold;
             color: #333333;
-            transform: 9s;
+            transition: .3s;
         }
 
         .main > li > a:hover {
-            background: #ffffff;
+            background: #c4c7d464;
         }
 
         .main > li > a:hover + .sub {
@@ -93,21 +105,25 @@
             display: none;
             padding: 10px 0 20px 0;
             line-height: 30px;
-            background: #ffffff;
-            
+            background: #75729638;
+            height: 200px;
+            text-shadow: 1px 1px #060606;
         }
 
     
         .sub a {
             padding: 4px 8px;
-            font-size: 1.4rem;
-            color: #333333;
+            font-size: 1.5rem;
+            color: #ffffff;
         }
 
         .sub a:hover {
-            background: #ffffff;
-            color: #333333;
+            background: #33314e87;
+            color: #ffffff;
         }
+
+       
+
 
         /* 슬라이드 */
         .slide {
@@ -142,7 +158,7 @@
  
         .slide li {
             width: 100%;
-            height: 500px;
+            height: 300px;
         }  
 
 
@@ -164,6 +180,7 @@
         footer {
             text-align: center;
             padding: 40px 0;
+            color: #ffffff;
         }
 
     </style>
@@ -221,7 +238,7 @@
             </ul>
         </div>
         <footer>
-            <p>Copyright 2023 Valley Festival. All rights reserved.</p>
+            <p>Copyright Valley Festival. All rights reserved.</p>
         </footer>
   
     </div>
