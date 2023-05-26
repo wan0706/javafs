@@ -1,32 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>valley Festival_오은준</title>
-    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&family=Poor+Story&family=Sunflower:wght@300&display=swap" rel="stylesheet"type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=Noto+Sans+KR:wght@100;400;700&family=Poor+Story&family=Sunflower:wght@300&display=swap"
+        rel="stylesheet" type="text/css">
 
     <style>
-
-
-        *{
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        html {font-size: 10px;}
-        li { list-style: none;}
+        html {
+            font-size: 10px;
+        }
+
+        li {
+            list-style: none;
+        }
+
         a {
             text-decoration: none;
-            color:#333333;
+            color: #333333;
         }
-        body {font: 1.5rem/1.8 'Poor Story', cursive;
+
+        body {
+            font: 1.5rem/1.8 'Poor Story', cursive;
         }
 
         /* 레이아웃 */
-        #wrap {width: 100%;}
+        #wrap {
+            width: 100%;
+        }
+
         header {
             height: 100px;
             background: #edf2f9;
@@ -41,13 +53,14 @@
             0% {
                 opacity: 0;
             }
+
             100% {
                 opacity: 1;
             }
         }
 
-        nav { 
-       
+        nav {
+
             height: 40px;
             background: #afbfe8;
         }
@@ -76,15 +89,15 @@
         }
 
         /* 1depth */
-        .main > li {
+        .main>li {
             width: 100%;
             height: 40px;
             display: block;
             text-align: center;
         }
 
-        .main > li > a {
-            display: block;            
+        .main>li>a {
+            display: block;
             font-size: 1.6rem;
             line-height: 40px;
             font-weight: bold;
@@ -92,11 +105,11 @@
             transition: .3s;
         }
 
-        .main > li > a:hover {
+        .main>li>a:hover {
             background: #c4c7d464;
         }
 
-        .main > li > a:hover + .sub {
+        .main>li>a:hover+.sub {
             display: block;
         }
 
@@ -110,7 +123,7 @@
             text-shadow: 1px 1px #060606;
         }
 
-    
+
         .sub a {
             padding: 4px 8px;
             font-size: 1.5rem;
@@ -122,7 +135,7 @@
             color: #ffffff;
         }
 
-       
+
 
 
         /* 슬라이드 */
@@ -133,7 +146,7 @@
             overflow: hidden;
         }
 
-    
+
 
         .slide h2 {
             z-index: 100;
@@ -155,25 +168,51 @@
             display: flex;
             animation: slide 9s infinite;
         }
- 
+
         .slide li {
             width: 100%;
             height: 300px;
-        }  
+        }
 
 
 
         /* 애니메이션 키프레임 */
         @keyframes slide {
-            0% {left: 0;}
-            5% {left: -100%;}
-            33% {left: -100%;}
-            38% {left: -200%;}
-            66% {left: -200%;}
-            71% {left: -300%;}
-            99% {left: -300%;}
-            99.99999% {left: -300%;}
-           100% {left: 0;}
+            0% {
+                left: 0;
+            }
+
+            5% {
+                left: -100%;
+            }
+
+            33% {
+                left: -100%;
+            }
+
+            38% {
+                left: -200%;
+            }
+
+            66% {
+                left: -200%;
+            }
+
+            71% {
+                left: -300%;
+            }
+
+            99% {
+                left: -300%;
+            }
+
+            99.99999% {
+                left: -300%;
+            }
+
+            100% {
+                left: 0;
+            }
         }
 
         /* 푸터 */
@@ -182,10 +221,10 @@
             padding: 40px 0;
             color: #ffffff;
         }
-
     </style>
 
 </head>
+
 <body>
     <div id="wrap">
         <header>
@@ -231,33 +270,34 @@
         <div class="slide">
             <h2>vally Festival</h2>
             <ul>
-                <li><img src="../images/valley4.jpg" alt="페스티벌1"></li>
-                <li><img src="../images/valley2.jpg" alt="페스티벌2"></li>
-                <li><img src="../images/valley3.jpg" alt="페스티벌3"></li>
-                <li><img src="../images/valley4.jpg" alt="페스티벌1"></li>
+                <li><img src="images/valley4.jpg" alt="페스티벌1"></li>
+                <li><img src="images/valley2.jpg" alt="페스티벌2"></li>
+                <li><img src="images/valley3.jpg" alt="페스티벌3"></li>
+                <li><img src="images/valley4.jpg" alt="페스티벌1"></li>
             </ul>
         </div>
         <footer>
             <p>Copyright Valley Festival. All rights reserved.</p>
         </footer>
-  
+
     </div>
 
     <!-- 제이쿼리 라이브러리 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 
     <script>
-        
-        $(function(){
-        $('.main > li').mouseenter(function(){
-            $('.sub').stop().slideDown();
+
+        $(function () {
+            $('.main > li').mouseenter(function () {
+                $('.sub').stop().slideDown();
+            });
+            $('.main > li').mouseleave(function () {
+                $('.sub').stop().slideUp();
+            });
         });
-        $('.main > li').mouseleave(function(){
-            $('.sub').stop().slideUp();
-        });
-    });
 
     </script>
 
 </body>
+
 </html>
