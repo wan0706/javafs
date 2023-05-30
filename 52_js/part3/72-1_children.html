@@ -16,10 +16,20 @@
         <li>목록4</li>
     </ul>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+
     <script>
         /* 
-            요소.children[index] ~ 자식 요소 선택
+            요소.children[nodeNumber] ~ 자식 요소 선택
+
+            eq(n) n=0,1,2...
         */
+
+        // children[노드번호] 속성을 사용하여 첫 번째  li요소의 글자색을 빨간색으로 지정하시오.
+
+        document.querySelectorAll('li')[0].children[0].style.border='solid';
+
+        $(li).children().css({border:'solid'});
 
     </script>
 </body>

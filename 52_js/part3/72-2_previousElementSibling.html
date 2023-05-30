@@ -16,10 +16,23 @@
         <li>목록4</li>
     </ul>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script>
         /* 
             요소.previousElementSibling ~ 이전 요소 선택
         */
+        //목록3을 선택 한 후 previousElementSibling 속성을 사요하여 이전 요소를 선택하여 글자를 빨강으로 지정하고, 
+        //nextElementSibling 속성을 사용하여 다음 형제 요소를 선택하여 글자색을 파랑으로 지정하라.
+
+
+        const li2Tag = document.querySelectorAll('li')[2];
+        li2Tag.previousElementSibling.style.color = 'red';
+        li2Tag.nextElementSibling.style.color = 'blue';
+
+        const $li2Tag = $('li').eq(2);
+        $li2Tag.prev().css({color:'red'});
+        $li2Tag.next().css({color:'blue'});
+
 
     </script>
 </body>
