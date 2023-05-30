@@ -14,18 +14,29 @@
 
     <script>
         /* 
-            setTimeout(): 일정한 시간 후에 코드를 한 번 실행
-            clearTimeout(): setTimeout() 메서드 제거
+            setTimeout(함수, 시간): 일정한 시간 후에 코드를 한 번 실행
+            clearTimeout(변수): setTimeout() 메서드 제거
 
-            var 참조변수 = setTimeout(function(){
+            var 참조변수 = setTimeout(function(함수, 시간){
                 코드;
             }, 시간간격(ms));
             
-            clearTimeout(참조변수);
+            clearTimeout(변수);
         */
 
-        var addNum = 0;
+        /* 
+            addNum을 3초후에 1증가 시킨 결과를 큰 솔에 나타내시오
+            변수: addNum
+            함수: add
+            메서드:setTimeout()
+        */
+        let addNum = 0;
 
+        setTimeout(add, 3000);
+
+        function add(){
+            console.log(++addNum);
+        }
 
 
     </script>
