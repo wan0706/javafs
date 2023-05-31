@@ -7,14 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HTML+CSS+JS</title>
     <style>
-        button {
+        button , span{
             font-size: 20px;
             margin: 20px;
         }
-        span {
-            font-size: 20px;
-            margin: 20px;
-        }
+       
     </style>
 </head>
 
@@ -24,6 +21,7 @@
         <span>변경전 입니다.</span>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /* 
             요소.innerHTML; ~ HTML 구조 반환
@@ -35,6 +33,9 @@
 
         btn.onclick = function(){
             box.innerHTML = '<h1>변경후 입니다.</h1>';
+
+            // box.innerText = '<h1>변경후 입니다.</h1>';
+            // box.style.fontSize = '32px';
         };
 
         box.onclick = function(){

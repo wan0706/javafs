@@ -33,22 +33,30 @@
         -> 하나를 빨강으로 지정하기 전에 모두 파랑으로 지정하고(초기화), 선택한 요소를 
 
       
+        탐색 메서드: 요소.not('선택자')
         키워드: $(this)
         */
 
 
 
-        const liTag = $('li');
+        // const liTag = $('li');
        
-        liTag.click(function () {
-            //li 전체
-            liTag.css({ color:'blue'});
-            //클릭한 li만
-            $(this).css({color: 'red'});
-        });
+        // liTag.click(function () {
+        //     //li 전체
+        //     liTag.css({ color:'blue'});
+        //     //클릭한 li만
+        //     $(this).css({color: 'red'});
+        // });
         
-     
+        //not 키워드로 한것.
+        const liTag = $('li');
+        
+        liTag.click(function(){
+             liTag.not($(this)).css({color:'blue'});
+             $(this).css({color:'red'});
+         });
 
+     
 
     </script>
 </body>
