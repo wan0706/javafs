@@ -59,13 +59,12 @@
         const pTag =$('p');
 
         
-        box1.on('click', function (){
-            console.log('클릭');
+        box1.click(function (){
             pTag.text('box1을 클릭했습니다.');
         });
        
        
-        box1.on('mouseenter', ev);
+        box1.mouseenter(ev);
         function ev() {
             pTag.text('box1에 마우스를 올렸습니다.');
         }
@@ -92,6 +91,8 @@
             pTag.text('창이 크기 조정 되었습니다.');
         });
       
+
+
 
 
     </script>
