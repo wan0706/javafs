@@ -65,49 +65,28 @@
         <img src="../assets/pic_1.jpg" alt="" id="lightboxImage">
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
         /*
             요소.getAttribute('속성명') ~ HTML 속성 반환
             요소.setAttribute('속성명', '값') ~ HTML 속성 설정
         */
 
-        // var pics = document.getElementsByClassName("pic");
-        // var lightbox = document.getElementById("lightbox");
-        // var lightboxImage = document.getElementById("lightboxImage");
+            const lightbox = $('#lightbox');
+            const lightboxImg = lightbox.find('#lightboxImage');
+            const imgs = $('.pic');
 
-        // for (i = 0; i < pics.length; i++) {
-        //     pics[i].addEventListener("click", showLightbox);
-        // }
-
-        // function showLightbox() {
-        //     var bigLocation = this.getAttribute("data-src");
-        //     lightboxImage.setAttribute("src", bigLocation);
-        //     lightbox.style.display = "block";
-        // }
-
-        // lightbox.onclick = function () {
-        //     lightbox.style.display = "none";
-        // }
-
-
-            const lightbox = document.querySelector('#lightbox');
-            const lightboxImg = document.querySelector('#lightboxImage');
-            const imgs = document.querySelectorAll('.pic');
-
-
-            for (let i = 0; i < imgs.length; i++) {
-                imgs[i].onclick = showLightbox;
-            }
-            
-            function showLightbox() {
-                let dataSrc = this.getAttribute('data-src');
-                lightboxImg.setAttribute('src', dataSrc);
-                lightbox.style.display = 'block';
+             imgs.click(showLightbox);
+             
+             function showLightbox() {
+                let dataSrc = $(this).attr('data-src');
+                lightboxImg.attr('src', dataSrc);
+                lightbox.css({display: 'block'});
             }
 
-            lightbox.onclick = function(){
-                lightbox.style.display = 'none';
-            }
+            lightbox.click(function(){
+                $(this).css({display: 'none'});
+            });
 
     </script>
 </body>
