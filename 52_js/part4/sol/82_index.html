@@ -28,11 +28,20 @@
 
         const liTags = document.querySelectorAll('li');
 
-        liTags.forEach(function(e, index){
-            e.onclick = function(){
+        for (let i = 0; i < liTags.length; i++) {
+            liTags[i].onclick = function(){
                 alert(index);
-            }
-        });
+            };
+        }
+
+
+
+
+        // liTags.forEach(function(e, index){
+        //     e.onclick = function(){
+        //         alert(index);
+        //     }
+        // });
 
     </script>
 </body>
