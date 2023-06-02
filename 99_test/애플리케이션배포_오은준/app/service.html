@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애플리케이션배포_오은준</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gaegu:wght@300;400;700&family=Gamja+Flower&family=Poor+Story&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
     <style>
-        /* 초기화 */
+        /* 가로 해상도: 390px */
         * {
             margin: 0;
             padding: 0;
@@ -16,20 +18,23 @@
 
         html {
             font-size: 10px;
-            font-family: 'Sunflower', sans-serif;
         }
 
         #wrap {
             margin: 100px 30px 0;
             text-align: center;
+            background: #fdeeff;
+            border-radius: 10px 10px;
         }
 
         h1 {
             margin-bottom: 32px;
+            font-family: 'Pacifico', cursive;
         }
 
         p {
-            font-size: 14px;
+            font-family: 'Dongle', sans-serif;
+            font-size: 20px;
             color: red;
         }
 
@@ -39,6 +44,11 @@
             padding: 8px;
             font-size: 20px;
         }
+        /* 이미지 */
+        img {
+            display: block;
+            margin: 0px auto;
+        }
 
         #member {
             position: absolute;
@@ -47,12 +57,14 @@
             bottom: 100px;
             font-size: 1.5rem;
             color: #777;
+            /* background: #c9c9c9; */
         }
     </style>
 </head>
+
 <body>
     <div id="wrap">
-        <h1>묵찌빠</h1>
+        <h1>PRINCESS GAME</h1>
         <div id="result">결과가 궁금하시죠?</div>
         <button id="againBtn">다시하기</button>
         <button id="logoutBtn">게임종료</button>
@@ -61,44 +73,44 @@
     </div>
 
     <script>
-
         const againBtn = document.querySelector('#againBtn');
         const logoutBtn = document.querySelector('#logoutBtn');
         const result = document.querySelector('#result');
-        let game = prompt('가위, 바위, 보 셋 중 하나만 입력하세요.', '');
+        let game = prompt('백설공주, 신데렐라, 잠자는 숲속의 공주 중 한명만 입력하세요.', '');
 
-        switch(game) {
-            case '가위':
+        switch (game) {
+            case '백설공주':
                 gameNum = 1;
                 break;
-            case '바위': 
+            case '신데렐라':
                 gameNum = 2;
                 break;
-            case '보': 
+            case '잠자는 숲속의 공주':
                 gameNum = 3;
                 break;
-            default: 
-                alert('가위, 바위 , 보 셋 중 하나만 입력하세요.');
+            default:
+                alert('백설공주, 신데렐라, 잠자는 숲속의 공주 중 하나만 선택하세요.');
                 location.reload();
         }
 
-        let com = Math.floor(Math.random()*3) + 1;
-        document.write('<img src="../app/math_img_' + com + '.png" alt="가위"><br>');
+        // 1~3 사이 정수
+        // Math.floor(Math.random() * 3) + 1)
+        let com = Math.floor(Math.random() * 3) + 1;
+        document.write('<img src="../app/p_img_' + com + '.jpg" alt="백설공주"><br>');
 
         if (gameNum === com) {
             result.innerHTML = '<p>축하합니다. 맞추었습니다.</p>';
         } else {
-            result.innerHTML = '<p>틀렸습니다. 다음 기회에..</p>';
+            result.innerHTML = '<p>틀렸습니다. 다음 기회에...</p>';
         }
 
         againBtn.onclick = function(){
             location.reload();
         };
         logoutBtn.onclick = function(){
-            location.href = 'login.html';
+            location.href = 'index.html';
         };
-
-
     </script>
 </body>
+
 </html>
