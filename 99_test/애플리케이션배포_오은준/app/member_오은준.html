@@ -4,20 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>애플리케이션배포2_오은준</title>
+    <title>애플리케이션배포_오은준</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gaegu:wght@300;400;700&family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
+
+        /* 초기화 */
+         * {
+            margin:0;
+            padding:0;
             box-sizing: border-box;
         }
 
         html {
-            font-size: 10px;
+            font-size: 16px;
+            font-family: 'Cute Font', cursive;
         }
 
         #wrap {
-            margin: 100px 30px 0;
+            position: fixed;
+            top: 100px;
+            margin: 30px;
             text-align: center;
         }
 
@@ -30,6 +37,14 @@
             color: red;
         }
 
+        input {
+            width: 100%;
+            font-size: 20px;
+            border: 1px solid #444;
+            margin:8px 0;
+            padding: 16px;
+        }
+
         button {
             width: 100%;
             margin: 8px 0;
@@ -37,65 +52,36 @@
             font-size: 20px;
         }
 
-        #member {
-            position: absolute;
-            left: 0;
-            width: 100%;
-            bottom: 100px;
-            font-size: 1.5rem;
-            color: #777;
-        }
     </style>
 </head>
 <body>
     <div id="wrap">
-        <h1>묵찌빠</h1>
-        <div id="result">결과가 궁금하시죠?</div>
-        <button id="againBtn">다시하기</button>
-        <button id="logoutBtn">게임종료</button>
-        <p>아이디와 패스워드를 입력후 로그인하세요.</p>
-        <p id="member">계정이 없으신가요? <a href="애플리케이션배포1_오은준.html">가입하기</a></p>
+        <h1>묵찌빠 회원가입</h1>
+        <input type="text" placeholder="아이디를 입력하세요." id="memberId">
+        <input type="text" placeholder="비밀번호를 입력하세요." id="memberPw">
+        <button>가입하기</button>
+        <p>아이디와 패스워드를 입력 후 가입하기를 누르세요.</p>
     </div>
 
     <script>
-
-        const againBtn = document.querySelector('#againBtn');
-        const logoutBtn = document.querySelector('#logoutBtn');
-        const result = document.querySelector('#result');
-        let game = prompt('가위, 바위, 보 셋 중 하나만 입력하세요.', '');
-
-        switch(game) {
-            case '가위':
-                gameNum = 1;
-                break;
-            case '바위': 
-                gameNum = 2;
-                break;
-            case '보': 
-                gameNum = 3;
-                break;
-            default: 
-                alert('가위, 바위 , 보 셋 중 하나만 입력하세요.');
-                location.reload();
+       
+        const memberId = document.querySelector('#memberId');
+        const memberPw = document.querySelector('#memberPw');
+        const memberBtn = document.querySelector('button');
+        
+        //로그인 시 입력한 아이디/패스워드
+        
+        memberBtn.onclick = member;
+        
+        
+        function member(){
+            const userId = memberId.value;
+            const userPw = memberPw.value;
+            location.href = 'login_오은준.html?' + userId + '/' + userPw;
+     
         }
 
-        let com = Math.floor(Math.random()*3) + 1;
-        document.write('<img src="../app/img/math_img_' + com + '.png" alt="가위"><br>');
-
-        if (gameNum === com) {
-            result.innerHTML = '<p>축하합니다. 맞추었습니다.</p>';
-        } else {
-            result.innerHTML = '<p>틀렸습니다. 다음 기회에..</p>';
-        }
-
-        againBtn.onclick = function(){
-            location.reload();
-        };
-        logoutBtn.onclick = function(){
-            location.href = '애플리케이션배포_오은준.html';
-        };
-
-
+       
     </script>
 </body>
 </html>

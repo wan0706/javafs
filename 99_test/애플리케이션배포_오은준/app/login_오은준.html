@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>애플리케이션배포_오은준</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cute+Font&family=Gaegu:wght@300;400;700&family=Gamja+Flower&family=Poor+Story&display=swap" rel="stylesheet">
+
     <style>
         *{
             margin: 0;
@@ -13,7 +15,8 @@
         }
 
         html {
-            font-size: 10px;
+            font-size: 16px;
+            font-family: 'Cute Font', cursive;
         }
 
         #wrap {
@@ -26,7 +29,7 @@
         }
 
         p {
-            font-size: 14px;
+            font-size: 20px;
             color: red;
         }
 
@@ -59,12 +62,11 @@
 <body>
     <div id="wrap">
         <h1>묵찌빠</h1>
-        
         <input type="text" placeholder="아이디를 입력하세요." id="loginId">
         <input type="text" placeholder="비밀번호를 입력하세요." id="loginPw">
         <button>로그인</button>
         <p>아이디와 패스워드를 입력 후 로그인 하세요.</p>
-        <p id="member">계정이 없으신가요?<a href="애플리케이션배포1_오은준.html">가입하기</a></p>
+        <p id="member">계정이 없으신가요?<a href="member_오은준.html">가입하기</a></p>
     </div>
 
     <script>
@@ -87,7 +89,7 @@
 
             if(userId === newId) {
                 if (userPw === newPw) {
-                    location.href = "애플리케이션배포2_오은준.html";
+                    location.href = "service_오은준.html";
                 } else {
                     alert('비밀번호를 잘못 입력 하셨습니다.')
                     location.reload();
