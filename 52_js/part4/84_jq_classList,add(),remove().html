@@ -23,21 +23,23 @@
             background: red;
         }
 
-        div.active{
+        div.active {
             transform: rotate(45deg);
         }
     </style>
 </head>
 
 <body>
-   <button class="addBtn">클래스 추가</button>
-   <button class="removeBtn">클래스 제거</button>
+   <button class="btn1">클래스 추가</button>
+   <button class="btn2">클래스 제거</button>
     <div></div>
 
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
     <script>
         /* 
-            요소.classList.add('클래스') ~ 요소의 클래스 추가
-            요소.classList.remove('클래스') ~ 요소의 클래스 제거
+            $('선택자').addClass('클래스1 클래스 2 ...') ~ 요소의 클래스 추가
+            $('선택자').removeClass('클래스1 클래스 2 ...') ~ 요소의 클래스 제거
+            $('선택자').removeClass() ~ 요소의 모든 클래스 제거
         */
 
         /*
@@ -48,20 +50,6 @@
 
             메서드: classList.add(), classList.remove()
         */
-
-    
-        const addBtn = document.querySelectorAll('button')[0];
-        const removeBtn = document.querySelectorAll('button')[1];
-        const box = document.querySelector('div');
-
-        addBtn.onclick = function(){
-            box.classList.add('on');
-        }
-
-        removeBtn.onclick = function(){
-            box.classList.remove('on');
-        }
-
 
     //     const l1 = document.querySelector('#ad');
     //     const l2 = document.querySelector('#rem');
@@ -76,19 +64,20 @@
     //    };
         
 
+        const addBtn = $('.btn1');
+        const removeBtn = $('.btn2');
+        const box = $('div');
 
-    ////////////////////////////////////////////////////////
-    //    const addBtn = document.querySelectorAll('.btn1');
-    //     const ramovetn = document.querySelectorAll('.btn2');
-    //     const box = document.querySelector('div');
+        addBtn.click(function(){
+            box.addClass('on active');
+        });
 
-    //     addBtn.onclick = function(){
-    //         box.classList.add('on', 'active');
-    //     }
+        removeBtn.click(function(){
+            box.removeClass('on active');
+        });
+       
 
-    //     removeBtn.onclick = function(){
-    //         box.classList.remove('on', 'active');
-    //     }
+
         
 
     </script>

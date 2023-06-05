@@ -28,8 +28,8 @@
         const divTag = document.querySelector('div');
         
         divTag.onclick = function () {
-            let w = this.offsetWidth;
-            this.style.height = w + 'px';
+            let w = divTag.offsetWidth;
+            divTag.style.height = w + 'px';
             console.log(w);
         };
     </script>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style>
+        div {
+            width: 200px;
+            height: 400px;
+            padding: 20px;
+            border: 5px solid blue;
+            /* margin: 50px; */
+            background: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+       
+        /* 
+            $('선택자').width() ~ 콘텐츠
+            $('선택자').height() ~ 
+            $('선택자').innerWidth() ~ 콘텐츠 + 패딩
+            $('선택자').innerHeight() ~ 
+            $('선택자').outerWidth(false) ~ 콘텐츠 + 패딩 + 보더
+            $('선택자').outerHeight(false) ~ 
+            $('선택자').outerWidth(true) ~ 콘텐츠 + 패딩 + 보더 + 마진
+            $('선택자').outerHeight(true) ~ 
+        */
+
+        /*
+            
+            파란색 박스를 클릭하면 박스의 가로 크기만큼 높이를 줄여 주세요.
+
+            메서드 : width, height
+
+        */
+
+
+       
+        const box = $('div');
+
+        box.click(function() {
+            const h = box.width();
+            console.log(h)
+            box.css({height: h + 'px'});
+        });
+
+
+
+
+
+    </script>
+</body>
+
+</html>
