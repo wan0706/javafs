@@ -20,7 +20,9 @@
             setInterval(코드, 시간): 일정한 시간 간격으로 코드를 반복 실행
             clearInterval(): setInterval() 메서드 제거
 
-            
+            setInterval(함수, 시간);
+            function 함수(){}
+
             let 변수 = setInterval(function(){
                 코드
             } 시간);
@@ -63,13 +65,15 @@
         
         */
 
-        let auto1 , auto2
+        let auto1 , auto2;
 
         btn1.onclick = function(){
-             auto1 = setInterval(add, 1000);
+            //1초마다 add 호출
+            auto1 = setInterval(add, 1000);
         };
 
         btn2.onclick = function(){
+            // auto1 정지
             clearInterval(auto1);
         };
 
