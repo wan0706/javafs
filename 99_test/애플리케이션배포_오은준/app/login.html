@@ -61,7 +61,7 @@
 </head>
 <body>
     <div id="wrap">
-        <h1>묵찌빠</h1>
+        <h1>숫자 맞추기</h1>
         <input type="text" placeholder="아이디를 입력하세요." id="loginId">
         <input type="text" placeholder="비밀번호를 입력하세요." id="loginPw">
         <button>로그인</button>
@@ -99,6 +99,60 @@
                 location.reload();
             }
         }
+
+
+
+        const memberId = document.querySelector('#memberId');
+        const memberPw = document.querySelector('#memberPw');
+        const memberBtn = document.querySelector('button');
+        
+        //로그인 시 입력한 아이디/패스워드
+        
+        memberBtn.onclick = member;
+        
+        
+        function member(){
+            const userId = memberId.value;
+            const userPw = memberPw.value;
+            location.href = 'login.html?' + userId + '/' + userPw;
+     
+        }
+
+        const againBtn = document.querySelector('#againBtn');
+        const logoutBtn = document.querySelector('#logoutBtn');
+        const result = document.querySelector('#result');
+        let game = prompt('가위, 바위, 보 셋 중 하나만 입력하세요.', '');
+
+        switch(game) {
+            case '가위':
+                gameNum = 1;
+                break;
+            case '바위': 
+                gameNum = 2;
+                break;
+            case '보': 
+                gameNum = 3;
+                break;
+            default: 
+                alert('가위, 바위 , 보 셋 중 하나만 입력하세요.');
+                location.reload();
+        }
+
+        let com = Math.floor(Math.random()*3) + 1;
+        document.write('<img src="../app/math_img_' + com + '.png" alt="가위"><br>');
+
+        if (gameNum === com) {
+            result.innerHTML = '<p>축하합니다. 맞추었습니다.</p>';
+        } else {
+            result.innerHTML = '<p>틀렸습니다. 다음 기회에..</p>';
+        }
+
+        againBtn.onclick = function(){
+            location.reload();
+        };
+        logoutBtn.onclick = function(){
+            location.href = 'login.html';
+        };
 
 
 
