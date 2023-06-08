@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fullpage.js</title>
+    <style>
+        @import url(https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.css);
+        
+        *{margin: 0;}
+
+        #section1{background: lavender;}
+        #section2{background: lightcoral;}
+        #section3{background: lightcyan;}
+        #section4{background: lightgoldenrodyellow;}
+        #footer {
+            background: lightgreen;
+            padding: 100px 0;
+        }
+ 
+         #wrap div {
+            height: 100vh;
+        } 
+
+
+        li {
+            list-style: none;
+        }
+
+        #indicator {
+            position: fixed;
+            right:0;
+            top:50%;
+            transform: translateY(-50%);
+            color: #fff;
+            text-indent: -9999em;
+            width:50px;
+            height:150px;
+        }
+        #indicator li a {
+            display: block;
+            width:12px;
+            height:12px;
+            margin: 20px 0;
+            border-radius: 50%;
+            background: #fff;
+        }
+       
+
+        
+    </style>
+</head>
+<body>
+    <div id="wrap">
+      <div class="section" id="section1">섹션1</div>
+      <div class="section" id="section2">섹션2</div>
+      <div class="section" id="section3">섹션3</div>
+      <div class="section" id="section4">섹션4</div>
+      <div class="section fp-auto-height" id="footer">푸터</div>
+    </div>
+   
+        <ul id="indicator">
+            <li><a href="#section1">section1</a></li>
+            <li><a href="#section2">section2</a></li>
+            <li><a href="#section3">section3</a></li>
+            <li><a href="#section4">section4</a></li>
+        </ul>
+
+
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.9.7/jquery.fullpage.min.js"></script>
+    <script>
+       //https://github.com/alvarotrigo/fullPage.js/tree/2.9.7
+        $('#wrap').fullpage();
+
+
+        $('#indicator a').on('click', function (e) {
+            // a태그 기본 이벤트 제거
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: $(this.hash).offset().top })
+        });
+
+       
+       
+       
+       
+       
+       
+       
+       
+
+    </script>
+</body>
+</html>

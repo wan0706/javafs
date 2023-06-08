@@ -60,6 +60,16 @@
                     // 마우스휠을 아래로 내림
                 }
             });
+
+            //eror(에러, bug): debugging(디버깅) ~ 에러 수정
+            //error 처리: try ~ catch 
+            try {
+                실행코드
+            } catch(err) {
+                에러시 처리할 내용
+            }
+
+
         */
 
     
@@ -74,7 +84,8 @@
                     // css({속성:값})
                     // animate({속성:값})
                     $('html').stop().animate({scrollTop:prev});
-                } else if (delta < 0) {
+                } 
+                 else if (delta < 0) {
                     // 마우스휠을 아래로 내림
                     //idx = 0, 1 ,2 , 3
                     let next = $(this).next().offset().top;

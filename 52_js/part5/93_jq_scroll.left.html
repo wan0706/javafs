@@ -80,20 +80,25 @@
         $('.section').mousewheel(function(e, delta){
                 if (delta > 0) {
                     // 마우스휠을 위로 올림
+                    try {
                     let prev = $(this).prev().offset().left;
                     console.log(prev);
-                    // css({속성:값})
-                    // animate({속성:값})
                     $('html').stop().animate({scrollLeft:prev});
+                    } catch(err) {
+                       return false;
+                    }
                 } else if (delta < 0) {
                     // 마우스휠을 아래로 내림
-                    //idx = 0, 1 ,2 , 3
+                    try {
                     let next = $(this).next().offset().left;
                     console.log(next);
                     // css({속성:값})
                     // animate({속성:값})
                     $('html').stop().animate({scrollLeft:next});
+                } catch (err) {
+                    return false;
                 }
+            }
             });
 
 
