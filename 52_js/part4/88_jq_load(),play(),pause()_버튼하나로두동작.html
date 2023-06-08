@@ -26,6 +26,8 @@
             border: 3px solid beige;
             cursor: pointer;
             text-indent: -99999rem;
+            opacity: 0;
+            transition: 0.3s;
         }
 
         .btn::after {
@@ -101,7 +103,15 @@
            num = 0;
            btn.removeClass('on');
         }
-    }       
+    }      
+    
+    $('.vid').mouseenter(function(){
+        btn.css({opacity:1});
+        });
+
+    $('.vid').mouseleave(function(){
+        btn.css({opacity:0});
+        });
         
 
 
