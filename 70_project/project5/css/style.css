@@ -1,0 +1,47 @@
+@charset "utf-8";
+@import url('reset.css');
+@import url('layout.css');
+@import url('typo.css');
+@import url('nav.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+
+
+/* 헤더 */
+#header {
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 60px;
+    background: #1F2122;
+}
+
+/* 로고 */
+.logo {
+    text-align: center;
+    letter-spacing: 0.5rem;
+    line-height: 1.4;
+}
+
+.logo b {
+    display: block;
+    font-weight: normal;
+    font-size: 2.2rem;   
+}
+
+.logo span {
+    font-size: 1.6rem;
+}
+
+/* 풀 페이지 비디오 */
+.vid {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}

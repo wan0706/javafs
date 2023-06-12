@@ -26,24 +26,52 @@
 
         a {
             text-decoration: none;
+            color: #ffffff;
         }
 
         body {
             font-family: 'Noto Sans KR', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        /* 헤더 */
+        #header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 60px;
+            background: #1F2122;
+        }
+
+        /* 로고 */
+        .logo {
+            text-align: center;
+            letter-spacing: 0.5rem;
+            line-height: 1;
+        }
+        
+        .logo b {
+            display: block;
+            font-weight: normal;
+            font-size: 2.2rem;   
+        }
+
+        .logo span {
+            font-size: 1.6rem;
         }
 
         /* GNB(Global Navigation Bar) */
-        nav {
+        #gnb {
             z-index: 99999;
             position: relative;
-            height: 31px;
-            background: #d3d0d0;
+            height: 94px;
         }
 
         .nav_bg {
             position: absolute;
             left: 0;
-            top: 31px;
+            /* 메인 메뉴 높이 만큼 내려준다. */
+            top: 94px;
             width: 100%;
             background: rgba(0, 0, 0, 0.7);
         }
@@ -65,31 +93,36 @@
         }
         
         .main>li>a {
-            display: block;
+            position: relative;
+            display: inline-block;
             padding: 5px 0;
             color: #fff;
-            font-size: 1.5rem;
+            line-height: 94px;
+            font-size: 1.8rem;
             font-weight: 500;
         }
 
         .main>li>a:hover {
-            background: #ccc;
             color: #333;
         }
 
-        .main>li>a:hover:after {
-            position: absolute;
-            top: 30px;
-            left: 50%;
-            transform: translateX(-50%);
+        .main>li>a::after {
             content: '';
-            height: 0; 
-             /* 가려주는것은 transparent */
-            border-top: 10px solid;
-            border-left: 12px solid transparent;
-            border-right: 12px solid transparent;
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            transform: scaleX(0);
+            transition: 0.3s;
+            width: 100%;
+            border: 1px solid #ffffff;
             color: #ccc;
         }
+
+        .main>li>a:hover:after {
+            transform: scaleX(1);
+        }
+
+
 
         /* 2depth: sub */
         .sub {
@@ -99,22 +132,30 @@
 
         .sub a {
             color: #ccc;
-            font-size: 1.4rem;
+            font-size: 1.6rem;
             line-height: 2;
             font-weight: 300;
             padding: 3px 12px;
         }
 
         .sub a:hover {
-            background: rgba(93, 103, 97, 0.5);
+            color: rgba(93, 103, 97, 0.5);
+        }
+
+        /* 로그인/회원가입 */
+        .member a {
+            margin: 0 8px;
         }
     </style>
 </head>
 
 <body>
-    <!-- nav#gnb>ul.main>li*4>a{메인메뉴$}+ul.sub>li*4>a{서브메뉴$} -->
-    <nav id="gnb">
+    <header id="header">
+        <!-- 로고는 항상 a링크 걸기 -->
+        <h1 class="logo"><a href="#"><b>마녀공장(로고넣기)</b><span>마녀공장</span></a></h1>
+        <!-- 서브메뉴의 배경 -->
         <div class="nav_bg"></div>
+    <nav id="gnb">
         <ul class="main">
             <li><a href="#">헤라스토리</a>
                 <ul class="sub">
@@ -147,6 +188,12 @@
         </ul>
     </nav>
 
+    <!-- 로그인/회원가입 -->
+    <div class="member">
+        <a href="#">로그인</a>
+        <a href="#">회원가입</a>
+    </div>
+</header>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script>
     // 내비게이션바
@@ -154,7 +201,7 @@
         //a태그 기본 이벤트 제거
         e.preventDefault();
         $('.sub').stop().slideDown(400);
-        $('.nav_bg').stop().animate({height: 150}, 400);
+        $('.nav_bg').stop().animate({height: 180}, 400);
     });
     $('nav').mouseleave(function(){
         $('.sub').stop().slideUp(400);
