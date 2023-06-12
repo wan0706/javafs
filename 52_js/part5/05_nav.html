@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML+CSS+JS</title>
+    <style></style>
+<style>
+    /* 초기화 */
+    
+        * {margin: 0;
+         padding: 0;
+          box-sizing: border-box;}
+    
+    html {font-size: 10px;}
+    li {list-style: none;}
+    a {text-decoration: none; color: #333;}
+    body {font: 1.5rem/1.8 sans-serif;}
+
+
+    /* GNB */
+   
+    /* 1depth */
+    /* .main::after {content: ''; clear: both; display: block;} */
+    .main > li {
+        float: left; width: 160px;
+         height: 40px;
+        background: #000;
+        text-align: center;
+    }
+
+    .main > li > a {
+        display: block;
+        font-size: 1.6rem;
+        line-height: 40px;
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .main > li > a:hover {
+        background: #234986;
+    }
+
+    /* 2depth */
+
+    .sub {
+        padding: 10px 0 20px 0;
+        background: rgb(143, 159, 186);
+    }
+
+    .sub a {
+        padding: 4px 8px;
+        font-size: 1.4rem;
+        color: #fff;
+    }
+    
+    .sub a:hover {
+        background: #377ded;
+        color: #111;
+    }
+
+</style>
+</head>
+<body>
+    <!-- nav#gnb>ul.main>li*4>a{메인메뉴$}+ul.sub>li*4>a{서브메뉴$} -->
+    <nav>
+        <div class="nav_bg"></div>
+        <ul class="main">
+            <li><a href="#">해외여행</a>
+                <ul class="sub">
+                    <li><a href="#">동남아/대만</a></li>
+                    <li><a href="#">중국/홍콩</a></li>
+                    <li><a href="#">유럽/두바이</a></li>
+                    <li><a href="#">미주/하와이</a></li>
+                </ul>
+            </li>
+            <li><a href="#">국내여행</a>
+                <ul class="sub">
+                    <li><a href="#">서울/경기권</a></li>
+                    <li><a href="#">충청권</a></li>
+                    <li><a href="#">전라권</a></li>
+                    <li><a href="#">경상/강원권</a></li>
+                </ul>
+            </li>
+            <li><a href="#">제주도</a>
+                <ul class="sub">
+                    <li><a href="#">버스여행</a></li>
+                    <li><a href="#">자유여행</a></li>
+                    <li><a href="#">호텔/펜션</a></li>
+                </ul>
+            </li>
+            <li><a href="#">렌트카</a>
+                <ul class="sub">
+                    <li><a href="#">국내 렌트카</a></li>
+                    <li><a href="#">국외 렌트카</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</body>
+</html>
