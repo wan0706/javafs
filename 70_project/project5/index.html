@@ -5,76 +5,82 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>마녀공장</title>
+    <title>메가커피</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.min.js"></script>
     <script src="js/script.js"></script>
-    
 </head>
 
 <body>
     <div id="fullpage">
         <div class="section" id="section1">
             <header id="header">
-                <!-- 로고는 항상 a링크 걸기 -->
-                <h1 class="logo"><a href="#"><b>마녀공장(로고넣기)</b><span>마녀공장</span></a></h1>
-                <!-- 서브메뉴의 배경 -->
+                <h1 class="logo"><a href="#"><img src="images/hera.svg" alt="hera"></a></h1>
                 <div class="nav_bg"></div>
-            <nav id="gnb">
-                <ul class="main">
-                    <li><a href="#">헤라스토리</a>
-                        <ul class="sub">
-                            <li><a href="#">브랜드 소개</a></li>
-                            <li><a href="#">에이 크루</a></li>
-                            <li><a href="#">캠페인 라이브러리</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">메이크업</a>
-                        <ul class="sub">
-                            <li><a href="#">메이크업 라인</a></li>
-                            <li><a href="#">페이스</a></li>
-                            <li><a href="#">립</a></li>
-                            <li><a href="#">아이</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">스킨케어</a>
-                        <ul class="sub">
-                            <li><a href="#">제품 라인</a></li>
-                            <li><a href="#">피부 고민</a></li>
-                            <li><a href="#">제품 유형</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="#">프래그런스</a>
-                        <ul class="sub">
-                            <li><a href="#">제품 라인</a></li>
-                            <li><a href="#">제품 유형</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+                <nav id="gnb">
+                    <ul class="main">
+                        <li><a href="#">헤라 스토리</a>
+                            <ul class="sub">
+                                <li><a href="#">브랜드 소개</a></li>
+                                <li><a href="#">에이 크루</a></li>
+                                <li><a href="#">캠페인 라이브러리</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">메이크업</a>
+                            <ul class="sub">
+                                <li><a href="#">페이스</a></li>
+                                <li><a href="#">립</a></li>
+                                <li><a href="#">아이</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">스킨케어</a>
+                            <ul class="sub">
+                                <li><a href="#">제품라인</a></li>
+                                <li><a href="#">피부고민</a></li>
+                                <li><a href="#">제품유형</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">프래그런스</a>
+                            <ul class="sub">
+                                <li><a href="#">제품라인</a></li>
+                                <li><a href="#">제품유형</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
         
-            <!-- 로그인/회원가입 -->
-            <div class="member">
-                <a href="#">로그인</a>
-                <a href="#">회원가입</a>
-            </div>
-        </header>
+                <div class="member">
+                    <a href="#">로그인</a>
+                    <a href="#">회원가입</a>
+                </div>
+            </header>
 
-        <!-- 비디오는 자동 플레이(무음)되면서 무한 반복 -->
-        <div class="vid">
-            <video autoplay muted loop>
-                <source src="video/main_video2.mp4" type="video/mp4">
-            </video>
+            <!-- 비디오는 자동플레이(무음)되면서 무한반복 -->
+            <!-- <div class="vid">
+                <video autoplay muted loop>
+                    <source src="video/main_video3.mp4" type="video/mp4">
+                </video>
+            </div> -->
+
+            <!-- 캐로셀 -->
+            <ul class="slider">
+                <li><img src="images/slide1.png" alt="상품1"></li>
+                <li><img src="images/slide2.png" alt="상품2"></li>
+                <li><img src="images/slide3.png" alt="상품3"></li>
+                <li><img src="images/slide4.png" alt="상품4"></li>
+                <li><img src="images/slide5.png" alt="상품4"></li>
+                <li><img src="images/slide6.png" alt="상품4"></li>
+              </ul>
         </div>
-        </div>
-       
         <div class="section" id="section2">SECTION2</div>
         <div class="section" id="section3">SECTION3</div>
         <div class="section" id="section4">SECTION4</div>
-        <div class="section fp-auto-height" id="footer">footer</div>
+        <div id="footer">footer</div>
     </div>
+
 </body>
 
 </html>
