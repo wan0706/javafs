@@ -1,6 +1,7 @@
 @charset "utf-8";
 @import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
 @import url('typo.css');
 @import url('nav.css');
@@ -49,67 +50,130 @@
 
 
 /* 섹션1 - 캐로셀 */
-/* 전체영역 */
-.bx-wrapper {
-    position: relative;
-    margin-bottom: 60px;
-    padding: 0;
-    box-shadow: none;
-    border: none;
-    background: transparent;
-}
+/* bx-wrapper 초기화 */
+    .bx-wrapper {
+        box-shadow: none;
+        border: none;
+        background: transparent;
+    }
 
-.bx-viewport {
-    height: 100vh !important;
-}
 
-/* 페이저 */
-.bx-wrapper .bx-pager { 
-    bottom: 70px;
-}
+    #slideWrap {
+        position: relative;
+         /* padding: 0 3%; */
+        height: 100vh;
+        background: red;
+        }
 
-.bx-wrapper .bx-pager.bx-default-pager a {
-    background: transparent;
-    border: 1px solid #777;
-    text-indent: -9999px;
-    display: block;
-    width: 12px;
-    height: 12px;
-    margin: 0 12px;
-    outline: 0;
-    border-radius: 50%;
-}
+       
+        #slideWrap .slider li {
+            width: 100% !important;
+            height: 100vh;
+            padding: 150px 0;
+            text-align: center;
+            background: no-repeat 50% 50%;
+        }
 
-.bx-wrapper .bx-pager.bx-default-pager a.active, .bx-wrapper .bx-pager.bx-default-pager a:focus {
-    background: #ffffff;
-    /* 동그라미 크게 하는 효과 */
-   transform: scale(1.5);
-   transition: 0.3s;
-    border: none;
-}
+        #slideWrap .slider li div {
+            position: relative;
+            top: 70px;
+            font-size: 2rem;
+            line-height: 1.8;
+            opacity: 0;
+        }
 
-/* 좌우버튼 */
-.bx-wrapper .bx-controls-direction a {
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    outline: 0;
-    width: 78px;
-    height: 78px;
-    
-}
+        #slideWrap .slider li div span {
+            display: block;
+            font-size: 3.5rem;
+        }
 
-.bx-wrapper .bx-prev {
-    left: 140px;
-    background: url(../images/next2.png) 0px 0px no-repeat;
-}
+        #slideWrap .slider li img {
+            display: inline-block;
+        }
 
-.bx-wrapper .bx-next {
-    right: 140px;
-    background: url(../images/next3.png) 0px 0px no-repeat;
-}
+        /* background */
+        #slideWrap .slider .bg1 {
+            background-color: #FDD000;
+            background-image: url(../images/pic_1.png);
+        }
 
-.bx-wrapper .bx-next:focus, .bx-wrapper .bx-next:hover {
-    background-position: 0px 0;
-}
+        #slideWrap .slider .bg2 {
+            background-color: #e1c47b;
+            background-image: url(../images/pic_2.png);
+        }
 
+        #slideWrap .slider .bg3 {
+            background-color: #FFEFCA;
+            background-image: url(../images/pic_3.png);
+        }
+
+        #slideWrap .slider .bg4 {
+            background-color: #09ebd0;
+            background-image: url(../images/pic_4.png);
+        }
+
+        /* 이전/이후 버튼 */
+        #slideWrap .btn {
+            z-index: 999;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100%;
+            height: 50px;
+        }
+
+        #slideWrap .btn a {
+            display: block;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 5rem;
+            color: #fff;
+            transition: color .3s;
+        }
+
+        #slideWrap .btn a:hover {
+            color: #333;
+        }
+
+        #slideWrap #prev {
+            left: 10%;
+        }
+
+        #slideWrap #next {
+            right: 10%;
+        }
+
+        /* 페이저 */
+        #slideWrap .pager {
+            display: flex;
+            z-index: 999;
+            position: absolute;
+            bottom: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #slideWrap .pager a {
+            display: block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1px solid #999;
+            margin: 0 15px;
+            transition: .3s;
+            cursor: pointer;
+        }
+
+        #slideWrap .pager a img {
+            width: auto;
+            opacity: 0;
+            transform: translate(-40%, -40%);
+            transition: .5s;
+        }
+
+        #slideWrap .pager a.active img {
+            opacity: 1;
+        }
+
+        /* 섹션2 */

@@ -4,26 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carousel_multi</title>
+    <title>Multi Carousel</title>
     <style>
         @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
-        *{
-            margin: 0;
-            padding: 0;
+        * {
+            margin:0;
+            padding:0;
             box-sizing: border-box;
         }
-        
         img {
             vertical-align: top;
             width: 100%;
         }
-
         #slideWrap {
-            position:relative;
+            position: relative;
             width: 1500px;
             margin: 0 auto;
         }
-
 
         /* 이전/이후 버튼 */
         #slideWrap .btn {
@@ -56,7 +53,6 @@
         #slideWrap #next {
             right: 10%;
         }
-
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.js"></script>
@@ -65,15 +61,15 @@
             const slider = $('.multiSlider').bxSlider({
                 pager: false,
                 controls: false,
-                //하나의 이미지 가로 크기 수
+                // 하나의 이미지 가로 크기
                 slideWidth: 360,
-                //최소 슬라이드 수
+                // 최소 슬라이드 수
                 minSlides: 1,
-                //최대 슬라이드 수
+                // 최대 슬라이드 수
                 maxSlides: 4,
-                //움직이는 슬라이드 수
+                // 움직이는 슬라이드 수
                 moveSlides: 1,
-                //이미지 사이 여백
+                // 이미지 사이 여백
                 slideMargin: 20
             });
 
@@ -106,8 +102,8 @@
             <li><img src="images/slide2.png" alt="슬라이드2"></li>
             <li><img src="images/slide3.png" alt="슬라이드3"></li>
             <li><img src="images/slide4.png" alt="슬라이드4"></li>
-       
         </ul>
+
         <!-- 이전/이후 버튼 -->
         <!-- 폰트어썸 -->
         <div class="btn">
