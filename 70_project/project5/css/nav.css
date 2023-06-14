@@ -11,8 +11,7 @@
     /* 메인메뉴 높이만큼 내려준다. */
     top: 94px;
     width: 100%;
-    background: #fafafa78;
-    /* background: transparent; */
+    background: rgba(0, 0, 0, 0.7);
 }
 
 /* 크기, 색, 굵기 등으로 폰트의 위계를 지정한다. */
@@ -52,7 +51,7 @@
     transform: scaleX(0);
     transition: .3s;
     width: 100%;
-    border: 1px solid #000000;
+    border: 1px solid #705b00;
     color: #ccc;
 }
 
@@ -67,7 +66,7 @@
 }
 
 .sub a {
-    color: #000000;
+    color: #ccc;
     font-size: 1.6rem;
     line-height: 2;
     font-weight: 300;
@@ -75,7 +74,7 @@
 }
 
 .sub a:hover {
-    color: #999;
+    color: #fdd000;
 }
 
 /* 로그인/회원가입 */
