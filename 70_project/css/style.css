@@ -148,17 +148,17 @@ section h2 + p {
     width: 75%;
 }
 
-.counter {
-    display: flex;
-    justify-content: space-around;
-    height: 132px;
+#counter ul {
     align-items: center;
+    height: 132px;
     background: #616161;
+    color: #fff;
+    text-align: center;
+    align-items: center;
 }
 
-.counter span {
+#counter span {
     display: block;
-    text-align: center;
 }
 
 
@@ -183,9 +183,9 @@ section h2 + p {
     text-align: center;
 }
 
-#portfolio .moreBtn a{
+#portfolio .moreBtn button{
     padding: 12px 24px;
-    background: #f1f1f1;
+    font-size: 1.5rem;
 
 }
 
