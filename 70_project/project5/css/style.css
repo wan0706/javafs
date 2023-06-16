@@ -21,8 +21,7 @@
     padding: 0 60px;
     background: transparent;
     /* background: #fdd000; */
-    transition-delay: 0.5s;
-    transition-duration: 0.5s;
+    transition: 0.5s 0.5s;
 }
 
 /* 로고 */
