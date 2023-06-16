@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>푸터</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
@@ -38,7 +40,7 @@
             justify-content: space-between;
             padding: 70px 80px 70px 330px;
             background: #2c2d2f url(images/logo_b.png) no-repeat 80px 50%/10%;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255, 255, 255, 0.3);
         }
 
         #footer .bnb ul {
@@ -47,6 +49,7 @@
             font-size: 1.8rem;
             font-weight: 500;
         }
+
         #footer .bnb ul a {
             color: #fff;
         }
@@ -54,11 +57,53 @@
         #footer .bnb li:not(:last-of-type)::after {
             content: '|';
             margin: 0 16px;
-            color:rgba(255,255,255,0.2);
+            color: rgba(255, 255, 255, 0.2);
         }
 
         #footer .copy {
             margin-top: 30px;
+        }
+
+        /* 패밀리사이트 */
+        .fs {
+            top: 70px;
+            position: relative;
+            width: 240px;
+            height: 50px;
+        }
+
+        .fs .fsBtn {
+            display: inline-block;
+            width: 240px;
+            height: 50px;
+            /* line height 같이 하면 중앙 배치와 높이가 같아진다. */
+            line-height: 50px;
+            text-align: center;
+            background: #494949;
+            border: 1px solid #676767;
+            color: #b9b9b9;
+            font-weight: 700;
+        }
+
+        .fs i {
+            margin-left: 40px;
+        }
+
+        .fs ul {
+            display: none;
+            position: absolute;
+            left: 0;
+            bottom: 50px;
+            width: 100%;
+            background: #494949;
+            border: 1px solid #676767;
+            border-bottom: none;
+            padding: 15px 40px;
+        }
+
+        .fs ul a {
+            color: #b9b9b9;
+            line-height: 2;
         }
     </style>
 </head>
@@ -80,8 +125,50 @@
             </div>
             <div class="copy">COPYRIGHT 2023 MEGA MGC COFFEE. ALL RIGHTS RESERVED.</div>
         </div>
-        <div class="fs">관련 사이트 열기</div>
+
+        <!-- 패밀리 사이트 -->
+        <div class="fs">
+            <a hred="#" class="fsBtn"><span>관련 사이트 열기</span><i class="fa-solid fa-plus"></i></a>
+            <ul>
+                <li><a href="https://blog.naver.com/ekddusekddus">블로그</a></li>
+                <li><a href="https://www.facebook.com/mega.mgc.coffee.official">페이스북</a></li>
+                <li><a href="https://www.instagram.com/mega.mgc.coffee_official/">인스타그램</a></li>
+            </ul>
+        </div>
     </div>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+
+        const fs = $('.fs'),
+            fsLst = fs.find('ul'),
+            fsIcon = fs.find('i'),
+            fsTxt = fs.find('span'),
+            fsBtn = fs.find('.fsBtn');
+
+        let state = 0;
+
+        fsBtn.click(function () {
+            // $('.fs ul').toggle();
+
+
+            fsLst.slideToggle();
+
+
+            if (state == 0) {
+
+                fsIcon.attr({ class: 'fa-solid fa-minus' });
+                fsTxt.text('관련사이트 닫기');
+                state = 1;
+
+            } else {
+                fsIcon.attr({ class: 'fa-solid fa-plus' });
+                state = 0;
+                fsTxt.text('관련사이트 열기');
+            }
+        });
+
+    </script>
 </body>
 
 </html>

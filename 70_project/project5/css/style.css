@@ -2,6 +2,7 @@
 @import url('reset.css');
 @import url('https://fonts.googleapis.com/css2?family=Monoton&family=Orbitron&family=Play&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap');
 @import url('http://fonts.cdnfonts.com/css/trajan-pro');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/bxslider/4.2.15/jquery.bxslider.min.css');
 @import url('typo.css');
@@ -20,6 +21,8 @@
     padding: 0 60px;
     background: transparent;
     /* background: #fdd000; */
+    transition-delay: 0.5s;
+    transition-duration: 0.5s;
 }
 
 /* 로고 */
@@ -55,12 +58,14 @@
     border: none;
     background: transparent;
 }
+
 #slideWrap {
     position: relative;
     /* padding: 0 3%; */
     height: 100vh;
     background: red;
 }
+
 #slideWrap .slider li {
     width: 100% !important;
     height: 100vh;
@@ -290,6 +295,7 @@
 #section3 .thumb li img {
     width: 110px;
 }
+
 #section3 .thumb li.active {
     border-bottom: 2px solid #ffa500;
     font-size: 2.2rem;
@@ -447,15 +453,31 @@
 }
 
 @keyframes topMotion {
-    0% {left: -105.5%;}
-    99.99999% {left: 0;}
-    100% {left: -105.5%;}
+    0% {
+        left: -105.5%;
+    }
+
+    99.99999% {
+        left: 0;
+    }
+
+    100% {
+        left: -105.5%;
+    }
 }
 
 @keyframes btmMotion {
-    0% {left: 0;}
-    99.99999% {left: -105.5%;}
-    100% {left: 0;}
+    0% {
+        left: 0;
+    }
+
+    99.99999% {
+        left: -105.5%;
+    }
+
+    100% {
+        left: 0;
+    }
 }
 
 /* 페이드 효과 */
@@ -596,4 +618,78 @@
     right: 37px;
     top: 230px;
     text-align: right;
+}
+
+/* 푸터 */
+
+/* 푸터 */
+#footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 80px 70px 330px;
+    background: #2c2d2f url(../images/logo_b.png) no-repeat 80px 50%/10%;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+#footer .bnb ul {
+    display: flex;
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 500;
+}
+
+#footer .bnb ul a {
+    color: #fff;
+}
+
+#footer .bnb li:not(:last-of-type)::after {
+    content: '|';
+    margin: 0 16px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+#footer .copy {
+    margin-top: 30px;
+}
+
+/* 패밀리사이트 */
+#footer .fs {
+    top: 70px;
+    position: relative;
+    width: 240px;
+    height: 50px;
+}
+
+#footer .fs .fsBtn {
+    display: inline-block;
+    width: 240px;
+    height: 50px;
+    /* line height 같이 하면 중앙 배치와 높이가 같아진다. */
+    line-height: 50px;
+    text-align: center;
+    background: #494949;
+    border: 1px solid #676767;
+    color: #b9b9b9;
+    font-weight: 700;
+}
+
+#footer .fs i {
+    margin-left: 40px;
+}
+
+#footer .fs ul {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 50px;
+    width: 100%;
+    background: #494949;
+    border: 1px solid #676767;
+    border-bottom: none;
+    padding: 15px 40px;
+}
+
+#footer .fs ul a {
+    color: #b9b9b9;
+    line-height: 2;
 }

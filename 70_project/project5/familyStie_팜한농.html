@@ -54,6 +54,7 @@
             background: #494949;
             border: 1px solid #676767;
             color: #b9b9b9;
+            font-weight: 700;
         }
         
         .fs i {
@@ -82,7 +83,7 @@
     <h1>패밀리사이트</h1>
 
     <div class="fs">
-        <a hred="#" class="fsBtn">관련 사이트 열기<i class="fa-solid fa-plus"></i></a>
+        <a hred="#" class="fsBtn"><span>관련 사이트 열기</span><i class="fa-solid fa-plus"></i></a>
         <ul>
             <li><a href="https://blog.naver.com/ekddusekddus">블로그</a></li>
             <li><a href="https://www.facebook.com/mega.mgc.coffee.official">페이스북</a></li>
@@ -96,6 +97,8 @@
        
             const fs = $('.fs'),
                  fsLst = fs.find('ul'),
+                 fsIcon = fs.find('i'),
+                 fsTxt = fs.find('span'),
                  fsBtn = fs.find('.fsBtn');
 
             let state = 0;
@@ -136,13 +139,14 @@
                     // $('선택자').attr({HTML속성: 값, 속성:값, ...}); ~중괄호를 썼을땐 속성을 여러개 사용할 수 있음.
                     // $('선택자').css({CSS속성: 값, 속성:값, ...}); ~중괄호를 썼을땐 속성을 여러개 사용할 수 있음.
                     //클래스 안에있는 속성은 창이 닫히고 열릴때 - , + 가 되는 속성이름 
-                    $('.fs i').attr({ class: 'fa-solid fa-minus' });
+                    fsIcon.attr({ class: 'fa-solid fa-minus' });
+                    fsTxt.text('관련사이트 닫기');
                     state = 1;
-               
+
                 } else {
-                    $('.fs i').attr({ class: 'fa-solid fa-plus' });
+                    fsIcon.attr({ class: 'fa-solid fa-plus' });
                     state = 0;
-                    
+                    fsTxt.text('관련사이트 열기');
                 }
             });
      

@@ -1,5 +1,22 @@
 // 문서가 준비되면 함수 실행
 $(function () {
+    // 헤더
+    const headerBg = $('#header');
+
+    // 윈도우에 스크롤 이벤트가 발생하면 함수 실행
+    $(window).scroll(function () {
+        // 스크롤바를 스크롤한 양을 st에 저장
+        let st = document.documentElement.scrollTop;
+        let stVal = 600;
+
+        if (st >= stVal) {
+            headerBg.css({ background: '#888' })
+        } else {
+            headerBg.css({ background: 'transparent' })
+        }
+    });
+
+
 
     // 내비게이션바
     $('.main > li > a').mouseenter(function (e) {
@@ -104,74 +121,102 @@ $(function () {
         console.log(st);
 
         if (st >= stVal) {
-            btn.css({opacity: 1});
-            txt1.css({left: 360 + 'px'});
-            txt2.css({left: 360 + 'px'});
+            btn.css({ opacity: 1 });
+            txt1.css({ left: 360 + 'px' });
+            txt2.css({ left: 360 + 'px' });
         } else {
-            btn.css({opacity: 0});
-            txt1.css({left: -800 + 'px'});
-            txt2.css({left: -400 + 'px'});
+            btn.css({ opacity: 0 });
+            txt1.css({ left: -800 + 'px' });
+            txt2.css({ left: -400 + 'px' });
         }
     });
 
     // 섹션 3
     const tabBtn = $('#section3 .thumb li'),
-    bigImg = $('#section3 .big li'),
-    txt = $('#section3 .txt li');
+        bigImg = $('#section3 .big li'),
+        txt = $('#section3 .txt li');
 
-tabBtn.click(function(){
-  let idx = $(this).index();
-  tabBtn.removeClass('active');
-  bigImg.removeClass('active');
-  txt.removeClass('active');
-  $(this).addClass('active');
-  bigImg.eq(idx).addClass('active');
-  txt.eq(idx).addClass('active');
-});
+    tabBtn.click(function () {
+        let idx = $(this).index();
+        tabBtn.removeClass('active');
+        bigImg.removeClass('active');
+        txt.removeClass('active');
+        $(this).addClass('active');
+        bigImg.eq(idx).addClass('active');
+        txt.eq(idx).addClass('active');
+    });
 
 
     //섹션 4 : 브랜드 소개
-       //상단 텍스트 모션을 위한 텍스트 복제
-       const txtTop = $('.top');
-       const txtTopSpan = txtTop.find('span');
-       const txtBtm = $('.btm');
-       const txtBtmSpan = txtBtm.find('span');
+    //상단 텍스트 모션을 위한 텍스트 복제
+    const txtTop = $('.top');
+    const txtTopSpan = txtTop.find('span');
+    const txtBtm = $('.btm');
+    const txtBtmSpan = txtBtm.find('span');
 
-       txtTopSpan.clone().appendTo(txtTop);
-       txtBtmSpan.clone().appendTo(txtBtm);
+    txtTopSpan.clone().appendTo(txtTop);
+    txtBtmSpan.clone().appendTo(txtBtm);
 
-       // 호버시 페이드 효과
-       const inner = $('.container > div')
-       const fade = inner.find('.fade');
-       let cnt = 0, idx, timer;
+    // 호버시 페이드 효과
+    const inner = $('.container > div')
+    const fade = inner.find('.fade');
+    let cnt = 0, idx, timer;
 
-       // fade에 마우스 올리면 
-       fade.mouseenter(function () {
-           // 마우스를 올린 fade의 부모의 색인 번호를 idx 저장
-           // 왼쪽은 0, 오른쪽은 1
-           idx = $(this).parent().index();
-           // 2초마다 fadeFn 함수를 호출한다.
-           timer = setInterval(fadeFn, 2000)
+    // fade에 마우스 올리면 
+    fade.mouseenter(function () {
+        // 마우스를 올린 fade의 부모의 색인 번호를 idx 저장
+        // 왼쪽은 0, 오른쪽은 1
+        idx = $(this).parent().index();
+        // 2초마다 fadeFn 함수를 호출한다.
+        timer = setInterval(fadeFn, 2000)
 
-       });
-       //fade 위에서 마우스가 벗어나면 함수 실행
-       fade.mouseleave(function () {
-           // setInerval 정지
-           clearInterval(timer);
-       });
+    });
+    //fade 위에서 마우스가 벗어나면 함수 실행
+    fade.mouseleave(function () {
+        // setInerval 정지
+        clearInterval(timer);
+    });
 
-       function fadeFn() {
-           cnt++;
-           if (cnt > 2) {
-               cnt = 0;
-           }
-           // idx가 0이면 .story
-           // idx가 1이면 .identity
-           // cnt: 0, 1, 2
-           inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
-           
-       }
+    function fadeFn() {
+        cnt++;
+        if (cnt > 2) {
+            cnt = 0;
+        }
+        // idx가 0이면 .story
+        // idx가 1이면 .identity
+        // cnt: 0, 1, 2
+        inner.eq(idx).find('li').eq(cnt).fadeIn(1000).siblings().fadeOut(1000);
 
+    }
+
+    //패밀리 사이트
+
+    const fs = $('.fs'),
+        fsLst = fs.find('ul'),
+        fsIcon = fs.find('i'),
+        fsTxt = fs.find('span'),
+        fsBtn = fs.find('.fsBtn');
+
+    let state = 0;
+
+    fsBtn.click(function (e) {
+        // $('.fs ul').toggle();
+        e.preventDefault();
+        fsLst.slideToggle();
+
+
+        if (state == 0) {
+
+            fsIcon.attr({ class: 'fa-solid fa-minus' });
+            fsTxt.text('관련사이트 닫기');
+            state = 1;
+
+        } else {
+            fsIcon.attr({ class: 'fa-solid fa-plus' });
+            state = 0;
+            fsTxt.text('관련사이트 열기');
+        }
+    });
 
 
     // 풀페이지 레이아웃
