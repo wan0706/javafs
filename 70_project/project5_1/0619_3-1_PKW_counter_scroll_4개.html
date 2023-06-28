@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        div {
+            height: 100vh;
+        }
+
+        span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Counter</h1>
+    <div id="counter">
+        <ul>
+            <li><span>0+</span>숫자의 의미</li>
+        </ul>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const elem = document.querySelector('#counter span');
+
+        window.onscroll = function () {
+            let j = 0;
+            let scr_e = document.documentElement.scrollTop;
+            if (scr_e >= 150) {
+                if (j === 0) {
+                    move();
+                    j = 1;
+                } else {
+                    return;
+                }
+            } else {
+                j = 0;
+            }
+
+        };
+
+        function move() {
+            let i = 0;
+            setInterval(function () {
+                if (i > 5) {
+                    return;
+                }
+                elem.innerHTML = i + "+";
+                i++
+            }, 100)
+            // 재실행 방지 j
+        };
+    </script>
+</body>
+
+</html>

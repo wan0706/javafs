@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        li {
+            list-style: none;
+        }
+
+
+        .section {
+            height: 100vh;
+        }
+
+        /* 프로그래스바 */
+        .progress {
+            width: 100%;
+            background-color: #ddd;
+            margin-bottom: 16px;
+        }
+
+        .progress div {
+            width: 0%;
+            height: 30px;
+            background-color: #04AA6D;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="section">
+        <h1>Progress Bar</h1>
+    </div>
+    <div class="section" class="skill">
+        <div class="progressbar">
+            <span>Planning With Figma</span>
+            <div class="progress">
+                <div>0%</div>
+            </div>
+            <span>Frontend Development</span>
+            <div class="progress">
+                <div>0%</div>
+            </div>
+            <span>Backend Development</span>
+            <div class="progress">
+                <div>0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+
+
+        // 프로그래스바
+        let state = 0;
+
+
+        $(window).scroll(function () {
+            if ($(this).scrollTop() >= 150) {
+                if (state === 0) {
+                    pgBar(0, 95);
+                    pgBar(1, 85);
+                    pgBar(2, 75);
+                    state = 1;
+                    move;
+                } else {
+                    return;
+                }
+            } else {
+                state = 0;
+            }
+        });
+
+        function pgBar(idx, maxCnt) {
+            const elem = $('.progress');
+            let w = 0;
+            const timer = setInterval(activePgBar, 15);
+            function activePgBar() {
+                if (w >= maxCnt) {
+                    clearInterval(timer);
+                } else {
+                    w++;
+                    elem.eq(idx).find('div').css({ width: w + "%" });
+                    elem.eq(idx).find('div').text(w + "%");
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

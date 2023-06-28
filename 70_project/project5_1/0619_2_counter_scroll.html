@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        div {
+            height: 100vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Counter</h1>
+    </div>
+    <div id="counter">
+        <span>0+</span>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+        const elem = $('#counter span');
+        $(window).scroll(function () {
+            // 윈도우 스크롤이 150 이상이면
+            console.log($(this).scrollTop());
+            if ($(this).scrollTop() >= 150) {
+                move();
+            };
+        });
+
+        function move() {
+            let num = 0;
+            //counter 함수를 0.2초마다 실행
+            //setInterval : 일정 시간(ms) 간격으로 함수를 반복적으로 실행(실행할 함수, 시간 간격)
+            const timer = setInterval(counter, 10);
+            function counter() {
+                if (num >= 100) {
+                    //clearInterval : setInterval을 이용하여 실행중인 반복 종료
+                    clearInterval(timer);
+                } else {
+                    num++;
+                    elem.text(`${num}+`);
+                }
+            }
+        }
+
+
+        /* 조성은 작성 */
+        /* 제이쿼리 */
+        /*
+        const elem = $('#counter span');
+        $(window).scroll(function (){
+            move();
+        });
+        let st = $(this).scroll; 
+
+        function move() {
+            let num = 0;
+            counter 함수를 0.2초마다 실행
+            setInterval : 일정 시간(ms) 간격으로 함수를 반복적으로 실행(실행할 함수, 시간 간격)
+            const timer = setInterval(counter, 200);
+            function counter() {
+                if (num >= 5) {
+                    clearInterval : setInterval을 이용하여 실행중인 반복 종료
+                    clearInterval(timer);
+                } else {
+                    num++;
+                    elem.text(`${num}+`);
+                }
+            }
+        } 
+        */
+
+
+        /* 박건우 작성 */
+        /* 자바스크립트 */
+        /* const elem = document.querySelector('#counter span');
+
+
+        window.onscroll = function () {
+            let scr_e = document.documentElement.scrollTop;
+            if (scr_e >= 150) {
+                move();
+            }
+        }
+
+        function move() {
+            let i = 0;
+            setInterval(function () {
+                if (i > 5) {
+                    return;
+                }
+                elem.innerHTML = i + "+";
+                i++
+            }, 100)
+          
+        }
+
+            // setTimeout(function () {
+            //     elem.innerHTML = 1 + "%";
+            // }, 100);
+            // setTimeout(function () {
+            //     elem.innerHTML = 2 + "%";
+            // }, 200);
+            // setTimeout(function () {
+            //     elem.innerHTML = 3 + "%";
+            // }, 300);
+            // setTimeout(function () {
+            //     elem.innerHTML = 4 + "%";
+            // }, 400);
+            // setTimeout(function () {
+            //     elem.innerHTML = 5 + "%";
+            // }, 500);
+
+
+
+ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

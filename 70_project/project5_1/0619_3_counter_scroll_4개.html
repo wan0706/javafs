@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 10px;
+        }
+
+        body {
+            width: 100%;
+            font-size: 1.5rem;
+        }
+
+        li {
+            list-style: none;
+            color: orange;
+        }
+
+        div {
+            height: 100vh;
+        }
+
+
+
+        ul {
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding: 16px 0;
+            background: slateblue;
+        }
+
+
+        span {
+            display: block;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Counter</h1>
+    </div>
+    <div id="counter">
+        <ul>
+            <li><span id="num"><b>0+</b></span>Page Count</li>
+            <li><span id="num"><b>0+</b></span>Frontend Projects Done</li>
+            <li><span id="num"><b>0+</b></span>Backend projects Done</li>
+            <li><span id="num"><b>0+</b></span>National Technical Qualification</li>
+        </ul>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+    <script>
+
+        let state = 0;
+
+
+        const elem = $('#counter span');
+        $(window).scroll(function () {
+            // 윈도우 스크롤이 150 이상이면
+            console.log($(this).scrollTop());
+            if ($(this).scrollTop() >= 150) {
+                if (state === 0) {
+                    move(0, 32, 100);
+                    move(1, 8, 400);
+                    move(2, 4, 700);
+                    move(3, 3, 750);
+                    state = 1;
+                } else {
+                    return;
+                }
+            } else {
+                state = 0;
+            }
+        });
+
+        function move(idx, maxCnt, mSec) {
+            let num = 0;
+            const timer = setInterval(counter, mSec);
+            function counter() {
+                if (num >= maxCnt) {
+                    //clearInterval : setInterval을 이용하여 실행중인 반복 종료
+                    clearInterval(timer);
+                } else {
+                    num++;
+                    elem.eq(idx).text(`${num}+`);
+                }
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>
