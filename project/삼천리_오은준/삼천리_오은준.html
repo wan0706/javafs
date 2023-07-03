@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼천리</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
+
+    img {
+      vertical-align: top;
+    }
+
+    body {
+      font-family: 'Noto Sans KR', sans-serif;
+      font-size: 1.5rem;
+    }
+
+    /* 헤더 */
+    #header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px;
+      color: #333;
+    }
+
+    
+
+
+    /* GNB(Global Navigation Bar) */
+    #gnb {
+      z-index: 99999;
+      position: relative;
+      height: 94px;
+    }
+
+    .nav_bg {
+      position: absolute;
+      left: 0;
+      top: 94px;
+      width: 100%;
+      /* background: rgba(0, 0, 0, 0.7); */
+    }
+
+    
+    /* 1depth: main */
+    .main {
+      display: flex;
+      /* 가운데로 이동 */
+      justify-content: center;
+    }
+
+    .main>li {
+      position: relative;
+      width: 160px;
+      text-align: center;
+    }
+
+    .main>li>a {
+      position: relative;
+      display: inline-block;
+      padding: 5px 0;
+      color: #000000;
+      line-height: 94px;
+      font-size: 1.8rem;
+      font-weight: 500;
+    }
+
+    .main>li>a:hover {
+      color: #000000;
+    }
+
+    .main>li>a::after {
+      content: '';
+      position: absolute;
+      bottom: 30px;
+      left: 0;
+      transform: scaleX(0);
+      width: 100%;
+      border: 1px solid #007CBC;
+      color: #ccc;
+    }
+
+    .main>li>a:hover:after {
+      transform: scaleX(1);
+    }
+
+    /* 2depth: sub */
+    .sub {
+      display: none;
+      padding: 15px 0;
+      background-color: #ffffff;
+    }
+    
+    .sub a {
+      color: #000000;
+      font-size: 1.6rem;
+      line-height: 2;
+      font-weight: 300;
+      padding: 3px 12px;
+    }
+    
+    .sub a:hover {
+      background-color: #007CBC;
+      color: #ffffff;
+    }
+
+
+    /* 메인 이미지*/
+    .slider img {
+      position: relative;
+    }
+
+    .box1 p {
+      position: absolute;
+      top: 180px;
+      left: 500px;
+      font-size: 44px;
+      line-height: 50px;
+    }
+
+    .slider2 {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      width: 960px;
+      height: 100px;
+      bottom: 50px;
+      margin: 0 auto;
+      padding: 0 32px;
+      background: rgba(0, 0, 0, 0.7);
+    }
+
+    .slider2 li {
+      display: flex;
+      justify-content: center;
+      /* padding: 4 10px 4 20px; */
+      text-align: right;
+      align-items: center;
+    }
+
+    .slider2 a {
+      color: #fff;
+    }
+
+    .slider2 img {
+      width: 50px;
+    }
+
+    /* 섹션1 */
+    #section1 {
+      position: relative;
+    }
+
+    #section1 .slider2 {
+
+      position: absolute;
+      left: 50%;
+      bottom: 10%;
+      transform: translateX(-50%);
+    }
+
+
+
+    /* 섹션2 */
+
+    #section2 {
+      position: relative;
+      display: flex;
+      width: 1903px;
+      height: 250px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .center1 {
+      width: 500px;
+      background: #0697e1;
+    }
+
+    .center1 .name {
+      justify-content: center;
+    }
+
+    .left1 {
+      width: 701.5px;
+    }
+
+    .left1 img {
+      float: right;
+      /* border: 2px solid black; */
+    }
+
+    .right1 {
+      width: 701.5px;
+      background: #007CBC;
+    }
+
+
+    /* 섹션3 */
+    #section3 {
+      position: relative;
+      display: flex;
+      width: 1903px;
+      height: 250px;
+      justify-content: center;
+      margin: 0 auto;
+      background: #EFF3F4;
+    }
+
+    .center2 {
+      width: 500px;
+      height: 250px;
+      background: #EFF3F4;
+    }
+
+    .center2 .name {
+      justify-content: center;
+    }
+
+    .left2 {
+      width: 701.5px;
+    }
+
+    .left2 img {
+      float: right;
+      /* border: 2px solid black; */
+    }
+
+    .right2 {
+      width: 701.5px;
+      background: #EFF3F4;
+    }
+
+    /* 섹션4 */
+    #section4 {
+      width: 980px;
+      margin: 0 auto;
+      height: 140px;
+    }
+
+    #section4 li {
+      justify-content: center;
+      float: left;
+      width: 150px;
+      text-align: center;
+    }
+
+    .txt3 h2{
+      /* border: 1px solid black; */
+      font-size: 15px;
+      line-height: 18px;
+      color: #666666;
+      text-align: left;
+      margin: 10px;
+      padding: 8px 16px;
+    }
+
+    .txt3 p {
+      /* border: 2px solid red; */
+      color: #666666;
+      font-size: 12px;
+      line-height: 18px;
+      margin: 5px;
+      padding: 8px;
+      text-align: left;
+    }
+
+    .txt3 .nav_1 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+      background: url(images/bg_etc_1.gif)no-repeat 90px 30px;
+    } 
+
+    .txt3 .nav_2 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+      background: url(images/bg_etc_2.gif)no-repeat 90px 30px;
+    } 
+
+    .txt3 .nav_3 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+      background: url(images/bg_etc_3.gif)no-repeat 90px 30px;
+    } 
+
+    .txt3 .nav_4 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+      background: url(images/bg_etc_4.gif)no-repeat 90px 30px;
+    }
+
+    .txt3 .nav_4 img {
+      width: 80px;
+    }
+
+    .txt3 .nav_5 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+      background: url(images/bg_etc_5.gif)no-repeat 90px 30px;
+    } 
+
+    .txt3 .nav_6 {
+      display: block;
+      height: 101px;
+      padding-top: 10px;
+    } 
+
+    
+
+    /* 푸터 */
+
+    #footer {
+      display: flex;
+      justify-content: center;
+      padding: 70px 80px 70px 80px;
+      background: #495860 url(images/foother.jpg) no-repeat 90px 50%/10%;
+      color: #ffffff;
+    }
+    
+    #footer .bnb ul {
+      display: flex;
+      position: relative;
+      right: 550px;
+      margin-bottom: 30px;
+      font-size: 14px;
+      right: 50px;
+    }
+
+    #footer .bnb ul a {
+      color: #ffffff;
+    }
+
+    #footer .bnb li:not(:last-of-type)::after {
+      content: '|';
+      margin: 0 16px;
+      color: rgba(255, 255, 255, 0.2);
+    }
+
+    #footer .copy {
+       margin-top: 30px;
+    }
+    
+  
+
+  </style>
+</head>
+
+<body>
+  <!-- 헤더 -->
+  <header id="header">
+    <h1 class="logo"><a href="#"><img src="images/logo.gif" alt="logo"></a></h1>
+    <div class="nav_bg"></div>
+    <nav id="gnb">
+      <ul class="main">
+        <li><a href="#">기업소개</a>
+          <ul class="sub">
+            <li><a href="#">그룹소개</a></li>
+            <li><a href="#">CEO 인사말</a></li>
+            <li><a href="#">연혁</a></li>
+            <li><a href="#">CI</a></li>
+            <li><a href="#">안전보건경영</a></li>
+            <li><a href="#">고객만족</a></li>
+            <li><a href="#">사회공헌</a></li>
+            <li><a href="#">GWP</a></li>
+            <li><a href="#">인사말</a></li>
+          </ul>
+        </li>
+        <li><a href="#">사업소개</a>
+          <ul class="sub">
+            <li><a href="#">도시가스사업</a></li>
+            <li><a href="#">발전 및 집단에너지사업</a></li>
+          </ul>
+        </li>
+        <li><a href="#">R&B</a>
+          <ul class="sub">
+            <li><a href="#">연구소 소개</a></li>
+            <li><a href="#">연구 현황</a></li>
+          </ul>
+        </li>
+        <li><a href="#">투자정보</a>
+          <ul class="sub">
+            <li><a href="#">지배 구조</a></li>
+            <li><a href="#">재무 정보</a></li>
+            <li><a href="#">공시/공고</a></li>
+            <li><a href="#">IR 자료실</a></li>
+            <li><a href="#">ESG</a></li>
+          </ul>
+        </li>
+        <li><a href="#">홍보센터</a>
+          <ul class="sub">
+            <li><a href="#">뉴스 센터</a></li>
+            <li><a href="#">홍보 영상</a></li>
+            <li><a href="#">사보</a></li>
+            <li><a href="#">Annual Report</a></li>
+            <li><a href="#">PR Library</a></li>
+          </ul>
+        </li>
+        <li><a href="#">고객센터</a>
+          <ul class="sub">
+            <li><a href="#">공지사항</a></li>
+            <li><a href="#">안내</a></li>
+            <li><a href="#">조회/납부</a></li>
+            <li><a href="#">신청</a></li>
+            <li><a href="#">문의</a></li>
+            <li><a href="#">전기(광명 역세권)</a></li>
+          </ul>
+        </li>
+        <li><a href="#">인재채용</a>
+          <ul class="sub">
+            <li><a href="#">--</a></li>
+            <li><a href="#">--</a></li>
+          </ul>
+        </li>
+        <li><a href="#">윤리경영</a>
+          <ul class="sub">
+            <li><a href="#">윤리상담/제보센터</a></li>
+            <li><a href="#">윤리규정</a></li>
+            <li><a href="#">윤리실천활동</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- 메인 -->
+  <div id="section1">
+    <div class="box1">
+      <ul class="slider">
+        <li><img src="images/main.jpg" alt="메인"></li>
+        <p>신뢰와 나눔 속에<br>사랑 받는 기업으로</p>
+      </ul>
+    </div>
+    <ul class="slider2">
+      <li class="search1"><img src="images/a1.png" alt="이미지1"><a href="#">요금조회</a></li>
+      <li class="search2"><img src="images/a2.png" alt="이미지2"><a href="#">요금납부</a></li>
+      <li class="search3"><img src="images/a3.png" alt="이미지3"><a href="#">전출입신청</a></li>
+      <li class="search4"><img src="images/a4.png" alt="이미지4"><a href="#">신청서양식</a></li>
+      <li><input type="text"></li>
+      <li><a href="#"><img src="images/btn_search01.gif" alt="버튼 이미지"></a></li>
+
+    </ul>
+  </div>
+
+  <!-- section2 -->
+  <div id="section2">
+    <div class="left1">
+      <ul>
+        <li><a href="#"><img src="images/img1.jpg" alt="left"></a></li>
+      </ul>
+    </div>
+    <div class="center1">
+      <h1 class="name">뉴스센터</h1>
+      <li><a href="#"><img src="images/1_20.jpg" alt="center"></a></li>
+    </div>
+    <div class="right1">
+      <h2>공지사항</h2>
+      <p class="txt">
+        도시가스 요금단가 변동<br>(2023년 7월 1일자)
+      </p>
+      <p class="txt2">
+        도시가스 요금단가 변동<br>(2023년 6월 1일자)
+      </p>
+    </div>
+  </div>
+
+  <!-- section3 -->
+
+  <div id="section3">
+    <div class="left2">
+      <ul>
+        <li><a href="#"><img src="images/story_off_03.jpg" alt="left2"></a></li>
+      </ul>
+    </div>
+      <div class="center2">
+        <h2>사회공헌 갤러리</h2>
+        <li><a href="#"><img src="images/g1_off_03.jpg" alt="center2"></a></li>
+    </div>
+      <div class="right2">
+        <ul>
+          <li><a href="#"><img src="images/rslide_1.jpg" alt="right2"></a></li>
+        </ul>
+      </div>
+  </div>
+
+  <!-- section4 -->
+  <div id="section4">
+    <ul class="txt3">
+      <li class="nav_1">
+        <a href="#">
+          <h2>고객의 소리</h2>
+          <p>고객의 궁금한<br>점을 남겨주세요</p>
+        </a>
+      </li>
+      <li class="nav_2">
+        <a href="#">
+          <h2>이용 안내</h2>
+          <p>도시가스 관련<br>안내사항입니다</p>
+        </a>
+      </li>
+      <li class="nav_3">
+        <a href="#">
+          <h2>연결비용 안내</h2>
+          <p>가스렌지 연결<br>비용 안내입니다</p>
+        </a>
+      </li>
+      <li class="nav_4">
+        <a href="#">
+          <h2>고객센터</h2>
+          <img src="images/txt_etc_1.gif" alt=고객센터">
+        </a>
+      </li>
+      <li class="nav_5">
+        <a href="#">
+          <h2>가스사고 신고접수</h2>
+          <p>가스 신고를 접수<br>하실 수 있습니다.</p>
+        </a>
+      </li>
+      <li class="nav_6">
+        <a href="#">
+          <h2>윤리 제보센터</h2>
+          <p>부정 및 비리행위 등에<br>대한 제보 센터입니다</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 푸터 -->
+
+  <div id="footer">
+    <div class="leftCont">
+      <div class="bnb">
+        <ul>
+          <li><a href="#">개인정보 처리 방침 </a></li>
+          <li><a href="#">메일주소 무단수집거부 </a></li>
+          <li><a href="#">신용정보 조회사실 통보공시 </a></li>
+          <li><a href="#">이용약관</a></li>
+        </ul>
+      </div>
+      <div class="addr">
+        <p>07328 서울특별시 영등포구 국제금융로 6길 42 (주)삼천리</p>
+        <p>Copyright samchully Corp. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+  <script>
+
+    //네비게이션바
+    $('.main > li > a').mouseenter(function (e) {
+      e.preventDefault();
+      $('.sub').stop().slideDown(400);
+      $('.nav_bg').stop().animate({ height: 0 }, 400);
+    });
+
+    $('nav').mouseleave(function () {
+      $('.sub').stop().slideUp(400);
+      $('.nav_bg').stop().animate({ height: 0 }, 400);
+    });
+  </script>
+</body>
+
+</html>
