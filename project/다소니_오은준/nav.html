@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다소니</title>
+    <style>
+        /* reset */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16.5px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        body {
+            font-size: 1.5rem;
+        }
+
+        /* 헤더 */
+        #header {
+            /* position: fixed; */
+            width: 100%;
+            height: 95px;
+            display:flex;
+            justify-content: space-between;
+            /* align-items:first baseline; */
+            padding: 0 60px;
+            background: beige;
+            transition: 0.3s 0.3s;  
+             
+        }
+
+        /* 로고 */
+        #gnb {
+            z-index: 999999;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 94px;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nav_bg {
+            position: relative;
+            top: 142px;
+            width: 100%;
+            height: 100%;
+            background: beige;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            border-top: 2px solid;
+            border-image: linear-gradient(to right, #7BD79C, #FBDE71, #AA8DD8, #ffa760);
+            border-image-slice: 1;
+            }
+
+        .main>li {
+            position: relative;
+            width: 250px;
+            height: 50px;
+            text-align: center;
+ 
+        }
+
+        .main>li>a:hover {
+            color: #333;
+            text-align: center;
+        }
+
+        .main>li>a::after {
+            content: '';
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            transform: scaleX(0);
+            transition: 0.3s;
+            width: 100%;
+            border: 1px solid #000000;
+            color: red;
+        }
+        
+        .main>li>a:hover:after {
+            background: rgb(138, 133, 126);
+        }
+
+        
+
+        .sub {
+            display: none;
+            padding: 15px 0;
+        }
+        
+        .sub a {
+            color: #333;
+            font-size: 16.5px;
+            line-height: 2;
+            font-weight: 300;
+            padding: 3px 12px;
+        }
+
+        .sub a:hover {
+            color: #777;
+            background: url(images/hover.png)no-repeat;
+        }
+
+
+    </style>
+</head>
+<body>
+    <header id="header">
+        <!-- 로고는 항상 a링크 걸기 -->
+        <h1 class="logo"><a href="#"><img src="images/main.png" alt="main"></a></h1>
+        <!-- 서브메뉴의 배경 -->
+        <div class="nav_bg"></div>
+        <nav id="gnb">
+            <ul class="main">
+                <li><a href="#">ABOUT 다소니</a>
+                    <ul class="sub">
+                        <li><a href="#">인사말</a></li>
+                        <li><a href="#">공지사항</a></li>
+                        <li><a href="#">오시는길</a></li>
+                        <li><a href="#">마음산책</a></li>
+                        <li><a href="#">후기</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">상담진 소개</a>
+                    <ul class="sub">
+                        <li><a href="#">대표/슈퍼바이저</a></li>
+                        <li><a href="#">다소니 상담진</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">심리상담</a>
+                    <ul class="sub">
+                        <li><a href="#">성인심리상담</a></li>
+                        <li><a href="#">청소년/아동심리상담</a></li>
+                        <li><a href="#">부부상담</a></li>
+                        <li><a href="#">가족상담</a></li>
+                        <li><a href="#">심리상담 예약신청</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">심리검사</a>
+                    <ul class="sub">
+                        <li><a href="#">다소니전문심리검사</a></li>
+                        <li><a href="#">종합심리평가</a></li>
+                        <li><a href="#">신경심리평가</a></li>
+                        <li><a href="#">단일검사</a></li>
+                        <li><a href="#">심리검사 예약신청</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">관계테라피</a>
+                    <ul class="sub">
+                        <li><a href="#">부부관계테라피</a></li>
+                        <li><a href="#">가족관계테라피</a></li>
+                        <li><a href="#">커플관계테라피</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+        <script>
+
+    
+            // 내비게이션바
+            $('.main > li> a').mouseenter(function (e) {
+                //a태그 기본 이벤트 제거
+                e.preventDefault();
+                $('.sub').stop().slideDown(400);
+                $('.nav_bg').stop().animate({ height: 300 }, 500);
+            });
+            $('nav').mouseleave(function () {
+                $('.sub').stop().slideUp(400);
+                $('.nav_bg').stop().animate({ height: 0 }, 500);
+            });
+    
+        </script>
+    
+</body>
+</html>
+
