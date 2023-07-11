@@ -37,7 +37,170 @@ desc 테이블명
 desc mem;
 
 3.1 필드 삭제하기
-alter table mem drop post_num
+alter table mem drop post_num;
+
+3.2 필드 수정
+alter table mem change age phone char(20);
+
+수정 -> ";
+	";
+
+3.3 필드 데이터형 수정하기
+
+alter table mem modify phone int;
+
+
+4. 데이터베이스 테이블 이름 관리
+이미 존재하는 DB 테이블 이름을 변경하는 명령
+
+alter table 수정할_테이블명 rename 새로운_테이블명;
+mem 테이블의 이름을 mem2로 변경.
+alter table mem rename mem2;
+
+
+데이터베이스 테이블 삭제
+drop table 테이블명
+
+mem2 테이블을 삭제하는 명령.
+drop table mem2;
+
+
+create table friend (
+	num int not null auto_increment,
+	name char(20) not null,
+	tel char(20) not null,
+	address char(80),
+	primary key(num)
+);
+
+insert into friend (name , tel, address) values ('송예진','031-123-4561', '경기도 용인시 수지구 정평로 30');
+ 
+
+이름은 멤버
+desc mamber;
+create table member (
+	num int not null auto_increment,
+	id char(20) not null,
+	name char(20) not null,
+	gender char(1) null,
+	post_num char(8) null,
+	address char(80) null,
+	tel char(20) null,
+	age int null,
+	primary key(num)
+);
+
+insert into member (id, name, gender, post_num, address, tel, age) values 
+('yjhwang', '황영주', 'M', '100-011', '서울시 중구 충무로1가','234-8879', '35');
+insert into member (id, name, gender, post_num, address, tel, age) values 
+('khshul', '설기형', 'M', '607-010', '부산시 동래구 명륜동','764-3784', '33');
+insert into member (id, name, gender, post_num, address, tel, age) values 
+('chpark', '박철호', 'M', '503-200', '광주시 남구 지석동','298-9730', '34');
+
+
+전체 필드와 데이터 검색
+다음은 DB 테이블의 전체 필드와 데이터를 보여주는 명령 형식.s
+select * from 테이블명;
+select * from member;
+
+-특정 필드의 전체 레코드 검색
+
+select 필드명1, 필드명2, 필드명3...from 테이블명
+member 테이블의 전체 레코드에서 name, tel, address 필드 데이터만 검색하는 명령
+select name, tel, address from member;
+
+
+③ member 테이블에 age 필드를 int 데이터형으로 추가하는 명령을 쓰시오.
+Alter table member add age int;
+
+
+select 필드명1, 필드명2, 필드명3...from 테이블명 where 조건
+member 테이블에서
+여성 회원의 아이디, 이름 , 주소, 성별 검색
+select id, name, address, gender from member where gender = "w";
+
+문제1) 50세 이상인 남성 회원의 이름, 전화번호, 성별, 나이검색
+select name, tel, gender, age from member where age >= 50 and gender = "M";
+
+문제2) 20대 회원의 이름, 성별, 주소, 나이검색
+select name, gender address, age from member where age >= 20 and age <=29;
+
+문제3) 30대 또는 50대 남성회원의 이름, 전화번호 , 나이, 성별 검색
+select name, tel, age gender from member where(( age >=30 and age <=39) or (age>=50 and age <=59)
+and gender = 'M';
+
+문제4) 이름이 '안철영'인 회원의 일련번호, 이름, 전화번호, 주소, 우편번호, 나이 성별 검색
+
+select id name tel address post_num age gender from memeber where name='안철영' ;
+
+특정문자열이 포함된 레코드 검색
+테이블명 이라는 DB 테이블에서 검색필드에 포함된 문자열 수식 조건을 만족하는 레코드의 필드명1,
+필드명2, ...를 검색하는 명령 형식.
+
+select 필드명1, 필드명2, ..from 테이블명 where 검색필드 like 문자열_수식
+-성이 박씨인 회원의 이름, 전화번호 검색
+-select name, tel from member where name like '박%';
+-서울에 거주하는 회원의 일련번호, 이름, 주소, 성별 검색
+
+select num, name, address, gender from member where address like '서울%';
+
+-은평구에 거주하는 회원의 모든 정보 검색
+select num, name, address, gender from member where adress like "은평구%";
+
+
+데이터의 검색과 관리
+-서울에 사는 회원을 나이순으로 오름차순 정렬한 뒤, 나이, 주소, 전화번호, 성별 출력
+//오름차순
+select name, age, address, tel, gender from member where address like '서울%' order by age;
+정렬 -> order by
+
+부산에 사는 회원을 나이순으로 내림차순 정렬한 뒤,이름, 나이, 주소, 전화번호 출력
+//내림차순은 뒤에 desc만 붙여주면 됌.
+select name, age, address, tel from member where address like '부산%' order by age desc;
+
+레코드의 수정
+-테이블명이라는 DB 테이블에서 조건식을 만족하는 레코드의 필드명 값을 필드값으로 변경하는 명령 형식.
+update 테이블명 set 필드명 = 필드값 where 조건식;
+
+-이름이 '고재진'인 레코드의 전화번호를 123-4567로 변경한 뒤 데이터 확인.
+update member set tel = '123-4567' where name ='고재진';
+select name, tel from member where name ="고재진";
+select는 데이터 확인
+-이름이 '정한나' 인 회원의 나이를 확인하고 값을 37로 변경
+update member set age =37 where name ='정한나';
+select name, age from member where name ="정한나";
+
+레코드 삭제
+'테이블명' 이라는 DB테이블에서 조건식을 만족하는 레코드를 삭제하는 명령 형식.
+delete from 테이블명 where 조건식;
+
+
+-이름이 '김수련'인 레코드를 삭제한 뒤 확인
+delete from member where name = '김수련';
+select * from member where name like '김%';
+
+40대 회원의 레코드를 삭제한 뒤 35 ~ 53세 회원의 이름, 나이 , 성별을 나이순으로 출력하여 확인
+delete from member where age >=40 and age <=49;
+select name, age, gender from member where age >=35 and age <=53 order by age;
+
+★★★member 테이블의 전체 레코드를 삭제하는 명령 형식.★★★
+delete from member
+->조건식을 생략한 채 delete from 명령을 실행하면 member 테이블의 전체 레코드를 삭제할 수 있음!!!!!!!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
