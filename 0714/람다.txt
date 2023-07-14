@@ -1,0 +1,64 @@
+
+
+function sayHello(name) {
+	console.log("Hello, " + name + "!");
+}
+sayHello("john");
+
+람다식
+const sayHello = (name) => {
+	console.log("Hello, " + name + "!");
+};
+
+sayHello("John");
+
+const numbers = [1,2,3,4,5];
+let sum = 0;
+for(let i = 0 ; i < numbers.length; i++) {
+	sum += numbers[i];
+}
+console.log("Sum:",sum);
+
+const numbers = [1,2,3,4,5];	//배열
+const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+//acc - 누적값을 나타내며, 이전 단계에서 반환된 값이 저장
+//curr : 현재 요소의 값 - 배열의 각 요소를 순회 하면서 차례대로 전달
+// 0 - 두번째 매개변수의 초기값(curr)
+console.log("Sum:", sum);
+
+
+자바
+List<String> fruits = Arrays.asList("Apple","Banana","Orange");
+for(String fruit : fruits){
+	System.out.printle(fruit);
+}
+
+람다
+List<String> fruits = Arrays.asList("Apple","Banana","Orange");
+fruits.forEach(fruit -> System.out.printle(fruit));
+
+List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+List<Integer> evenNumbers = new ArrayList<>();
+for(Integer numbers : numbers){
+	if (number % 2 == 0) {
+	evenNumbers.add(number);
+     }
+}
+
+List<Integer> numbers = Arrays.asList(1,2,3,4,5,6,7,8,9,10);
+List<Integer> evenNumbers = numbers.stream()
+				 .filter(number -> number % 2 == 0)
+				 .collect(Collectors.toList());
+
+
+
+
+
+
+
+
+
+
+
+
+
