@@ -5,26 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #btn{
-            float: left;
-            width: 100px;
-            height: 50px;
-            background-color:#ffffff;
-            border-radius: 20px;
-            box-shadow: 3px 3px 3px black;
-            transition-duration: .3s;
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        #btn:active {
-            margin-left: 5px;
-            margin-top: 5px;
-            box-shadow: none;
-            background-color: rgb(255, 0, 0);
-            border: 1px solid red;
+        body{
+            margin: 0 auto;
         }
+
+        .pbox{
+            width: 466px;
+            height: 466px;
+            background: red;
+        }
+
+
+        section {
+            display: flex;
+        }
+
+        .big {
+            display: flex;
+        }
+        .big img{
+            display: block;
+        }
+
+
     </style>
 </head>
 <body>
-    <div id="btn"></div>
+    <section>
+    <div class="pbox">
+    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore, eum quidem quam aliquam, eos temporibus neque excepturi aliquid corrupti, vitae magnam iste saepe! Ipsa iste deserunt aspernatur, ut exercitationem nostrum.
+    Iste, quod? Mollitia quaerat excepturi quam eaque aperiam amet, molestiae dolore fugit ullam voluptas ipsum repudiandae maxime! Omnis maiores molestias voluptatum quisquam aliquid accusantium, perferendis vel quod optio repellendus dolor.
+    Ex dolorem, suscipit neque sapiente exercitationem voluptatem aliquid quibusdam expedita dolor minima, voluptatum perferendis, labore corrupti assumenda officiis iure tenetur. Placeat vitae hic sapiente modi quam suscipit qui assumenda animi!
+    Enim itaque ullam iusto ipsa, cupiditate dicta, tempore autem unde dolor doloremque voluptatem commodi nemo hic est id nesciunt! Neque expedita mollitia, tempora temporibus doloribus ducimus molestias error a officiis!
+   </p>
+    </div>
+    <div class="big">
+        <img src="../workplace.jpg" alt="">
+        <img src="../workplace.jpg" alt="">
+        <img src="../workplace.jpg" alt="">
+    </div>   
+</section>
+
 </body>
 </html>
