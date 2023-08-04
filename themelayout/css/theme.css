@@ -1,0 +1,88 @@
+/*테마 디자인 - theme.css*/
+/*테마1 -  morning*/
+#wrap.morning { background-image: url(../images/bg_morning.jpg); }
+#wrap.morning  h1 { background-image: url(../images/logo_b.png); }
+#wrap.morning #gnb a { color: #555; }
+#wrap.morning #sns i { color: #555; }
+#wrap.morning div#frontFrame { background-image: url(../images/phone_morning.png); }
+#wrap.morning article p { color: #666; }
+#wrap.morning article p strong { color: #111; }
+#wrap.morning article em { color: #333; }
+#wrap.morning div#frontFrame p { color: #333; }
+#wrap.morning > img:nth-child(1), 
+#wrap.morning > img:nth-child(2) { opacity: 1; }
+ 
+ 
+/*테마2 - afternoon*/
+#wrap.afternoon { background-image: url(../images/bg_afternoon.jpg); }
+#wrap.afternoon  h1 { background-image: url(../images/logo_b.png); }
+#wrap.afternoon #gnb a { color: #555; }
+#wrap.afternoon #sns i { color: #555; }
+#wrap.afternoon div#frontFrame { background-image: url(../images/phone_afternoon.png); }
+#wrap.afternoon article p { color: #666; }
+#wrap.afternoon article p strong { color: #111; }
+#wrap.afternoon article em { color: #333; }
+#wrap.afternoon div#frontFrame p { color: #333; }
+#wrap.afternoon > img:nth-child(1), 
+#wrap.afternoon > img:nth-child(2) { opacity: 1; }
+ 
+ 
+/*테마3 - evening*/
+#wrap.evening { background-image: url(../images/bg_evening.jpg); }
+#wrap.evening  h1 { background-image: url(../images/logo_w.png); }
+#wrap.evening #gnb a { color: #fff; }
+#wrap.evening #sns i { color: #fff; }
+#wrap.evening div#frontFrame { background-image: url(../images/phone_evening.png); }
+#wrap.evening article p { color: #444; }
+#wrap.evening article p strong { color: #fff; }
+#wrap.evening article em { color: #333; }
+#wrap.evening div#frontFrame p { color: #fff; }
+#wrap.evening > img:nth-child(1), 
+#wrap.evening > img:nth-child(2) { opacity: 0.6; }
+ 
+ 
+/*테마4 - night*/
+#wrap.night { background-image: url(../images/bg_night.jpg); }
+#wrap.night  h1 { background-image: url(../images/logo_w.png); }
+#wrap.night #gnb a { color: #fff; }
+#wrap.night #sns i { color: #fff; }
+#wrap.night div#frontFrame { background-image: url(../images/phone_night.png); }
+#wrap.night article p { color: #bbb; }
+#wrap.night article p strong { color: #fff; }
+#wrap.night article em { color: #888; }
+#wrap.night div#frontFrame p { color: #fff; }
+#wrap.night > img:nth-child(1), 
+#wrap.night > img:nth-child(2) { opacity: 0.1; }
+#wrap.night div p img.cld1, 
+#wrap.night div p img.cld2 { opacity: 0.4; }
+
+ 
+ 
+/*전경 프레임 이미지*/
+div#frontFrame p img.cld1 {
+    position: absolute;
+    width: 600px;
+    top: 30px;
+    left: -600px;
+    z-index: 4;
+    animation: flow3 110s linear infinite;
+}
+div#frontFrame p img.cld2 {
+    position: absolute;
+    width: 700px;
+    top: 20px;
+    left: 0;
+    animation: flow4 100s linear infinite;
+}
+ 
+@keyframes flow3 {
+    0% { left: -600px; }
+    100% { left: 540px; }
+}
+@keyframes flow4 {
+    0% { left: 0; }
+    50% { left: 540px; opacity: 0; }
+    50.001% { left: -700px; opacity: 1; }
+    100% { left: 0; }
+}
+

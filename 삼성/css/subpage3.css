@@ -1,0 +1,283 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700|Do+Hyeon|Jua|Maven+Pro:400,700|Noto+Sans+KR:300,400,500,700|Noto+Sans:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap');
+/**/
+*{margin: 0;padding: 0;}
+a {color: inherit;text-decoration: inherit;text-decoration-style: none;}
+/*reset*/
+li {list-style: none;}
+h1,h2,h3,h4,h5,h6 {margin: 0;padding: 0;}
+h2 {font-size: 48px;color: #56493f;font-family: 'Source Serif Pro', serif;font-weight: 600;margin-bottom: 10px;}
+p1 {font-size: 26px;color: #333;font-family: 'Do Hyeon', ;font-weight: 500;display: inline-block;margin: 50px 0;}
+p2 {font-size: 19px;line-height: 1.8;letter-spacing: 0px;text-align: justify;font-weight: 300;}
+p3 {display: inline-block;padding: 2px;border-bottom: 1px solid #56493f;color: #56493f;font-size: 13px;float: right;position: absolute;margin-right: 15px;right: 5px;bottom: 5px;}
+p3:after {content: '\f141';font-family: FontAwesome;position: absolute;top: 7px;right: -13px;}
+
+
+
+body {font-family: 'Noto Sans KR', sans-serif;color: #333;padding: 0;margin: 0;}
+.wrap {margin: 0 auto;}
+.border {position: relative;}
+.menuOpen,nav.gnb_mo,header .logo .logoMo {display: none;}
+/*header*/
+header {z-index: 99;width: 100%;height: 100px;background: #fff;font-size: 18px;border-bottom: 1px solid #777;color: #333;position: fixed;z-index: 100;top: 0px;}
+header .logo {width: 175px;height: 70px;float: left;margin: 0px 0 0 25px;}
+header .logo a {display: block;width: 100%;height: 100%;}
+header .logo a img {width: 100%;height: 100%;}
+.innerheader {width:700px;margin: 0 auto;height:;}
+.innerheader ul {text-align: center;}
+.innerheader ul li {float:left;}
+.innerheader ul li:nth-child(3) p{padding-bottom: 3px;    border-bottom: 1px solid #56493f;display:inline-block;margin-top: 6px;}
+.innerheader ul li a {display: block;width: 100%; height: 100%;padding: 20px 0px;margin: 0 40px;}
+.innerheader ul li a p {transition: all 0.5s;}
+.innerheader ul li a:hover p{border-bottom: 1px solid #56493f;padding-bottom: 3px;transition: all 0.5s;margin-top: 6px;display:inline-block;}
+.icon {width: 100%;height:30px;background:#56493f;color: #999;}
+.icon div {float: right;padding: 0px 10px;font-size: 14px;}
+.icon .sns1 {margin-right: 5px;}
+.icon .btn1 {margin-right: 10px;}
+.icon .btn1,.btn2 {margin-top: 3px;border-left: 1px solid #555;}
+.icon img {display: block;height: 18px;margin-top: 5px;}
+
+/*상단바로가기*/
+.top {position:fixed; z-index: 100;;top:800px;right: 230px;z-index: 100;}
+.top a {padding: 30px;}
+/*section*/
+section {margin: 0 auto;padding: 100px 0px 105px 0px;width: 1320px;}
+/*foodDstribution*/
+.foodDstribution {background: url(../subpage3/img/main.png)no-repeat center/cover;width: 100%;height: 475px;padding: 100px 0 0 300px;box-sizing: border-box;margin-top: 90px}
+.foodDstribution .foodDstributionText h2,.foodDstribution .foodDstributionText p1,.foodDstribution .foodDstributionText p2 {color: #fff;text-shadow: 0px 0px 10px #000;}
+.foodDstribution .foodDstributionText h2 {font-size: 48px;margin-bottom: 20px;}
+.foodDstribution .foodDstributionText p1 {display: block;margin: 0 0 20px 0;}
+.foodDstribution .foodDstributionText p2 {letter-spacing: .5px;}
+/*distribution*/
+.distribution {margin-top: 105px;overflow: hidden}
+.distribution.on .border {display: inline-block;border-top: 3px solid #56493f;border-bottom: 7px solid #56493f;height: 425px;float: right; box-sizing: border-box;animation:distributionB;animation-duration: 3s; background: #fff;}
+@keyframes distributionB {
+    0%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    20%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    50%{height: 425px;margin-top: 0px; padding-top: 0px;}
+    100%{height: 425px; margin-top:0px;padding-top: 0x;}    
+}
+.distribution.on .distributionText {animation-duration: 3s; animation-name:distribution; }
+@keyframes distribution {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}    
+}
+.distribution .distributionImg {float: left;}
+
+/*productnbrand*/
+.productnbrand {overflow: hidden;height: 425px;}
+.productnbrand.on .border {display: inline-block;border-top: 3px solid #56493f;border-bottom: 7px solid #56493f;height: 425px;box-sizing: border-box; animation-name: productnbrandB; animation-duration: 3s; }
+@keyframes productnbrandB {
+    0%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    20%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    50%{height: 425px;margin-top: 0px; padding-top: 0px;}
+    100%{height: 425px; margin-top:0px;padding-top: 0x;}   }
+.productnbrand.on .productnbrandText {animation-name: productnbrand; animation-duration: 3s;}
+@keyframes productnbrand {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}  
+}
+.productnbrand .productnbrandImg {float: right;}
+/*competitive*/
+.competitive {margin: 105px 0;background: url(../subpage3/img/competitive.png)no-repeat center/cover;width: 100%;height: 660px;text-align: end;box-sizing: border-box;;position: relative;}
+.competitive.on:after {content: ''; position: absolute; animation-name: competitive; animation-duration: 4s;width: 100%;height: 660px;top: 0;left: 0;}
+@keyframes competitive {
+    0%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,1));opacity: 1;}
+    3%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.96));}
+    6%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.93));}
+    10%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.9));}
+    13%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.86));}
+    16%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.83));}
+    20%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.8));}
+    23%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.76));}
+    26%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.73));}
+    30%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.7));}
+    33%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.67));}
+    36%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.63));}
+    40%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.6));}
+    43%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.56));}
+    46%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.53));}
+    50%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.5));}
+    53%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.48));}
+    56%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.45));}
+    60%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.42));}
+    63%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.4));}
+    66%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.36));}
+    70%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.33));}
+    73%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.3));}
+    76%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.26));}
+    80%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.23));}
+    83%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.2));}
+    86%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.16));}
+    90%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.13));}
+    93%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.1));}
+    96%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.06));}
+    100%{  background-image: radial-gradient( rgba(255,0,0,0), rgba(0,0,0,0.03));opacity: 0;}
+    
+    
+    
+}
+.competitiveText {display: inline-block;padding: 50px 300px 0 0;text-shadow: 0px 0px 20px #000; }
+.competitiveText h2,.competitiveText p2 {color: #fff;}
+/*infra*/
+.infra {overflow: hidden;height: 425px;}
+.infra .infraImg {float: right;}
+.infra.on .border { display: inline-block;border-top: 3px solid #56493f;border-bottom: 7px solid #56493f;height: 425px;box-sizing: border-box; animation-name: infraB; animation-duration: 3s;}
+@keyframes infraB{
+    0%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    20%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    50%{height: 425px;margin-top: 0px; padding-top: 0px;}
+    100%{height: 425px; margin-top:0px;padding-top: 0x;}   }
+.infra.on .infraText {animation-name: infra; animation-duration: 3s;}
+@keyframes infra {
+    0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/*solution*/
+.solution {padding-bottom: 105px;overflow: hidden;height: 425px;}
+.solution.on .border {border-top: 3px solid #56493f;border-bottom: 7px solid #56493f;box-sizing: border-box;float: right;animation-name: solutionB; animation-duration: 3s;height: 425px;}
+@keyframes solutionB { 
+    0%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    20%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    50%{height: 425px;margin-top: 0px; padding-top: 0px;}
+    100%{height: 425px; margin-top:0px;padding-top: 0x;}
+    
+}
+.solution .solutionImg {display: inline-block;float: left; }
+
+.solution.on .solutionText {animation-name: solution; animation-duration: 3s;}
+@keyframes solution {
+     0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+/*custmer*/
+.customer {margin-bottom: 105px;overflow: hidden;height: 425px;}
+.customer.on .border {height: 425px;display: inline-block;border-top: 3px solid #56493f;border-bottom: 7px solid #56493f;box-sizing: border-box;float: left; animation-name: customerB; animation-duration: 3s;}
+@keyframes customerB {
+    0%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    20%{height: 0px;margin-top: 213px; padding-top: 0px;}
+    50%{height: 425px;margin-top: 0px; padding-top: 0px;}
+    100%{height: 425px; margin-top:0px;padding-top: 0x;}
+}
+.customer.on .customerText {animation-name: customer; animation-duration: 3s;}
+@keyframes customer {
+     0%{opacity: 0;}
+    50%{opacity: 0;}
+    100%{opacity: 1;}
+}
+.customer .customerImg {float: right;}
+/*footer*/
+footer { clear: both;width: 100%px;height: 120px;background: #fff;border-top: 1px solid #777; }
+footer .ncLogo {width: 170px;height: 75px;float: right;margin: 20px 20px 0 0;}
+footer .ncLogo a {width: 100%;height: 100%;display: block;}
+footer .ncLogo a img {width: 100%;height: 100%;-webkit-filter: grayscale(100%);filter: gray;opacity: 60%}
+footer .text {text-align: center;font-size: 11px;color: #777;padding-top: 15px;margin: 0 auto;width: 400px;line-height: 1.2;}
+footer .text a {line-height: 2.5;color: #333;padding: 0 15px;border-left: 1px solid #333;font-weight: 500;font-size: 13px}
+footer .text a.text1 {color: red;}
+    .gnb_mo > ul{ width: 70%;}
+    .sns_Mo img {margin-right: 10px;}
+
+
+/*1599*/
+@media screen and (max-width:1599px){
+	header .icon{width: 100%;min-width: 768px;}
+    .innerheader ul li a {padding: 20px 0;}
+    section{width: 80%;}
+    .top{top: 85%;right:2.5%;}
+    .top a img {width: 30%;height: 30%;}	.productnbrand .productnbrandImg, .infra .infraImg{width: 50%; overflow: hidden;}
+	.customer .customerImg,.distribution .distributionImg, .solution .solutionImg{width: 60%; overflow: hidden;}
+}
+/*1024*/
+@media screen and (max-width:1024px) {
+    section{width: 95%;}
+	.innerheader ul li a{margin: 0 25px}
+
+	.foodDstribution, .competitiveText {padding:100px;}
+      
+ 
+/*768tablet*/
+    @media screen and (max-width:768px){
+    br.Mo {display: block;}
+    br.MoNo {display: none;}
+    h1 {}
+    p2 {font-size: 20px;}
+    p3 {font-size: 16px;font-weight: 500;}
+    header .logoPc{display: none;} 
+    header {background: #56493f; transition: all 5s;}
+    header .logo .logoMo {display: block;width: 220px; height: 35px;padding:34px 0; }
+    header .logo .logoMo img {width: 100%;height: 100%;}
+    header .logoPc {display: none;}
+    .innerheader ul{display: none;}
+    header .icon {display: none;}
+    header .menuOpen {display: block;float: right; margin: 20px;font-size: 18px;color: #fff;}
+    header .menuOpen span {margin-left: 30px;font-size: 60px;vertical-align: middle;}
+    .menuOpen,nav.gnb_mo {display: block;}
+    h1.logo {width: 100%;height: auto}
+    h1.logo img{width: 120px;height: 20px;margin: 20px auto;}
+    .sns_Mo {height: 100px; color: #fff;background: #56493f;}
+    .sns_Mo p.text{float: left;margin-left: 10px;}
+    .sns_Mo p.text a{margin-left: 10px; font-size: 16px;}
+    .sns_Mo img {float: right;margin-right: 30px;width: 20px;height: 20px;margin-top: 5px}
+    .gnb_mo{display: block;	position: absolute;	width: 100%;height: 100vh;	background: rgba(0,0,0,0.6);right: -1000px; /*임시 0*/top: 0;transition: all 0.3s;overflow: hidden;z-index: 200;opacity: 0;/*임시 1*/color: #333;}
+	.gnb_mo.on {right: 0;transition: opacity 0.3s;opacity: 1;}
+	.gnb_mo .close {position: absolute;	right: -100px;/*임시 0px*/top: 10px;z-index: 200;	transform:rotate(360deg);transition: all 0.3s;width: 25px;height: 25px;}
+	.gnb_mo .close img{width: 100%;}
+	.gnb_mo.on .close {right:1%;transform: rotate(0);transition: all 0.5s;color: #fff;font-size: 20px;padding: 0 0 15px 15px;}
+  /*모바일 쥐엔비 나올때 슬라이드되도록*/
+	.gnb_mo > ul {position: absolute;right:-1000px; /*임시 0px*/top: 0;background: #fff;width: 70%;height:100%;transition: all 0.3s;border-left: 5px solid #56493f;}
+	.gnb_mo.on > ul {right: 0;transition: all 0.5s;	}
+  /*모바일쥐엔비 내부메뉴*/
+	.gnb_mo > ul > li {font-size: 16px;	line-height: 55px;text-indent: 20px;border-bottom: 1px solid #aaa;}
+    .gnb_mo > ul > li > a{display: block;width: 100%;height: 100%;position: relative;background: #fff;}
+	.gnb_mo > ul > li > a:after{content:'\f107';width: 21px;height: 12px;font-family:FontAwesome;line-height: 18px;font-size: 25px;position: absolute;right: 10px;top: 50%;margin-top: -10px;margin-right: 30px;}
+	.gnb_mo > ul > li > a.on:after{content: '\f106';font-family: FontAwesome; line-height: 18px;margin-right: 30px;font-size: 25px;}
+    .gnb_mo > ul > li .inner{display: none;background: #ffffff;}
+    .gnb_mo > ul > li .inner li:after{content: '';
+    color: #56493f;top: 25px; left: 22px;position: absolute;
+     font-size: 1px; width: 5px;height: 5px;background: #56493f; border-radius: 50%;}
+	.gnb_mo > ul > li .inner.on{background: #fff;display: block;}    
+    .gnb_mo > ul > li .inner li {box-sizing: border-box; border-top: 1px solid #ddd;position:relative;padding-left: 20px}
+    .gnb_mo > ul > li .inner li:nth-child(1) {border-top: 1px solid #aaa;}
+/*section*/
+	section {width: 85%;}
+    .productnbrand .productnbrandImg img, .infra .infraImg img, .customer .customerImg img,.distribution .distributionImg img, .solution .solutionImg img{width: 100%;}
+    .productnbrand .productnbrandImg , .infra .infraImg , .customer .customerImg ,.distribution .distributionImg , .solution .solutionImg{margin-bottom: 100px;}
+    .distribution ,.productnbrand ,.infra, .solution, .customer {height:875px}
+    .distribution.on .border, .productnbrand.on .border,.infra.on .border,.solution.on .border, .customer.on .border , .productnbrand .productnbrandImg , .infra .infraImg , .customer .customerImg ,.distribution .distributionImg , .solution .solutionImg {width: 100%;}
+        .productnbrand .productnbrandImg , .infra .infraImg , .customer .customerImg ,.distribution .distributionImg , .solution .solutionImg{width: 100%;height: 350px;vertical-align: middle;}
+    .foodDstribution{background-size: auto 100%;background-position: -800px}
+    .competitive{background-size: auto 100%;background-position: -500px}
+    .foodDstribution {padding: 60px 0 0 50px;}
+    .competitiveText  {padding: 60px 30px;}
+    
+ /*footer*/
+    footer {width: 85%;margin: 0 auto; border-top: none;}
+    footer .text {width: 100%;}
+    footer .text a {text-align: left; display: block;font-size: 18px; border-bottom: 1px solid #ddd; border-left: none;}
+    footer .ncLogo {display: none;}
+    footer .text span{line-height:2; }
+    footer .text a {font-size: 24px;padding: 10px 0;}
+    footer .text a:last-child {margin-bottom: 60px;}
+	footer .text {font-size: 25px;text-align: left;margin: 100px 0;}}
+
+/*414 mobile*/
+@media screen and (max-width:414px) {
+    p2 {font-size: 18px}
+	section {width:95%;padding: 50px 0 50px 0;}
+     .distribution ,.productnbrand ,.infra, .solution, .customer {height:775px}
+     .productnbrand .productnbrandImg img, .infra .infraImg img, .customer .customerImg img,.distribution .distributionImg img, .solution .solutionImg img{height: 250px;}
+    .productnbrand .productnbrandImg , .infra .infraImg , .customer .customerImg ,.distribution .distributionImg , .solution .solutionImg {height: 250px;}
+    .foodDstribution {background-size: auto 100%;background-position: left;}
+    .competitive{background-size: auto 100%;background-position: -600px}
+    .foodDstribution {padding: 60px 0 0 20px;}
+	.sns_Mo img {margin-right: 10px;}
+    
+    }
+
+
+    

@@ -1,0 +1,446 @@
+@charset "utf-8";
+
+@import url(reset.css);
+
+ 
+    /*  메인 페이지 스타일  */
+ 
+    /*구글 웹 폰트 지정*/
+ @import url(http://fonts.googleapis.com/css?family=Orbitron);
+ 
+ 
+    body {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #222;	/* 기본 배경색 */
+        font-family: orbitron;	/* 글꼴 지정 */
+    }
+ 
+    .wrap {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        min-height: 768px;	/*최소 높이 지정*/
+        min-width: 1024px;	/*최소 너비 지정*/
+        perspective: 900px; /*원근감 표시 : 400보다 작으면 원근감이 커진다*/
+    }
+ 
+ 
+    /************************************************* 
+        메뉴 버튼 스타일 
+    *************************************************/
+ 
+    /*기본 스타일*/
+    .btnMenu {
+        position: fixed;
+        top: 50px;
+        left: 40px;
+        display: inline-block;
+        width: 20px;
+        height: 70px;
+        text-align: center;
+        font-size: 40px;
+        color: #fff;
+        z-index: 10;
+    }
+ 
+    /*메뉴 버튼 애니메이션 (심장박동 효과)*/
+ 
+    /*애니메이션 정의*/
+    @keyframes menuAni {
+        0% {
+            transform: scale(1);
+            opacity: 1;
+            color: #fff;
+        }
+        100% {
+            transform: scale(1.3);
+            opacity: 0.7;
+            color: #888;
+        }
+    }
+ 
+    /* 버튼에 애니메이션 지정 */
+    .btnMenu {
+        animation: menuAni 0.5s infinite alternate;
+    }
+ 
+ 
+    /************************************************* 
+        로고 스타일
+    *************************************************/
+ 
+    /*로고 위치 지정*/
+    nav h1 {
+        position: absolute;
+        top: 80px;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+    }
+ 
+    /* 로고 이미지를 영역 안에 들어가도록 조정 */
+    nav h1 img {
+        width: 100%;
+        height: auto;
+    }
+ 
+ 
+ 
+    /************************************************* 
+        메뉴(카테고리 목록) 스타일 
+    *************************************************/
+ 
+    /* 메뉴(카테고리) 그룹 스타일*/
+    nav {
+        position: fixed;
+        width: 150px;
+        height: 100%;
+        background-color: #eee;
+        z-index: 5;
+    }
+ 
+    /*메뉴 목록 위치 지정*/
+    nav ul {
+        position: absolute;
+        width: 100%;
+        top: 35%;
+        left: 0;
+    }
+ 
+    nav li a {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        color: #000;
+        font-size: 18px;
+        line-height: 4;	/*줄간격을 4배로 설정*/
+        text-align: center;
+    }
+ 
+    /*마우스 호버시 스타일 지정*/
+    nav li a:hover {
+        color: #fff;
+        background-color: #000;
+    }
+ 
+    /* 호버시 전환 효과 */
+    nav li a {
+        transition: all 0.6s;
+    }
+ 
+ 
+    /*메뉴(카테고리) 그룹 효과*/
+    nav {
+        transform: rotateY(120deg);
+        transform-origin: left center;	/*회전 중심축은 좌측 중앙*/
+        opacity: 0;
+        transition: all 0.8s;
+    }
+ 
+    nav.on {
+        opacity: 1;
+        transform: rotateY(15deg);
+    }
+ 
+ 
+ 
+    /*
+        컨텐츠 그룹
+    */
+ 
+    section {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background-color: #555;
+        z-index: 3;
+    }
+ 
+    /*컨텐츠 그룹 효과*/
+    section {
+        transform-origin: right center;	/*회전 중심축은 우측 중앙*/
+        transition: all 0.6s;
+    }
+ 
+    section.on {
+        transform: rotateY(-10deg);
+    }
+ 
+    section > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        opacity: 0;
+        transition: all 1.5s;
+        perspective: 700px;	/*컨텐츠 영역의 원근감*/
+    }
+ 
+    section > div.on {
+        z-index: 5;
+        opacity: 1;
+    }
+ 
+    section > div > p {
+        box-sizing: border-box;
+        text-align: center;
+        overflow: hidden;
+        transition: all 1.5s;
+        transform: rotateY(180deg);
+    }
+ 
+    section > div.on > p {
+        transform: rotateY(0deg);
+    }
+ 
+ 
+ 
+    /*************************************************
+        페이지 레이아웃 구성
+    *************************************************/
+ 
+    /*1페이지(.page1) 공통 스타일 및 개별 스타일*/
+    .page1 > p {
+        height: 25%;
+        float: left;
+        text-align: center;
+        position: relative;
+    }
+ 
+    .page1 > p:nth-child(1) {
+        width: 50%;
+        background-color: #333;
+    }
+ 
+    .page1 > p:nth-child(2) {
+        width: 25%;
+        background-color: #ccc;
+        background-image: url(../images/m1.jpg);
+        background-repeat: no-repeat;
+        background-position: right center;	/*이미지 기준 위치는 우측 중앙*/
+        background-size: cover;				/*영역에 이미지를 가득 채우기*/
+    }
+ 
+    .page1 > p:nth-child(3) {
+        width: 25%;
+        background-color: #444;
+    }
+ 
+    .page1 > p:nth-child(3) em {
+        position: absolute;
+        top: 50%;
+    }
+ 
+    .page1 > p:nth-child(4) {
+        width: 50%;
+        height: 50%;
+        float: right;		/*우측에 배치*/
+        background: url(../images/m2.jpg) no-repeat center top;
+        background-size: cover;
+    }
+ 
+    .page1 > p:nth-child(5) {
+        width: 25%;
+        float: right;
+        background: url(../images/m3.jpg) no-repeat center;
+        background-size: contain;		/*이미지를 영역 안에 맞추기*/
+        background-color: #fff;
+    }
+ 
+    .page1 > p:nth-child(6) {
+        width: 25%;
+        background-color: #888;
+        float: right;
+    }
+ 
+    .page1 > p:nth-child(7) {
+        width: 25%;
+        background-color: #444;
+        float: right;
+    }
+ 
+    .page1 > p:nth-child(8) {
+        width: 25%;
+        float: right;
+        background: url(../images/m4.jpg) no-repeat center center;
+    }
+ 
+    .page1 > p:nth-child(9) {
+        width: 25%;
+        background-color: #444;
+    }
+ 
+    .page1 > p:nth-child(10) {
+        width: 50%;
+        background: url(../images/m5.jpg) no-repeat right center;
+        background-size: cover;
+    }
+ 
+    .page1 > p:nth-child(11) {
+        width: 25%;
+        background-color: #222;
+    }
+ 
+ 
+    /*2페이지(.page2) 공통 스타일 및 개별 스타일*/
+    .page2 > p {
+        height: 25%;
+        float: left;
+        text-align: center;
+    }
+ 
+    .page2 > p:nth-child(1) {
+        width: 25%;
+        background-color: #444;
+    }
+ 
+    .page2 > p:nth-child(2) {
+        width: 25%;
+        background: url(../images/w1.jpg) no-repeat center bottom;
+        background-size: contain;
+        background-color: #fff;
+    }
+ 
+    .page2 > p:nth-child(3) {
+        width: 50%;
+        background-color: #222;
+    }
+ 
+    .page2 > p:nth-child(4) {
+        width: 25%;
+        height: 49.9%;
+        background: url(../images/w2.jpg) no-repeat right top;
+        background-size: cover;
+        background-color: #fff;
+    }
+ 
+    .page2 > p:nth-child(5) {
+        width: 50%;
+        height: 49.9%;
+        background: url(../images/w3.jpg) no-repeat center;
+        background-size: cover;
+    }
+ 
+    .page2 > p:nth-child(6) {
+        width: 25%;
+        background: url(../images/w4.jpg) no-repeat center;
+        background-size: contain;
+        background-color: #fff;
+    }
+ 
+    .page2 > p:nth-child(7) {
+        width: 25%;
+        background-color: #555;
+    }
+ 
+    .page2 > p:nth-child(8) {
+        width: 25%;
+        background: url(../images/w5.jpg) no-repeat center;
+        background-size: cover;
+        background-color: #fff;
+    }
+ 
+    .page2 > p:nth-child(9) {
+        width: 25%;
+        background-color: #555;
+    }
+ 
+    .page2 > p:nth-child(10) {
+        width: 25%;
+        background: url(../images/w6.jpg) no-repeat center top;
+        background-size: cover;
+    }
+ 
+    .page2 > p:nth-child(11) {
+        width: 25%;
+        background: url(../images/w7.jpg) no-repeat center;
+        background-size: cover;
+        background-color: #fff;
+    }
+ 
+    /*3페이지(.page3) 공통 스타일 및 개별 스타일*/
+    .page3 p {
+        width: 25%;
+        height: 25%;
+        float: left;
+    }
+ 
+    .page3 > p:nth-child(1) {
+        width: 50%;
+        height: 100%;
+        background: url(../images/k1.jpg) no-repeat center top;
+        background-size: cover;
+        background-color: #fff;
+    }
+ 
+    .page3 > p:nth-child(2) {
+        background-color: #555;
+    }
+ 
+    .page3 > p:nth-child(3) {
+        background: url(../images/k2.jpg) no-repeat center;
+        background-size: cover;
+    }
+ 
+    .page3 > p:nth-child(4) {
+        width: 50%;
+        background-color: #222;
+    }
+ 
+    .page3 > p:nth-child(5) {
+        height: 50%;
+        background: url(../images/k3.jpg) no-repeat center top;
+        background-size: cover;
+    }
+ 
+    .page3 > p:nth-child(6) {
+        background-color: #777;
+    }
+ 
+    .page3 > p:nth-child(7) {
+        background: url(../images/k4.jpg) no-repeat center;
+        background-size: cover;
+    }
+ 
+ 
+    /* 컨텐츠 텍스트 스타일 */
+    section > div > p > strong {
+        display: block;
+        text-align: center;
+        font-size: 50px;
+        color: #fff;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        margin-left: -25px;
+    }
+ 
+    section > div > p > span {
+        display: block;
+        text-align: center;
+        font-size: 20px;
+        color: #eee;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        margin-left: -10px;
+    }
+ 
+    /* 웹 폰트 아이콘 스타일 */
+    section > div > p > em > a > i {
+        font-size: 30px !important;
+        color: #eee;
+        position: relative;
+        top: 50%;
+        margin-top: -15px;
+        opacity: 0.5;
+        margin: 0 15px;
+        transition: all 0.5s;
+    }
+ 
+    section > div > p > em > a > i:hover {
+        opacity: 1;
+        transform: scale(1.2);
+    }

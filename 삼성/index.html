@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Samsungwelstory</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="css/customer.css">
+<!-- JS   -->
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/scrolla.jquery.min.js"></script>
+<script src="js/script_main.js"></script>
+<script>   var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+
+        //탭메뉴
+
+        $(function() {
+            
+            
+            $('.tabMenu .list li a').on('click', function() {
+                var num = $('.tabMenu .list li a').index($(this));
+                //.tabmenu .list li a의 인덱스 번호를 (num)에저장 -> .index($(this)); 는 클릭한 리스트 자신
+
+
+                $('.tabMenu .box').removeClass('on'); //모든탭을 닫아라
+                $('.tabMenu .box:eq(' + num + ')').addClass('on');
+                $('.tabMenu .list li').removeClass('on'); //모든 li의 테두리 변경
+                $(this).parent().addClass('on'); //..tabMenu .list li a 부모인 li에 on 클래스 부여(해당 탭의 테두리 변경)
+            });
+        });
+    </script>
+</head>
+<body id="body">
+   <div id="id01" class="modal">
+
+        <div class="tabMenu animate">
+            <ul class="list">
+                <li class="on"><a href="#">위탁급식 문의</a></li>
+                <li><a href="#">식자재구매 문의</a></li>
+                <li><a href="#">고객의소리</a></li>
+            </ul>
+            <div class="box on">
+                <form class="modal-content " action="/action_page.php" method="post">
+
+                   
+            
+
+                   
+                    <ul class="datalist">
+                    
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+
+ <div class="checkbox">
+                        <b><label for="checkbox">문의항목</label></b>
+                        <select id="cars" name="checkbox">
+
+                            <option value="1">항목 선택</option>
+                            <option value="2">일반급식</option>
+                            <option value="3">병원급식</option>
+                            <option value="4">골프장 식음료</option>
+                            <option value="5">외식 위탁문의</option>
+
+                        </select>
+                    </div>
+                        <li><label for="register" title="필수항목"><b>담당자명</b></label>
+                            <input type="text" placeholder="" name="register"></li>
+                        <li><label for="phone" title="필수항목"><b>회사번호</b></label>
+                            <input type="text" placeholder=" - 없이 입력해주세요" name="phone" value style="IME-MODE: disabled" maxlength="11">
+                        <li><label for="company_name" title="필수항목"><b>회사명</b></label>
+                            <input type="text" placeholder="" name="company_name"></li>
+
+                        <li><label for="post1" title="필수항목"><b>회사주소</b></label>
+                            <input type="text" placeholder="" name="post1"></li>
+
+                        <li><label for="post2" title="필수항목"><b>상세주소</b></label>
+                            <input type="text" placeholder="" name="post2"></li>
+
+                        <li class="content_comm"> <label for="advice" title="필수항목"><b>상담내용</b></label>
+                            <div class="insert" style="padding-top: 10px;">
+                                <textarea id="content_comm" name="content_comm" placeholder="*상담내용을 작성해주세요*
+			
+※ 아래 내용을 함께 보내주시면,빠른처리를 도와드립니다.
+
+  기업명 :
+  소재지 :
+  업군(급식/외식, 단체급식/레스토랑,카페등):
+  매출규모(월 식재료비):"></textarea>
+
+                            </div>
+                        </li>
+
+
+
+                        <li>
+                            <div class="customer_O">
+                                개인정보 수집 및 활용동의<input type="checkbox" checked="checked" name="remember">
+
+                            </div>
+                        </li>
+
+
+                        <div class="buttonS">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+                            <button type="submit">확인</button>
+                        </div>
+                    </ul>
+
+
+                </form>
+            </div>
+            <div class="box">
+              <form class="modal-content " action="/action_page.php" method="post">
+
+
+
+                    <ul class="datalist">
+ <div class="checkbox">
+                       
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <b><label for="text">문의항목</label></b>
+                    <p>식자재 구매 문의</p>
+                    </div>
+                        <li><label for="register" title="필수항목"><b>담당자명</b></label>
+                            <input type="text" placeholder="" name="register"></li>
+                        <li><label for="phone" title="필수항목"><b>회사번호</b></label>
+                            <input type="text" placeholder=" - 없이 입력해주세요" name="phone" value style="IME-MODE: disabled" maxlength="11">
+                        <li><label for="company_name" title="필수항목"><b>회사명</b></label>
+                            <input type="text" placeholder="" name="company_name"></li>
+
+                        <li><label for="post1" title="필수항목"><b>회사주소</b></label>
+                            <input type="text" placeholder="" name="post1"></li>
+
+                        <li><label for="post2" title="필수항목"><b>상세주소</b></label>
+                            <input type="text" placeholder="" name="post2"></li>
+
+                        <li class="content_comm"> <label for="advice" title="필수항목"><b>상담내용</b></label>
+                            <div class="insert" style="padding-top: 10px;">
+                                <textarea id="content_comm" name="content_comm" placeholder="*상담내용을 작성해주세요*
+			
+※ 아래 내용을 함께 보내주시면,빠른처리를 도와드립니다.
+
+  기업명 :
+  소재지 :
+  업군(급식/외식, 단체급식/레스토랑,카페등):
+  매출규모(월 식재료비):"></textarea>
+
+                            </div>
+                        </li>
+
+
+
+                        <li>
+                            <div class="customer_O">
+                                개인정보 수집 및 활용동의<input type="checkbox" checked="checked" name="remember">
+
+                            </div>
+                        </li>
+
+
+                        <div class="buttonS">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+                            <button type="submit">확인</button>
+                        </div>
+                    </ul>
+
+
+                </form>
+            </div>
+            <div class="box">
+                C
+            </div>
+            <div class="box">
+                D
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <!--header-->
+        <header>
+            <div class="icon">
+               
+                <div class="btn1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="#">문의하기</a></div>
+                <div class="btn2"><a href="#">채용센터</a></div>
+                 <div class="sns1"><a href="#"><img src="img/facebook.png" alt=""></a></div>
+                <div class="sns2"><a href="#"><img src="img/instagram.png" alt=""></a></div>
+
+            </div>
+            <div class="logo"><a href="index.html"><img src="img/169466_375341_1851_20190424142243388.jpg" alt="logoimg" class="logoPc"><img src="img/logoMo.png" alt="logo" class="logoMo">
+                </a>
+            </div>
+            <nav class="innerheader">
+                <ul>
+                    <li><a href="subpage1/subpage1.html">
+                            <p>회사소개</p>
+                        </a></li>
+                    <li><a href="subpage2/subpage2.html">
+                            <p>푸드서비스</p>
+                        </a></li>
+                    <li><a href="subpage3/subpage3.html">
+                            <p>식자재유통</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>홍보센터</p>
+                        </a></li>
+                </ul>
+            </nav>
+            
+            
+            <a href="#" class="menuOpen"><span class="lnr lnr-menu"></span></a>
+            <!--gnb-->
+
+                      <nav class="gnb_mo">
+   
+      	<a href="#" class="close"><span><i class="fa fa-times" aria-hidden="true"></i></span> </a>
+      
+      	
+      	
+                     <ul>
+                    <a href="index.html"><h1 class="logo"><img src="/img/logoMo.png" alt="" class="logo"></h1></a>
+
+                    <div class="sns_Mo">
+                        <p class="text">
+                            <a href="#">채용안내</a>
+                            <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">문의하기</a>
+                        </p>
+                        <a href="#"><img src="/img/facebook_mo.png" alt=""></a>
+                        <a href="#"><img src="/img/instagram_M.png" alt=""></a>
+                        <a href="#"><img src="/img/twiiter.png" alt=""></a>
+                    </div>
+                    <li>
+                        <a href="#">회사소개</a>
+                        <ul class="inner">
+                            <li><a href="../subpage1/subpage1.html#welstory">삼성웰스토리</a></li>
+                            <li><a href="../subpage1/subpage1.html#vision">비전과 연혁</a></li>
+                            <li><a href="../subpage1/subpage1.html#sustainability">지속가능경영</a></li>
+                            <li><a href="../subpage1/subpage1.html#location">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">푸드산업서비스</a>
+                        <ul class="inner">
+                            <li><a href="../subpage2/subpage2.html#business">푸드산업서비스 사업</a></li>
+                            <li><a href="../subpage2/subpage2.html#brand">브랜드</a></li>
+                            <li><a href="../subpage2/subpage2.html#competitive">경쟁력</a></li>
+                            <li><a href="../subpage2/subpage2.html#rnd">연구개발</a></li>
+                            <li><a href="../subpage2/subpage2.html#event">이벤트</a></li>
+                            <li><a href="../subpage2/subpage2.html#place">주요사업장</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">식자재유통</a>
+                        <ul class="inner">
+                            <li><a href="../subpage3/subpage3.html#foodDstribution">식자재유통 사업</a></li>
+                            <li><a href="../subpage3/subpage3.html#productnbrand">상품과 브랜드</a></li>
+                            <li><a href="../subpage3/subpage3.html#competitive">경쟁력</a></li>
+                            <li><a href="../subpage3/subpage3.html#infra">인프라</a></li>
+                            <li><a href="../subpage3/subpage3.html#solution">고객지원솔루션</a></li>
+                            <li><a href="../subpage3/subpage3.html#customer">주요고객사</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">홍보센터</a>
+                        <ul class="inner">
+                            <li><a href="#">새로운 소식</a></li>
+                            <li><a href="#">홍보자료</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+				</nav>
+
+       
+        </header>
+        <!--main-->
+        <div class="top"><a href="#body"><i class="fa fa-angle-double-up" aria-hidden="true"></i></a></div>
+        <div class="mainvisual">
+            <div class="text">
+                <h1 class="mainH1">식재료의 품질은 식탁에 <br class="Mo">오를 때까지 타협하지 않습니다.</h1>
+                <p1 class="mainP1">위해식품은 사전에 차단하고 식재료가 식탁에 오를 때까지 깐깐하게 관리합니다. <br class="Mo">식품연구소의 전문 기술로 식재료의 안전과 더 나은 맛을 연구합니다. </p1>
+            </div>
+        </div>
+        <div class="mainvisual2">
+            <div class="mainvisualText">
+                <h2>Cook The Healthy Life</h2><br>
+                <p3>당신미래의, 건강 웰스토리가 미리 생각합니다. 편리하게 영양을 챙기고<br class="Mo"> 맛을 즐길 수 있는 음식을 개발합니다. <br class="MoNo">실버세대와 환자들의 안전한 식사,<br class="Mo">다이어트를 위한 맛있는 건강식,바쁜 직장인들의 간편하지만 만족스러운<br class="Mo">한 끼.미래의 식생활을 채워줄 상품과 기술을 웰스토리가 연구합니다.
+                </p3>
+            </div>
+        </div>
+        <!--section-->
+        <section class="section1">
+            <div class="welstory1">
+               <img src="img/curatorMo.png" alt="section1" class="welstoryImg">
+                <div class="text">
+                
+                    <h2>Food Life Curator</h2>
+                    <p2 class="textp2">건강한 하루, 맛있는 일상!<br>푸드라이프 큐레이터 삼성웰스토리가 만듭니다.<br></p2>
+                    <p3 class="text1">국내 식음 트렌드를 선도하며 고객이 가장<br>선호하는 브랜드로 성장한 삼성웰스토리는<br>‘건강한 삶’을 기본 가치로 식생활의 건강한 <br>변화를 만들어 갑니다.</p3>
+                    <p3 class="text2">또한, 미래의 식생활과 건강한 먹거리를<br>
+                        준비하고 건강관리의 노하우를 접목한<br>
+                        모바일 솔루션을 개발하여 스마트한<br>
+                        Food Life를 만들고 있습니다.</p3>
+
+                </div>
+            </div>
+            <div class="welstory2">
+               <img src="img/business_M.png" alt="section2" class="businessImg">
+                <div class="text">
+                    <h2>Food Life Business.</h2>
+                    <p2>건강하고 행복한 오늘을 만들어 갑니다.<br></p2>
+                    <p3 class="text1">건강하고 행복한 오늘을 만들어가는 사업을<br>합니다. 삼성웰스토리는 식음 대표 기업으로<br>,국내외 식음서비스, 식자재 유통, 식품 전문<br>쇼핑몰까지 다양한 영역에서 함께 합니다.</p3>
+                    <p3 class="text2">
+                        삼성웰스토리는 신선한 식자재와 프리미엄<br>식음서비스, 미래 먹거리까지, 건강한 푸드<br>라이프의 시작과 끝까지 책임지고 있습니다.
+                    </p3>
+                </div>
+            </div>
+            <div class="welstory3">
+               <img src="img/distributionM.png" alt="section3" class="distributionImg">
+                <div class="text">
+                    <h2>Food Distribution.</h2>
+                    <p3>삼성웰스토리만의 150여 개 품질관리 체크리스트를<br>적용한 현지의 우수 브랜드 상품을 공급하고, 국내 및<br>중국 현지 식품연구소에서 안전성 검사를 실시합니다.<br>특히, 축수산품은 과학적 생산이력관리를 통해 원재료<br>부터 고객배송까지 전 프로세스를 관리합니다.<br></p3>
+                    <div class="btn"><a href="#">view more <i class="fa fa-ellipsis-h" aria-hidden="true"></i></a></div>
+                </div>
+            </div>
+        </section>
+        <!--release-->
+        <section class="release">
+            <ul class="pressRelease animate" data-animate="fadeIn" data-duration="1.8s" data-delay="1.0s">
+                <li class="news">
+                    <h1>보도자료</h1><span>삼성웰스토리의 다양한 최신 보도자료를<br>
+                        지금 바로 확인 하실 수 있습니다. </span><br> <a href="#" class="viewmore">
+                        <p>view more</p>
+                    </a>
+                </li>
+                <li><a href=""><img src="img/8777dc26-bc5f-4bf0-80ef-f5d9f45ccfc5-file.png" alt="음식먹는 여자"></a>Lorem ipsum dolor sit amet, consectesimilique corrupti inventore</li>
+                <li><a href=""><img src="img/thumb_03.jpg" alt="음식사는 여자"></a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit perferendis magni ipsum similique corrupti inventore</li>
+                <li class="foster"><a href="#"><img src="img/thumb_05_m.png" alt="포스터"></a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit perferendis magni ipsum similique corrupti inventore</li>
+            </ul>
+            <div class="gnb">
+                <ul class="btn">
+                    <li class="li1"><i class="fa fa-bullhorn" aria-hidden="true"></i><a href="#">
+                            <p>공지사항<br><span>SAMSUNGWELSTORY의 새로운 소식을 전해드립니다.</span></p>
+                        </a></li>
+                    <li class="li2"><i class="fa fa-address-card-o" aria-hidden="true"></i><a href="#">
+                            <p>인재채용<br><span>SAMSUNGWELSTORY의 새로운 소식을 전해드립니다.</span></p>
+                        </a></li>
+                    <li><i class="fa fa-map-o" aria-hidden="true"></i><a href="#">
+                            <p>오시는 길<br><span>본사위치 및 연락처를 안내드립니다.</span></p>
+                        </a></li>
+                </ul>
+            </div>
+        </section>
+        <!--footer-->
+        <footer>
+            <div class="ncLogo"><a href="index.html"><img src="img/169466_375341_1851_20190424142243388.jpg" alt="logo"></a></div>
+            <div class="text">
+                <p><a href="#" class="text1">이용약관</a><a href="#">개인정보처리방침</a><a href="#">오시는 길</a><a href="#">사이트 맵</a></p><span>경기도 성남시 분당구 구미로 8 (구미동, 엠타워)<br>사업자등록번호 104-86-51732<br>Copyright © 2014, SAMSUNG WELSTORY INC. All rights Reserved.<br></span>
+            </div>
+        </footer>
+    </div>
+
+</body></html>

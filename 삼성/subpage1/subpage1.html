@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>회사소개</title>
+    <link rel="stylesheet" href="../css/subpage1.css">
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/font-awesome-4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <script src="../js/script_main.js"></script>
+    <link rel="stylesheet" href="../css/customer.css">
+</head>
+
+<body id="body">
+   <div id="id01" class="modal">
+
+        <div class="tabMenu animate">
+            <ul class="list">
+                <li class="on"><a href="#">위탁급식 문의</a></li>
+                <li><a href="#">식자재구매 문의</a></li>
+                <li><a href="#">고객의소리</a></li>
+            </ul>
+            <div class="box on">
+                <form class="modal-content " action="/action_page.php" method="post">
+
+                   
+                    <ul class="datalist">
+ <div class="checkbox">
+                       
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <b><label for="checkbox">문의항목</label></b>
+                        <select id="cars" name="checkbox">
+
+                            <option value="1">항목 선택</option>
+                            <option value="2">일반급식</option>
+                            <option value="3">병원급식</option>
+                            <option value="4">골프장 식음료</option>
+                            <option value="5">외식 위탁문의</option>
+
+                        </select>
+                    </div>
+                        <li><label for="register" title="필수항목"><b>담당자명</b></label>
+                            <input type="text" placeholder="" name="register"></li>
+                        <li><label for="phone" title="필수항목"><b>회사번호</b></label>
+                            <input type="text" placeholder=" - 없이 입력해주세요" name="phone" value style="IME-MODE: disabled" maxlength="11">
+                        <li><label for="company_name" title="필수항목"><b>회사명</b></label>
+                            <input type="text" placeholder="" name="company_name"></li>
+
+                        <li><label for="post1" title="필수항목"><b>회사주소</b></label>
+                            <input type="text" placeholder="" name="post1"></li>
+
+                        <li><label for="post2" title="필수항목"><b>상세주소</b></label>
+                            <input type="text" placeholder="" name="post2"></li>
+
+                        <li class="content_comm"> <label for="advice" title="필수항목"><b>상담내용</b></label>
+                            <div class="insert" style="padding-top: 10px;">
+                                <textarea id="content_comm" name="content_comm" placeholder="*상담내용을 작성해주세요*
+			
+※ 아래 내용을 함께 보내주시면,빠른처리를 도와드립니다.
+
+  기업명 :
+  소재지 :
+  업군(급식/외식, 단체급식/레스토랑,카페등):
+  매출규모(월 식재료비):"></textarea>
+
+                            </div>
+                        </li>
+
+
+
+                        <li>
+                            <div class="customer_O">
+                                개인정보 수집 및 활용동의<input type="checkbox" checked="checked" name="remember">
+
+                            </div>
+                        </li>
+
+
+                        <div class="buttonS">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+                            <button type="submit">확인</button>
+                        </div>
+                    </ul>
+
+
+                </form>
+            </div>
+            <div class="box">
+              <form class="modal-content " action="/action_page.php" method="post">
+
+               
+
+                   
+                    <ul class="datalist">
+ <div class="checkbox">
+                       
+                        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        <b><label for="text">문의항목</label></b>
+                    <p>식자재 구매 문의</p>
+                    </div>
+                        <li><label for="register" title="필수항목"><b>담당자명</b></label>
+                            <input type="text" placeholder="" name="register"></li>
+                        <li><label for="phone" title="필수항목"><b>회사번호</b></label>
+                            <input type="text" placeholder=" - 없이 입력해주세요" name="phone" value style="IME-MODE: disabled" maxlength="11">
+                        <li><label for="company_name" title="필수항목"><b>회사명</b></label>
+                            <input type="text" placeholder="" name="company_name"></li>
+
+                        <li><label for="post1" title="필수항목"><b>회사주소</b></label>
+                            <input type="text" placeholder="" name="post1"></li>
+
+                        <li><label for="post2" title="필수항목"><b>상세주소</b></label>
+                            <input type="text" placeholder="" name="post2"></li>
+
+                        <li class="content_comm"> <label for="advice" title="필수항목"><b>상담내용</b></label>
+                            <div class="insert" style="padding-top: 10px;">
+                                <textarea id="content_comm" name="content_comm" placeholder="*상담내용을 작성해주세요*
+			
+※ 아래 내용을 함께 보내주시면,빠른처리를 도와드립니다.
+
+  기업명 :
+  소재지 :
+  업군(급식/외식, 단체급식/레스토랑,카페등):
+  매출규모(월 식재료비):"></textarea>
+
+                            </div>
+                        </li>
+
+
+
+                        <li>
+                            <div class="customer_O">
+                                개인정보 수집 및 활용동의<input type="checkbox" checked="checked" name="remember">
+
+                            </div>
+                        </li>
+
+
+                        <div class="buttonS">
+                            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">취소</button>
+                            <button type="submit">확인</button>
+                        </div>
+                    </ul>
+
+
+                </form>
+            </div>
+            <div class="box">
+                C
+            </div>
+            <div class="box">
+                D
+            </div>
+        </div>
+    </div>
+    <div class="wrap">
+        <header>
+            <div class="icon">
+
+                <div class="btn1" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"><a href="#">문의하기</a></div>
+                <div class="btn2"><a href="#">채용센터</a></div>
+                <div class="sns1"><a href="#"><img src="img/facebook.png" alt=""></a></div>
+                <div class="sns2"><a href="#"><img src="img/instagram.png" alt=""></a></div>
+
+            </div>
+
+            <div class="logo"><a href="../index.html"><img src="img/169466_375341_1851_20190424142243388.jpg" alt="logoimg" class="logoPc"><img src="../img/logoMo.png" alt="logo" class="logoMo">
+                </a>
+            </div>
+            <nav class="innerheader">
+                <ul>
+                    <li><a href="../subpage1/subpage1.html">
+                            <p>회사소개</p>
+                        </a></li>
+                    <li><a href="../subpage2/subpage2.html">
+                            <p>푸드서비스</p>
+                        </a></li>
+                    <li><a href="../subpage3/subpage3.html">
+                            <p>식자재유통</p>
+                        </a></li>
+                    <li><a href="#">
+                            <p>홍보센터</p>
+                        </a></li>
+                </ul>
+            </nav>
+            <a href="#" class="menuOpen"><span class="lnr lnr-menu"></span></a>
+
+            <!--gnb-->
+            <nav class="gnb_mo">
+
+                <a href="#" class="close"><span><i class="fa fa-times" aria-hidden="true"></i></span> </a>
+
+
+
+                <ul>
+                    <a href="../index.html"><h1 class="logo"><img src="../img/logoMo.png" alt="" class="logo"></h1></a>
+
+                    <div class="sns_Mo">
+                        <p class="text">
+                            <a href="#">채용안내</a>
+                             <a href="#" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">문의하기</a>
+                        </p>
+                        <a href="#"><img src="../img/facebook_mo.png" alt=""></a>
+                        <a href="#"><img src="../img/instagram_M.png" alt=""></a>
+                        <a href="#"><img src="../img/twiiter.png" alt=""></a>
+                    </div>
+                    <li>
+                        <a href="#">회사소개</a>
+                        <ul class="inner">
+                            <li><a href="#welstory">삼성웰스토리</a></li>
+                            <li><a href="#vision">비전과 연혁</a></li>
+                            <li><a href="#sustainability">지속가능경영</a></li>
+                            <li><a href="#location">오시는 길</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">푸드산업서비스</a>
+                        <ul class="inner">
+                            <li><a href="../subpage2/subpage2.html#business">푸드산업서비스 사업</a></li>
+                            <li><a href="../subpage2/subpage2.html#brand">브랜드</a></li>
+                            <li><a href="../subpage2/subpage2.html#competitive">경쟁력</a></li>
+                            <li><a href="../subpage2/subpage2.html#rnd">연구개발</a></li>
+                            <li><a href="../subpage2/subpage2.html#event">이벤트</a></li>
+                            <li><a href="../subpage2/subpage2.html#place">주요사업장</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">식자재유통</a>
+                        <ul class="inner">
+                            <li><a href="../subpage3/subpage3.html#foodDstribution">식자재유통 사업</a></li>
+                            <li><a href="../subpage3/subpage3.html#productnbrand">상품과 브랜드</a></li>
+                            <li><a href="../subpage3/subpage3.html#competitive">경쟁력</a></li>
+                            <li><a href="../subpage3/subpage3.html#infra">인프라</a></li>
+                            <li><a href="../subpage3/subpage3.html#solution">고객지원솔루션</a></li>
+                            <li><a href="../subpage3/subpage3.html#customer">주요고객사</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">홍보센터</a>
+                        <ul class="inner">
+                            <li><a href="#">새로운 소식</a></li>
+                            <li><a href="#">홍보자료</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+        <div class="top"><a href="#body"><img src="img/top.png" alt="상단바로가기"></a></div>
+        <section class="company" id="company">
+            <div class="companyText">
+                <h2>Company.</h2>
+                <p1>더 나은<br>푸드 라이프를 만듭니다.<br></p1>
+                <p2>식음서비스부터 식자재공급까지<br>
+                    국내외 고객의 건강한 푸드라이프를 위해<br>최고의 상품과 서비스를 준비합니다.<br>
+                </p2>
+            </div>
+        </section>
+        <section class="welstory" id="welstory">
+            <div class="welstoryImg">
+                <p class="img"><img src="img/section1.png" alt=""></p>
+            </div>
+            <div class="border">
+                <div class="welstoryText">
+                    <h2>Welstory. <br></h2>
+
+                    <p1>식음서비스의 모든<br>
+                        솔루션을 제공합니다. <br></p1>
+                    <p2><br>삼성웰스토리는 푸드서비스를 시작으로<br>식자재 유통 서비스 뿐만 아니라,<br>글로벌 식음서비스까지 제공합니다. </p2>
+                    <br class="MoNo"><br>
+                    <p3><a href="#">view more</a></p3>
+                </div>
+            </div>
+        </section>
+        <section class="vision" id="vision">
+            <div class="visionImg">
+                <p class="img"><img src="img/section2.png" alt=""></p>
+            </div>
+            <div class="border">
+                <div class="visionText">
+                    <h2>Vision.</h2>
+                    <p1>더 건강하고 행복한<br>
+                        세상을 만듭니다.<br></p1>
+                    <p2><br>삼성웰스토리는 글로벌 식음 기업으로서<br>
+                        건강한 식문화를 선도하며 삶의 질을<br>
+                        높이겠습니다.</p2>
+                    <br class="MoNo"><br>
+                    <p3><a href="#">view more </a></p3>
+                </div>
+            </div>
+        </section>
+
+        <div class="sustainability" id="sustainability">
+            <div class="sustainabilityText">
+                <h2>Sustainability.</h2>
+                <p2>지역사회와 상생하고<br>
+                    환경을 생각합니다.고객, 임직원, 파트너와<br>
+                    지역사회가 건강할 수 있도록<br>
+                    노력합니다.<br>
+                </p2>
+            </div>
+        </div>
+        <section class="location" id="location">
+            <div class="locationImg">
+                <p><img src="img/section4.png" alt=""></p>
+            </div>
+            <div class="locationText">
+                <h2>Location.</h2>
+                <p1>국내외 사업장에 방문을 원하시나요?</p1><br>
+                <p2>삼성웰스토리 본사 및 물류센터,해외 사업장을 안내해 드립니다.</p2>
+                <p3><a href="#">view more</a></p3>
+            </div>
+        </section>
+
+        <footer>
+            <div class="ncLogo"><a href="index.html"><img src="img/169466_375341_1851_20190424142243388.jpg" alt="logo"></a></div>
+            <div class="text">
+                <p><a href="#" class="text1">이용약관</a><a href="#">개인정보처리방침</a><a href="#">오시는 길</a><a href="#">사이트 맵</a></p><span>경기도 성남시 분당구 구미로 8 (구미동, 엠타워)<br>사업자등록번호 104-86-51732<br>Copyright © 2014, SAMSUNG WELSTORY INC. All rights Reserved.<br></span>
+            </div>
+
+        </footer>
+
+
+    </div>
+<script>   
+	
+	var modal = document.getElementById('id01');
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+
+        //탭메뉴
+
+        $(function() {
+            
+            
+            $('.tabMenu .list li a').on('click', function() {
+                var num = $('.tabMenu .list li a').index($(this));
+                //.tabmenu .list li a의 인덱스 번호를 (num)에저장 -> .index($(this)); 는 클릭한 리스트 자신
+
+
+                $('.tabMenu .box').removeClass('on'); //모든탭을 닫아라
+                $('.tabMenu .box:eq(' + num + ')').addClass('on');
+                $('.tabMenu .list li').removeClass('on'); //모든 li의 테두리 변경
+                $(this).parent().addClass('on'); //..tabMenu .list li a 부모인 li에 on 클래스 부여(해당 탭의 테두리 변경)
+            });
+        });
+    </script>
+</body></html>

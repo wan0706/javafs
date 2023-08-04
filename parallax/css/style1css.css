@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Righteous);
+/*기본 초기화*/
+ 
+    * { margin: 0; padding: 0; }
+ 
+    ol, ul { list-style: none; }
+ 
+    a {
+        text-decoration: none;
+        color: #555;
+        outline: 0;
+    }
+ 
+    img {
+        border: 0;
+    }
+ 
+    body {
+        font: 12px/1.6 arial;
+        color: #555;
+    }
+ 
+ 

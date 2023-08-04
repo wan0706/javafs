@@ -1,0 +1,217 @@
+@charset "utf-8";
+
+/* reset.css 가져오기 */
+@import url(reset.css);
+
+/* 웹 폰트 적용 */
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+/*배경 이미지 지정*/
+.wrap { 
+    position: fixed;    /*위치값 고정*/
+    width: 100%;        /*너비 전체(100%)*/
+    height: 100%;       /*높이 전체(100%)*/
+    min-width: 1024px;  /*최소 너비 지정*/
+    min-height: 768px;  /*최소 높이 지정*/
+    background-image: url(../images/bg.jpg);    /*배경 이미지 지정*/
+    background-repeat: no-repeat;    /*배경 이미지 반복 없음*/    
+    background-position: center bottom;    /*배경 이미지 위치: 가로 가운데, 세로 아래*/
+    background-size: cover;    /*배경 이미지는 화면에 가득 채우기*/
+}
+ 
+ 
+ 
+/*로고 영역*/
+#logo { 
+    position: fixed;    /*위치 고정*/
+    width: 300px;       /*너비 지정*/
+    text-align: center; /*글자(텍스트)는 가로 가운데 정렬*/
+    line-height: 0.8;   /*줄간격은 기준크기의 80%로 지정*/
+    top: 240px;         /*위쪽에서 아래쪽으로 240px 이동*/
+    left: 0;            /*왼쪽에서 오른쪽으로 0px 이동*/
+}
+ 
+#logo strong {
+    font: bold 16px/1.1 Verdana;    /*진하게 글자크기/줄간격 글꼴종류*/
+    color: #333;                    /*글자색은 진회색*/
+}
+ 
+#logo img {
+    width: 200px;    /*이미지 너비 조정*/
+    height: auto;    /*이미지 높이는 너비에 맞추어 자동 조정*/
+}
+ 
+#logo span {
+    font: 12px/1.6 arial bold;    /*글자크기/줄간격 글꼴종류 진하게*/
+    color: #444;                  /*글자색은 진회색*/
+    letter-spacing: 5px;          /*자간(글자 간격) 지정*/
+}
+ 
+ 
+ 
+/*슬로건 영역*/
+.txt {
+    position: fixed;           /*위치 고정*/
+    font: 30px/0.8 Raleway;    /*글자크기/줄간격 글꼴종류*/
+    color: #111;               /*글자색은 진회색*/
+    top: 400px;                /*위쪽에서 아래쪽으로 400px 이동*/
+    left: 40px;                /*왼쪽에서 오른쪽으로  40px 이동*/
+}
+ 
+.txt span {
+    font-size: 30px;    
+    color: #888;        /*글자색은 중간회색색*/
+}
+ 
+ 
+ 
+/*웹 폰트 아이콘 영역 스타일*/
+.sns {
+    position: fixed;    /*위치 고정*/
+    top: 30px;          /*위쪽에서 아래쪽으로 30px 이동*/
+    right: 50px;        /*오른쪽에서 왼쪽으로 50px 이동*/
+    z-index: 10;        /*영역의 우선순위를 10으로 지정*/
+}
+ 
+.sns li {
+    float: left;        /*아이콘을(li태그를) 옆으로 배열*/
+    margin-left: 30px;  /*각 아이콘의 왼쪽 여백을 30px 로 지정*/
+}
+ 
+.sns li a {
+    font-size: 22px;    /*웹 폰트 아이콘 크기 지정*/
+    color: #555;        /*웹 폰트 아이콘 색상 지정*/
+}
+ 
+ 
+ 
+/*컨텐츠(section) 영역*/
+section {
+    position: fixed;    /*상대 위치 지정*/
+    width: 100%;        /*너비 지정(100%)*/
+    height: 100%;       /*높이 지정(100%)*/
+    top: 0;             /*기준 세로 위치는 상단으로 지정*/
+    right: 0;           /*기준 가로 위치는 우측으로 지정*/
+}
+ 
+ 
+ 
+/*메뉴(div.nav) 영역*/
+div.nav {
+    position: relative;    /*위치 고정*/
+    width: 12%;         /*너비 지정*/
+    height: 100%;       /*높이 지정*/
+    float: right;       /*가로 기준 위치를 오른쪽부터 가로로 배치*/ 
+    overflow: hidden;   /*지정 영역을 초과하면 숨김 처리*/
+    background-image: url(../images/divider.png);   /*이미지(구분선)*/
+    background-repeat: no-repeat;    /*반복 속성 없음*/
+    background-position: left center;    /*가로 왼쪽, 세로 가운데 위치 지정정*/
+}
+ 
+/*제목*/
+div.nav h2 {
+    position: absolute; /*부모 기준 절대 위치 지정*/
+    top: 300px;         /*위쪽에서 아래쪽으로 300px 이동*/
+    left: 20px;         /*왼쪽에서 오른쪽으로  20px 이동*/
+    font: bold 20px Raleway;    /*진하게 글꼴크기 글꼴종류*/
+    border-left: 3px solid #555;    /*왼쪽 테두리 지정*/
+    padding-left: 15px;         /*왼쪽 내부 여백 지정으로 테두리와의 간격 조정*/
+    color: #666;        /*글자색 지정*/
+    z-index: 5;         /*제목 영역 우선 순위 지정*/
+    transition: all 0.6s;    /*상태 변화 속성 및 시간 지정*/
+}
+ 
+/*제목 배경 스타일*/
+div.nav div {
+    position: absolute; /*부모 기준 절대 위치 지정*/
+    top: 300px;         /*위쪽에서 아래쪽으로 300px 이동*/
+    left: 0;            /*왼쪽 0px 위치로 이동*/
+    width: 100%;        /*너비 지정*/
+    height: 0;          /*높이 지정*/
+    background-color: #000; /*배경색 지정*/
+    opacity: 0.5;       /*투명도 지정*/
+    z-index: 2;         /*영역 우선 순위 지정*/
+    transition: all 0.6s;   /*상태 변화 속성 및 시간 지정*/
+}
+ 
+/*제목에 마우스 호버 효과 지정*/
+div.nav:hover h2 {
+    color: #ccc;                    /*글자색 변경*/
+    border-left: 3px solid #ccc;    /*왼쪽 테두리 변경*/
+}
+ 
+/*제목 배경 효과*/
+div.nav:hover div {
+    top: 270px;         /*위쪽에서 아래쪽으로 270px 이동*/
+    height: 70px;       /*높이 지정*/
+}
+ 
+ 
+ 
+/*비디오(동영상)*/
+div.nav video { 
+    position: absolute; /*부모 기준 절대 위치*/
+    width: auto;        /*너비는 자동으로 지정(auto)*/
+    height: 100%;       /*높이 지정*/
+    margin-top: 0;      /*위쪽 외부 여백 지정*/
+    margin-left: -100px;    /*왼쪽 외부 여백 지정(왼쪽으로 100px)*/
+    z-index: 1;         /*비디오 영역의 우선 순위 지정*/
+    opacity: 0;         /*기본 투명 처리리(동영상 숨김)*/
+}
+ 
+ 
+div.nav h3 {
+    position: absolute; /*부모 위치 기준 절대 위치*/
+    bottom: 210px;      /*아래쪽에서 위쪽으로 이동*/
+    right: -310px;      /*오른쪽으로 이동*/
+    font: 40px Raleway; /*글자크기 글꼴종류*/
+    color: #fff;        /*글자색 지정*/
+    text-align: right;  /*글자(텍스트) 가로 오른쪽으로 정렬*/
+    opacity: 1;         /*불투명도 지정*/
+    z-index: 4;         /*영역 우선 순위 지정*/
+}
+div.nav p {
+    position: absolute; /*부모 위치 기준 절대 위치*/
+    bottom: 50px;       /*아래쪽에서 위로*/
+    right: -310px;      /*오른쪽으로 이동*/
+    font: 12px/1.5 arial;    /*글자크기/줄간격 글꼴종류*/
+    color: #fff;        /*글자색*/
+    text-align: right;  /*글자(텍스트) 가로 오른쪽 정렬*/
+    opacity: 0.8;       /*불투명도 지정*/
+    z-index: 5;         /*영역 우선 순위 지정*/
+    width: 300px;       /*너비 지정*/
+    height: 150px;      /*높이 지정*/
+}
+ 
+ 
+ 
+/*푸터(footer) 영역*/
+footer {
+    position: fixed;            /*위치 고정*/
+    width: 100%;                /*너비 지정*/
+    height: 40px;               /*높이 지정*/
+    background-color: #000;     /*배경색 지정*/
+    color: #fff;                /*글자색 지정*/
+    font: 12px/3.3 Verdana;     /*글자크기/줄간격 글꼴종류*/
+    letter-spacing: 2px;        /*자간(글자 사이 간격) 지정*/
+    opacity: 0.4;               /*불투명도 지정*/
+    z-index: 10;                /*영역 우선 순위 지정*/
+    bottom: 0;                  /*아래쪽에 위치*/
+    left: 0;                    /*왼쪽에 위치*/
+}
+ footer ul {
+    position: absolute;    /*부모 기준 절대 위치*/
+    bottom: 0;             /*아래쪽에 위치*/
+    left: 50px;            /*왼쪽에서 오른쪽으로 이동*/
+}
+ footer ul li {
+    float: left;           /*왼쪽 기준 가로로 배열*/
+    margin-left: 40px;     /*왼쪽 외부 여백 지정*/
+}
+ 
+footer span {
+    position: absolute;    /*부모 기준 절대 위치*/
+    bottom: 0;             /*아래쪽에 위치*/
+    right: 50px;           /*오른쪽에서 왼쪽으로 이동*/
+}
+
+
