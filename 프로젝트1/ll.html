@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>review</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 10px;
+    }
+
+    body {
+      font-size: 1.5rem;
+    }
+
+    a {
+      text-decoration: none;
+      color: #999;
+      font-size: 1.5rem;
+    }
+
+    li {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    .section {
+      max-width: 1320px;
+      height: 100vh;
+      margin: 0 auto;
+    }
+
+    .section1 {
+      background: lightblue;
+    }
+
+    .section2 {
+      background: lightcoral;
+    }
+
+    .section3 {
+      background: lightslategray;
+    }
+
+    .section4 {
+      position: relative;
+      background: lightcyan;
+    }
+
+    /* tapMenu 시작 */
+    .tapMenuList {
+      display: flex;
+      justify-content: center;
+      position: absolute;
+      left: 50%;
+      top: 15%;
+      transform: translateX(-50%);
+      width: 100%;
+    }
+
+    .tapMenuList>li {
+      padding: 0 24px;
+    }
+
+    .tapMenuList>li>a {
+      font-size: 3rem;
+      color: #000;
+    }
+
+    .tapMenuList>li>a:hover {
+      color: #999;
+    }
+
+    /* /tapMenu 끝 */
+
+    /* card 시작 */
+    .cards {
+      height: 100vh;
+      /* display: flex; */
+      justify-content: center;
+      align-items: center;
+      display: none;
+    }
+
+    .cards.on {
+      display: flex;
+    }
+
+    .card {
+      width: 400px;
+      height: 500px;
+      /* background: lightgreen; */
+      background: #8ED3FF;
+      margin: 0 12px;
+      border-radius: 10%;
+      overflow: hidden;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+
+    .cardImg {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      border-bottom: 1px solid black;
+      background-image: url(images/travelImg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+
+    /* like 시작 */
+    .con-like {
+      --red: rgb(255, 50, 50);
+      position: absolute;
+      bottom: 10px;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+    }
+
+    .con-like .like {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      z-index: 20;
+      cursor: pointer;
+    }
+
+
+    .con-like .outline,
+    .con-like .filled {
+      fill: var(--red);
+      position: absolute;
+    }
+
+    .con-like .filled {
+      animation: kfr-filled 0.5s;
+      display: none;
+    }
+
+    .con-like .like:checked~.checkmark .filled {
+      display: block
+    }
+
+    @keyframes kfr-filled {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+    }
+
+    /* /like 끝 */
+
+
+
+    .userNickname {
+      padding: 8px 12px;
+    }
+
+    .userHashTag {
+      text-align: center;
+      padding-bottom: 2px;
+      color: #999;
+    }
+
+    .userContext {
+      word-break: break-all;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      height: 60px;
+      margin: 0 12px 8px;
+    }
+
+    .reviewDate {
+      margin-top: 8px;
+      text-align: right;
+    }
+
+    .reviewDate span {
+      width: 100%;
+      display: block;
+      padding: 0 24px 8px 0;
+      font-size: 0.9em;
+    }
+
+    .cardButtons {
+      border-top: 1px solid black;
+    }
+
+    .cardButtons>ul {
+      display: flex;
+    }
+
+    .cardButton {
+      width: 33.3%;
+      line-height: 60px;
+      text-align: center;
+    }
+
+    .cardButton:not(.btn3) {
+      border-right: 1px solid black;
+    }
+
+    .addBtn {
+      position: absolute;
+      left: 50%;
+      bottom: 11%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 50px;
+      color: #fff;
+      font-weight: bold;
+      background: #000;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* /card 끝 */
+
+    /* board 시작 */
+    .boardContainer {
+      display: none;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      /* background: lightblue; */
+      text-align: center;
+      width: 800px;
+      height: 500px;
+    }
+
+    .board {
+      width: 100%;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      border-collapse: collapse;
+    }
+
+    table th {
+      padding: 14px 21px;
+      background: #ececec;
+      /* 
+          #efefef
+          #eeeeee
+          #ececec
+          #cccccc
+          #dddddd
+          #333333
+          #666666
+          #999999
+        */
+      color: #666;
+      font-size: 1.2rem;
+      border-top: 2px solid #333;
+      border-bottom: 2px solid #ddd;
+    }
+
+    table td {
+      padding: 14px 21px;
+      color: #666;
+      font-size: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center;
+    }
+
+    .subject {
+      width: 45%;
+      text-align: left;
+    }
+
+    .subject:hover {
+      background: #eee;
+      cursor: pointer;
+    }
+
+    .boardContainer.on {
+      display: block;
+    }
+
+    /* /board 끝 */
+
+    /* center 시작 */
+    .centerIcons {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 250px;
+      background: lightblue;
+      align-items: center;
+      display: none;
+    }
+
+    .centerIcons.on {
+      display: flex;
+      text-align: center;
+    }
+
+    .icon {
+      width: 25%;
+    }
+
+    /* /center 끝 */
+
+    /* 모달 시작 */
+    .modal {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      display: none;
+      background-color: rgba(0, 0, 0, 0.4);
+    
+    }
+
+    .modal.show {
+      display: block;
+    }
+
+    .modalBody {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 800px;
+      height: 600px;
+      padding: 40px;
+      text-align: center;
+      background-color: rgb(255, 255, 255);
+      border-radius: 10px;
+      box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+      transform: translateX(-50%) translateY(-50%);
+    }
+    .btnOpenPopup{
+      position: fixed;
+      bottom: 100px;
+      right: 100px;
+      width: 100px;
+      height: 100px;
+      border-style: none;
+      border-radius: 50%;
+      border-color: #fff;
+    }
+    
+    /* 모달 끝 */
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="contatiner">
+      <header></header>
+      <section class="section section1"></section>
+      <section class="section section2"></section>
+      <section class="section section3"></section>
+
+
+      <section class="section section4">
+        <div class="tapMenus">
+          <div class="tapMenu">
+            <ul class="tapMenuList">
+              <li><a href="#">리뷰</a></li>
+              <li><a href="#">공지사항</a></li>
+              <li><a href="#">고객센터</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 카드 시작 -->
+        <div class="cards tabContent on">
+          <div class="card">
+            <div class="cardImg">
+              <!-- like 시작 -->
+              <div class="con-like">
+                <input class="like" type="checkbox" title="like">
+                <div class="checkmark">
+                  <svg class="outline" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                    </path>
+                  </svg>
+                  <svg class="filled" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <!-- /like 끝 -->
+            </div>
+            <h2 class="userNickname">보라돌이</h2>
+            <p class="userHashTag">#여행 #첫여행 #travel</p>
+            <p class="userContext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti alias,
+              at ex quas itaque voluptates quia vero, illum maiores consequuntur, veritatis culpa expedita corporis
+              nemo! Quas hic minima fuga alias quibusdam ipsum mollitia! Sit esse pariatur beatae neque optio.</p>
+            <div class="reviewDate">
+              <span class="travelPeriod">2023-08-03 ~ 2023-08-03</span>
+              <span class="userReviewDate">2023-08-03</span>
+            </div>
+
+            <!-- 카드 하단 임시 버튼 -->
+            <div class="cardButtons">
+              <ul>
+                <li class="cardButton btn1">a</li>
+                <li class="cardButton btn2">a</li>
+                <li class="cardButton btn3">a</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardImg">
+              <!-- like 시작 -->
+              <div class="con-like">
+                <input class="like" type="checkbox" title="like">
+                <div class="checkmark">
+                  <svg class="outline" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                    </path>
+                  </svg>
+                  <svg class="filled" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <!-- /like 끝 -->
+            </div>
+            <h2 class="userNickname">뚜비</h2>
+            <p class="userHashTag">#여행 #첫여행 #travel</p>
+            <p class="userContext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti alias,
+              at ex quas itaque voluptates quia vero, illum maiores consequuntur, veritatis culpa expedita corporis
+              nemo! Quas hic minima fuga alias quibusdam ipsum mollitia! Sit esse pariatur beatae neque optio.</p>
+            <div class="reviewDate">
+              <span class="travelPeriod">2023-08-03 ~ 2023-08-03</span>
+              <span class="userReviewDate">2023-08-03</span>
+            </div>
+            <!-- 카드 하단 임시 버튼 -->
+            <div class="cardButtons">
+              <ul>
+                <li class="cardButton btn1">a</li>
+                <li class="cardButton btn2">a</li>
+                <li class="cardButton btn3">a</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="cardImg">
+              <!-- like 시작 -->
+              <div class="con-like">
+                <input class="like" type="checkbox" title="like">
+                <div class="checkmark">
+                  <svg class="outline" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                    </path>
+                  </svg>
+                  <svg class="filled" viewBox="0 0 24 24">
+                    <path
+                      d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                    </path>
+                  </svg>
+                </div>
+              </div>
+              <!-- /like 끝 -->
+            </div>
+            <h2 class="userNickname">나나</h2>
+            <p class="userHashTag">#여행 #첫여행 #travel</p>
+            <p class="userContext">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reiciendis deleniti alias,
+              at ex quas itaque voluptates quia vero, illum maiores consequuntur, veritatis culpa expedita corporis
+              nemo! Quas hic minima fuga alias quibusdam ipsum mollitia! Sit esse pariatur beatae neque optio.</p>
+            <div class="reviewDate">
+              <span class="travelPeriod">2023-08-03 ~ 2023-08-03</span>
+              <span class="userReviewDate">2023-08-03</span>
+            </div>
+            <!-- 카드 하단 임시 버튼 -->
+            <div class="cardButtons">
+              <ul>
+                <li class="cardButton btn1">a</li>
+                <li class="cardButton btn2">a</li>
+                <li class="cardButton btn3">a</li>
+              </ul>
+            </div>
+          </div>
+          <button class="addBtn" type="submit">더보기</button>
+        </div>
+        <!-- /cards 끝 -->
+
+        <!-- board 시작 -->
+        <div class="boardContainer tabContent">
+          <table class="board">
+            <thead class="boardTitle">
+              <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>작성 날짜</th>
+                <th>조회수</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td class="subject">제목1</td>
+                <td>홍길동</td>
+                <td>2023-08-06</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td class="subject">제목2</td>
+                <td>김길동</td>
+                <td>2023-08-06</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td class="subject">제목3</td>
+                <td>이길동</td>
+                <td>2023-08-06</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td class="subject">제목4</td>
+                <td>최길동</td>
+                <td>2023-08-06</td>
+                <td>0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- /board 끝 -->
+
+        <!-- center 시작 -->
+        <div class="centerIcons tabContent">
+          <!-- 아이콘은 임시 아이콘 이므로 추후 내용물을 정하여 변경 필요 폰트어썸 cdn도 제거 -->
+          <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+          <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+          <div class="icon"><i class="fa-solid fa-star"></i></div>
+          <div class="icon"><i class="fa-solid fa-poo"></i></div>
+        </div>
+        <!-- /center 끝 -->
+
+        <!-- 모달 시작 -->
+        <div class="modal">
+          <div class="modalBody">Modal</div>
+        </div>
+        <button class="btnOpenPopup"><i class="fa-solid fa-plane-up"></i></button>
+        <!-- 모달 끝 -->
+      </section>
+
+
+      <footer></footer>
+    </div>
+  </div>
+  <script>
+    const tabMenuBtn = document.querySelectorAll('.tapMenuList li');
+    const tabCont = document.querySelectorAll('.tabContent');
+
+    // 탭 버튼
+    for (let i = 0; i < tabMenuBtn.length; i++) {
+      tabMenuBtn[i].onclick = function (e) {
+        e.preventDefault();
+        for (let k = 0; k < tabMenuBtn.length; k++) {
+          tabMenuBtn[k].classList.remove('on');
+          tabCont[k].classList.remove('on');
+        }
+        this.classList.add('on');
+        tabCont[i].classList.add('on');
+      };
+    }
+    
+    // 탭 버튼 끝
+
+    // 모달
+    const modal = document.querySelector('.modal');
+    const btnOpenPopup = document.querySelector('.btnOpenPopup');
+    const modalBody = document.querySelector('body');
+
+    // 모달 on
+    btnOpenPopup.addEventListener('click', () => {
+      modal.classList.toggle('show');
+      modalBody.style.overflow = 'hidden';
+    });
+    // 모달 off
+    modal.addEventListener('click', () => {
+      modal.classList.toggle('show');
+      modalBody.style.overflow = 'auto';
+    });
+    // 모달 끝
+  </script>
+</body>
+
+</html>
