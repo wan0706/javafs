@@ -19,13 +19,13 @@
 
             html {
                 font-size: 10px;
-                /* max-width: 1320px; */
-            }
-
-            body {
+              }
+              
+              body {
+              max-width: 1320px;
                 font-size: 1rem;
                 margin: 0 auto;
-                width: 100%;
+                /* width: 100%; */
                 font-family: 'Noto Sans KR', sans-serif;
             }
 
@@ -58,12 +58,19 @@
                 left: 500px;
             }
 
-            /* 좌측 탭 메뉴 */
+            /* 메뉴 클릭시 이벤트 발생 */
             .mother {
                 position: relative;
-                border: 1px solid red;
+                /* border: 1px solid red; */
             }
 
+            .child {
+                position: absolute;
+            }
+
+            .child:first-of-type {
+                z-index: 1;
+            }
 
 
             .txt {
@@ -92,8 +99,8 @@
 
             /* 이미지 */
             .big {
-                /* width: 1791px; */
-                /* height: 577px; */
+                 width: 1791px; 
+                height: 577px; 
                 display: flex;
                 position: relative;
                 left: 500px;
@@ -307,244 +314,408 @@
     
     
     <div class="mother">
-    <div class="child">
-        <!-- 가운데 이미지 -->
-        <div class="big">
+        <div class="child">
+          <!-- 가운데 이미지 -->
+          <div class="big">
             <div id="con">
-                <img src="image/img.jpg" alt="여행지1" class="img1">
-                <p class="img1Txt1"><b>
-                        [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
-                <p class="img1Txt2">
-                    ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
-                <p class="img1Txt3">579,000원</p>
-
-
-                <!-- like 시작 -->
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-                <!-- /like 끝 -->
+              <img src="images/img (1).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
             </div>
-            </div>
-
             <div>
-                <img src="image/img.jpg" alt="여행지2" class="img2">
-                <p class="img2Txt1"><b>
-                        [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
-                <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
-                <p class="img2Txt3">499,000원</p>
-
-
-                <!-- like 시작 -->
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-                <!-- /like 끝 -->
+              <img src="images/img (10).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
             </div>
-
-
-
             <div>
-                <img src="image/img.jpg" alt="여행지3" class="img3">
-                <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
-                <p class="img3Txt2"></p>
-                <p class="img3Txt3">599,000원</p>
+              <img src="images/img (11).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
 
-
+               
                 <!-- like 시작 -->
                 <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
+                  <input class="like" type="checkbox" title="like">
+                  <div class="checkmark">
+                    <svg class="outline" viewBox="0 0 24 24">
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
+                      </path>
+                    </svg>
+                    <svg class="filled" viewBox="0 0 24 24">
+                      <path
+                        d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
+                      </path>
+                    </svg>
+                  </div>
                 </div>
                 <!-- /like 끝 -->
             </div>
+          </div>
         </div>
     
-    <!-- 1섹션 끝 -->
-    <!-- 1번 끝 -->
-
-    <!-- 2번 시작-->
-    <!-- 좌측 탭 메뉴 -->
-    <div class="mother1">
+        <!-- 2번째 이미지 -->
+    
         <div class="child">
-            <!-- 텍스트 -->
-            <ul class="txt">
-                <li class="active"><a href="#">#가까워도 이국적인 중국/대만/몽골로</a></li>
-                <li class="t1"><a href="#">#한 번쯤 꿈꿔왔던_유럽으로</a></li>
-                <li class="t2"><a href="#">#가까운 인기여행지_일본으로</a></li>
-                <li class="t3"><a href="#">#가도 가도 또 가고 싶은_동남아로</a></li>
-                <li class="t4"><a href="#">#신비하고 청정한_남태평양으로</a></li>
-                <li class="t5"><a href="#">#평생 버킷리스트_미주로</a></li>
-            </ul>
-        </div>
-    </div>
-
-
-    <section>
-        <!-- 가운데 이미지 -->
-        <div class="big">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
             <div id="con">
-                <img src="image/img1 (1).jpg" alt="여행지1" class="img1">
-                <p class="img1Txt1"><b>
-                        [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
-                <p class="img1Txt2">
-                    ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
-                <p class="img1Txt3">579,000원</p>
-
-
-                <!-- like 시작 -->
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-                <!-- /like 끝 -->
-
+              <img src="images/img (9).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
             </div>
-
-
             <div>
-                <img src="image/img1 (2).jpg" alt="여행지2" class="img2">
-                <p class="img2Txt1"><b>
-                        [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
-                <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
-                <p class="img2Txt3">499,000원</p>
-
-
-                <!-- like 시작 -->
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-                <!-- /like 끝 -->
+              <img src="images/img (15).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
             </div>
-
-
-
             <div>
-                <img src="image/img1 (3).jpg" alt="여행지3" class="img3">
-                <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
-                <p class="img3Txt2"></p>
-                <p class="img3Txt3">599,000원</p>
-
-
-                <!-- like 시작 -->
-                <div class="con-like">
-                    <input class="like" type="checkbox" title="like">
-                    <div class="checkmark">
-                        <svg class="outline" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Zm-3.585,18.4a2.973,2.973,0,0,1-3.83,0C4.947,16.006,2,11.87,2,8.967a4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,11,8.967a1,1,0,0,0,2,0,4.8,4.8,0,0,1,4.5-5.05A4.8,4.8,0,0,1,22,8.967C22,11.87,19.053,16.006,13.915,20.313Z">
-                            </path>
-                        </svg>
-                        <svg class="filled" viewBox="0 0 24 24">
-                            <path
-                                d="M17.5,1.917a6.4,6.4,0,0,0-5.5,3.3,6.4,6.4,0,0,0-5.5-3.3A6.8,6.8,0,0,0,0,8.967c0,4.547,4.786,9.513,8.8,12.88a4.974,4.974,0,0,0,6.4,0C19.214,18.48,24,13.514,24,8.967A6.8,6.8,0,0,0,17.5,1.917Z">
-                            </path>
-                        </svg>
-                    </div>
-                </div>
-                <!-- /like 끝 -->
+              <img src="images/img (8).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
             </div>
+          </div>
         </div>
-    </section>
-    <!-- 1섹션 끝 -->
-    <!-- 2번 끝 -->
-
-
-
-
-
-
-
-
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
-    <script>
+    
+         <!-- 3번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img1 (3).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (4).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (1).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 4번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img.jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (1).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (2).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 5번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img1 (3).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (4).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1.jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 6번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img2.jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1.jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img.jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 7번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img1 (3).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (4).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img.jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 8번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img1 (1).jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img2.jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (3).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 9번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img1.jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img.jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (2).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 10번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img2.jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1.jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img.jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+    
+         <!-- 11번째 이미지 -->
+    
+         <div class="child">
+    
+          <!-- 가운데 이미지 -->
+          <div class="big">
+            <div id="con">
+              <img src="image/img.jpg" alt="여행지1" class="img1">
+              <p class="img1Txt1"><b>
+                  [완전정복][교원, 그대만은 다르다] 대만 단수이 #지우펀 #시내4성급호텔 #SNS맛집여행 #10</b></p>
+              <p class="img1Txt2">
+                ① 영화 '말할 수 없는 비밀'의 촬영지 단수이 ② 예류, 지우펀, 스펀 천등날리기 포함 ③ 세계 4대박물관 중 하나인 국립고궁</p>
+              <p class="img1Txt3">579,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (1).jpg" alt="여행지2" class="img2">
+              <p class="img2Txt1"><b>
+                  [KT알파홈쇼핑/감동두배] 백두산(서파/북파)/고구려유적지/압록강조망/대련/장춘 5일</b></p>
+              <p class="img2Txt2"># 마지막날 레이트 체크아웃 무료 제공(24시까지) #삼아공항<> 리조트 왕복 무료 샌딩 서비스 # 퀀팜타워 슈페리어</p>
+              <p class="img2Txt3">499,000원</p>
+            </div>
+            <div>
+              <img src="image/img1 (2).jpg" alt="여행지3" class="img3">
+              <p class="img3Txt1"><b>[동양의 하와이]하이난(삼아) 맹글로브 리조트 휴양&워터파크무제한 5일/6일</b></p>
+              <p class="img3Txt2"></p>
+              <p class="img3Txt3">599,000원</p>
+            </div>
+          </div>
+        </div>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      </div>
+    
+    
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+      <script>
         // mother child
         const mother = document.querySelector(".mother");
         const childs = document.querySelectorAll(".child");
-        const childs2 = document.querySelectorAll(".child2");
-        let btns = document.querySelectorAll(".allbtn");
+        let btns = document.querySelectorAll(".Allbtn");
         const left_btn = document.querySelectorAll(".leftbtn");
+        
         // for(let i=0; i<childs.length; i++) {
         //     childs[i].style.zIndex = 5;
         //   }
-
+    
         function change() {
-            for (let j = 0; j < btns.length; j++) {
-                btns[j].onclick = function () {
-                    for (let i = 0; i < childs.length; i++) {
-                        childs[i].style.zIndex = 0;
-                    }
-                    childs[j].style.zIndex = 5;
-                };
-            }
+          for (let j = 0; j < btns.length; j++) {
+            btns[j].onclick = function () {
+              for (let i = 0; i < childs.length; i++) {
+                childs[i].style.zIndex = 0;
+              }
+              childs[j].style.zIndex = 1;
+            };
+          }
         }
         // window.onload = function () {
         //   change();
         // };
         document.addEventListener('DOMContentLoaded', function () {
-            change();
+          change();
         });
-    </script>
-
-</body>
-
-</html>
+      </script>
+    
+    
+    </body>
+    
+    </html>
