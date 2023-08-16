@@ -34,7 +34,7 @@
     font-family: 'Noto Sans KR', sans-serif;
 
   }
-  
+
   .oejcommon {
     width: 100%;
     /* border: 10px solid rebeccapurple; */
@@ -247,7 +247,7 @@
   }
 
   /* like 시작 */
-  .oejcon-like {
+  .con-like {
     --red: rgb(255, 50, 50);
     position: absolute;
     top: 30px;
@@ -256,7 +256,7 @@
     height: 30px;
   }
 
-  .oejcon-like .oejlike {
+  .con-like .like {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -266,18 +266,18 @@
   }
 
 
-  .oejcon-like .oejoutline,
-  .oejcon-like .oejfilled {
+  .con-like .outline,
+  .con-like .filled {
     fill: var(--red);
     position: absolute;
   }
 
-  .oejcon-like .oejfilled {
+  .con-like .filled {
     animation: kfr-filled 0.5s;
     display: none;
   }
 
-  .oejcon-like .oejlike:checked~.oejcheckmark .oejfilled {
+  .con-like .like:checked~.checkmark .filled {
     display: block
   }
 
