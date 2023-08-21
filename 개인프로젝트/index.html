@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            height: 200vh;
+        }
+        
+        html {
+            font-size: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        li {
+            list-style: none;
+        }
+        
+        .fullfage {
+            max-width: 1390px;
+        }
+
+        #header{
+            z-index: 10;
+            background: lawngreen;
+            top: 0;
+            width: 100%;
+            display: flex;
+            position: fixed;
+            /* justify-content: center; */
+            text-align: center;
+            align-items: center;
+            padding: 20px;
+            height: 200px;
+        }
+
+        .logo img {
+            width: 100%;
+            /* height: 25%; */
+            top:50%;
+            left: 50%;
+            transform: translateX(-50%, -50%);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            position: relative;
+            
+        }
+
+        #gnb {
+            z-index: 10;
+            /* position: relative; */
+        }
+
+
+
+        .main {
+            background: lightcoral;
+            display: flex;
+            margin: 0 ;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="fullpage">
+        <header id="header">
+           
+       
+            <!-- 네비 -->
+            <nav id="gnb">
+                <ul class="main">
+                    <li><a href="#">서브메뉴1</a>
+                        <ul class="sub">
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                            <li><a href="#">서브4</a></li>
+                            <li><a href="#">서브5</a></li>
+                            <li><a href="#">서브6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서브메뉴2</a>
+                        <ul class="sub">
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                            <li><a href="#">서브4</a></li>
+                            <li><a href="#">서브5</a></li>
+                            <li><a href="#">서브6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서브메뉴3</a>
+                        <ul class="sub">
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                            <li><a href="#">서브4</a></li>
+                            <li><a href="#">서브5</a></li>
+                            <li><a href="#">서브6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#"서브메뉴4</a>
+                        <ul class="sub">
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                            <li><a href="#">서브4</a></li>
+                            <li><a href="#">서브5</a></li>
+                            <li><a href="#">서브6</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">서브메뉴5</a>
+                        <ul class="sub">
+                            <li><a href="#">서브1</a></li>
+                            <li><a href="#">서브2</a></li>
+                            <li><a href="#">서브3</a></li>
+                            <li><a href="#">서브4</a></li>
+                            <li><a href="#">서브5</a></li>
+                            <li><a href="#">서브6</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+                 <!-- 로고 -->
+                 <div class="logo">
+                    <h1><a href="#"><img src="image/로고.png" alt="로고"></a></h1>
+                    </div>
+        
+        </header>
+       
+
+
+    </div>
+</body>
+</html>

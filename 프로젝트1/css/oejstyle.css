@@ -1,295 +1,264 @@
-@charset 'utf-8';
-* {
-    margin: 0;
-    padding: 0;
-  }
+@charset "utf-8";
 
-  html {
-    font-size: 10px;
+.oejsection3 {
+  position: relative;
+  font-size: 1rem;
+  margin: 0 auto;
+  height: 800px;
+  max-width: 1320px;
+  font-family: 'Noto Sans KR', sans-serif;
 
-  }
+}
 
-  
+.oejcommon {
+  width: 100%;
+}
 
-  li {
-    list-style: none;
-  }
+.oejcommon .oejcom {
+  width: 1200px;
+  margin: 0 60px;
+}
 
-  img {
-    vertical-align: top;
-    width: 100%;
-  }
+.oejmother {
+  position: relative;
 
-  a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-
-  }
-  .oejsection3 {
-    font-size: 1rem;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1320px;
-    font-family: 'Noto Sans KR', sans-serif;
-
-  }
-
-  .oejcommon {
-    width: 100%;
-    /* border: 10px solid rebeccapurple; */
-  }
-
-  .oejmother {
-    position: relative;
-  }
-
-  .oejchild {
-    position: absolute;
-  }
-
-  .oejchild:first-of-type {
-    z-index: 1;
-  }
+}
 
 
-  /* 상단바 탭 메뉴 */
-  .oejallb {
-    display: flex;
-    /* justify-content: space-evenly; */
-    justify-content: center;
-    position: relative;
-    top: 100px;
-    left: 50%;
-    bottom: 10%;
-    transform: translateX(-50%);
-    width: 100%;
-   
-  }
+.oejchild {
+  position: absolute;
 
-  .oejallb > button:not(:first-of-type) {
-    margin-left: 50px;
-    
-  }
-  
-  
-  .oejAllbtn {
-    box-shadow: 0 0 5px #8ED3FF;
-    background-color: #ffffff;
-    border: 0;
-    cursor: pointer;
+}
 
-  }
-
-  .oejAllbtn:hover {
-    background: #8ED3FF;
-  }
-
-  .oejAllbtn:focus {
-    background:  #8ED3FF;
-  }
+.oejchild:first-of-type {
+  z-index: 1;
+}
 
 
-  .oejallb .oejAllbtn {
-    align-items: center;
-    margin-left: 10px;
-    width: 150px;
-    height: 50px;
-    font-size: 1.5rem;
-    border-radius: 10px;
+/* 상단바 탭 메뉴 */
+.oejp {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 50px;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 100%;
+}
 
-  }
+.oejp>p {
+  font-size: 3.2rem;
+  font-weight: 700;
+}
 
-  /* 이미지 */
+.oejallb {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 100px;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  width: 100%;
+}
 
-  .oejbig {
-    position: absolute;
-    display: flex;
-    top: 150px;
-    left: 10px;
-    justify-content: center;
-    align-items: center;
+.oejAllbtn {
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  color: #a3a3a3;
+  font-weight: 700;
+  -moz-transition: color .3s ease;
+  -o-transition: color .3s ease;
+  -ms-transition: color .3s ease;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+}
 
-  }
+.oejAllbtn:hover {
+  color: #313131;
+}
 
-  .oejbig>div {
-    width: 420px;
-    height: 577px;
-    position: relative;
-    left: 0;
-    top: 0;
-  }
-
-  .oejbig>div:not(:nth-last-of-type(1)) {
-    margin-right: 20px;
-  }
-
-
-
-  .oejbig>div>img {
-    width: 400px;
-    height: 500px;
-    margin: 0 12px;
-    border-radius: 10px;
-    text-align: center;
-    /* overflow: hidden; */
-  }
+.oejAllbtn.on {
+  color: #000;
+}
 
 
-  .oejbig>div>.oejimg1 {
-    position: absolute;
-  }
+.oejallb .oejAllbtn {
+  align-items: center;
+  margin-left: 10px;
+  width: 170px;
+  height: 50px;
+  font-size: 2.2rem;
+  border-radius: 10px;
 
-  .oejbig>div>.oejimg2 {
-    position: absolute;
-  }
+}
 
-  .oejbig>div>.oejimg3 {
-    position: absolute;
-  }
+/* 이미지 */
 
-  .oejbig>div>p {
-    font-size: 1.5rem;
-  }
+.oejbig {
+  position: absolute;
+  display: flex;
+  top: 150px;
+  left: 50%;
+  width: 1200px;
+  height: 500px;
+  justify-content: space-between;
+  align-items: center;
+}
 
-  /* 이미지 공통 텍스트 상단  */
-  .oejbig>div>.oejimg1Txt1 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 40%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  width: 390px;
+  height: 500px;
+}
 
-  .oejbig>div>.oejimg2Txt1 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 40%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
 
-  .oejbig>div>.oejimg3Txt1 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 40%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div>img {
+  width: 390px;
+  height: 500px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
 
-  /* 이미지 공통 텍스트 중앙 */
-  .oejbig>div>.oejimg1Txt2 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 30%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+}
 
-  .oejbig>div>.oejimg2Txt2 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 30%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
 
-  .oejbig>div>.oejimg3Txt2 {
-    position: absolute;
-    width: 400px;
-    left: 51%;
-    bottom: 30%;
-    font-size: 1.5rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div>.oejimg1 {
+  position: absolute;
 
-  /* 이미지 공통 텍스트 하단 */
+}
 
-  .oejbig>div>.oejimg1Txt3 {
-    position: absolute;
-    width: 200px;
-    left: 80%;
-    bottom: 90px;
-    font-size: 3.2rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div>.oejimg2 {
+  position: absolute;
+}
 
-  .oejbig>div>.oejimg2Txt3 {
-    position: absolute;
-    width: 200px;
-    left: 80%;
-    bottom: 90px;
-    font-size: 3.2rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div>.oejimg3 {
+  position: absolute;
+}
 
-  .oejbig>div>.oejimg3Txt3 {
-    position: absolute;
-    width: 200px;
-    left: 80%;
-    bottom: 90px;
-    font-size: 3.2rem;
-    transform: translateX(-50%);
-    /* border: 1px solid red; */
-  }
+.oejbig>div>p {
+  font-size: 1.5rem;
+}
 
-  /* like 시작 */
-  .con-like {
-    --red: rgb(255, 50, 50);
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    width: 30px;
-    height: 30px;
-  }
+/* 이미지 안 텍스트 */
 
-  .con-like .like {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+
+.oej_blurtxt {
+  position: relative;
+  top: 65%;
+  width: 390px;
+  height: 175px;
+  backdrop-filter: blur(10px);
+  background: hsla(0, 0%, 17%, 0.3);
+}
+
+.oej_txt {
+  position: absolute;
+  top: 65%;
+  width: 390px;
+  height: 175px;
+  border-radius: 10px;
+}
+
+.oejimg1Txt1>p {
+  position: absolute;
+  top: -20px;
+  left: 270px;
+  width: 90px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 1.7rem;
+  backdrop-filter: blur(10px);
+  background: hsla(0, 0%, 17%, 0.5);
+
+  color: #fff;
+
+}
+
+.oejimg1Txt2>p {
+  position: absolute;
+  bottom: 70px;
+  left: 20px;
+  font-size: 1.7rem;
+  color: #fff;
+}
+
+.oejimg1Txt3>p {
+  position: absolute;
+  color: rgb(255, 211, 17);
+  font-size: 1.7rem;
+  letter-spacing: 10px;
+  bottom: 30px;
+  left: 20px;
+}
+
+.oejimg1Txt4>a {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 3.2rem;
+  color: rgb(255, 211, 17);
+
+}
+
+.oejimg1Txt4>a:hover {
+
+
+  color: rgb(255, 76, 22);
+
+}
+
+
+/* like 시작 */
+.oejcon-like {
+  --red: rgb(255, 50, 50);
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 30px;
+  height: 30px;
+}
+
+.oejcon-like .oejlike {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 20;
+  cursor: pointer;
+}
+
+
+.oejcon-like .oejoutline,
+.oejcon-like .oejfilled {
+  fill: var(--red);
+  position: absolute;
+}
+
+.oejcon-like .oejfilled {
+  animation: kfr-filled 0.5s;
+  display: none;
+}
+
+.oejcon-like .oejlike:checked~.oejcheckmark .oejfilled {
+  display: block
+}
+
+@keyframes kfr-filled {
+  0% {
     opacity: 0;
-    z-index: 20;
-    cursor: pointer;
+    transform: scale(0);
   }
 
-
-  .con-like .outline,
-  .con-like .filled {
-    fill: var(--red);
-    position: absolute;
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
   }
 
-  .con-like .filled {
-    animation: kfr-filled 0.5s;
-    display: none;
-  }
-
-  .con-like .like:checked~.checkmark .filled {
-    display: block
-  }
-
-  @keyframes kfr-filled {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-
-    50% {
-      opacity: 1;
-      transform: scale(1.2);
-    }
-
-  }
+}

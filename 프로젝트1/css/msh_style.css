@@ -1,0 +1,92 @@
+@charset "utf-8";
+
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css);
+
+.section5{
+width: 100%;
+height: 500px;
+}
+
+/* contents */
+.carousel {
+    max-width: 1320px;
+    position: relative;
+    margin: 0 auto;
+    /* height: 600px; */
+    /* padding: 100px; */
+
+}
+
+.carousel h2 {
+    font-size: 2rem;
+}
+
+
+/* 캐러셀 */
+.bx-wrapper {
+    margin: 100px auto;
+    box-shadow: none;
+    border: none;
+}
+
+.bx-viewport {
+    max-width: 1320px;
+    padding-top: 40px;
+}
+
+.bxSlider>li>a {
+    display: block;
+    transition: .5s;
+}
+
+.bxSlider>li>a>h3 {
+    font-size: 2.4rem;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.bxSlider>li>a>span {
+    font-size: 1.6rem;
+    margin-top: 10px;
+    display: block;
+    text-align: center;
+}
+
+.bxSlider>li:hover>a {
+    transform: translateY(-20px);
+}
+
+/* /캐러셀 */
+
+
+/* 전후 버튼 */
+.carousel .carousel_prev {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-left: 20px;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: #95B0B6;
+    transition: color .3s;
+
+}
+
+.carousel .carousel_next {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-right: 20px;
+    transform: translateY(-50%);
+    font-size: 4rem;
+    color: #95B0B6;
+    transition: color .3s;
+}
+
+.carousel .carousel_btn a:hover {
+    color: #324B50;
+}
+
+/* /전후버튼 */
+/* /contents */

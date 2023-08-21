@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 10px;
+}
+
+.oej_contaier {
+  /* display: flex; */
+  position: relative;
+  margin: 0 auto;
+  top: 200px;
+  height: 600px;
+  max-width: 1320px;
+  background: lightcoral;
+}
+
+header {
+    border: 1px solid red;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    margin: 0 auto;
+}
+
+/* .oej_input-box{
+    position: relative;
+    margin: 10px 0;
+    background: lavenderblush;
+    border: 1px solid red;
+} */
